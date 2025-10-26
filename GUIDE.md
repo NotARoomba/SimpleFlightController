@@ -94,13 +94,15 @@ Go to their website (https://www.ti.com/), select "Products", then "Battery Mana
 
 ![TI Battery Charger Page](assets/ti-battery-charger-page.png)
 
-After looking around a bit, I found the `BQ25887`. It's a 2 Li-ion cell charger (which meets our requirement). You could add a more complicated battery charger if you want more cells/power, but they take up more space and are more complex to route.
+After looking around a bit, I found the `BQ25798`. It's a 2 Li-ion cell charger (which meets our requirement). You could add a more complicated battery charger if you want more cells/power, but they take up more space and are more complex to route.
 
 For the regulators, go back to the TI main page, then navigate to "Power Management", then "DC/DC Power Modules". Here you can find all the regulators you would ever need, complete with excellent datasheets.
 
 ![TI DC/DC Power Modules](assets/ti-dcdc-power-modules.png)
 
 Here is where we can choose the right regulators for our needs. For this tutorial we are going to use the `TPS63070` which supports 2-16V input and can output a steady 5V with high current for the servos.
+
+Now all that's missing is to find another regulator for 3.3V, for this we are going to us `LMR51430` as it is one tht supplies alot of amperage for the various sensors that w will be using.
 
 Now that we have the chips that we are going to use, we also need to verify that they are available on some platform like [LCSC](https://lcsc.com) or wherever else you are going to manufacture your PCB. We also might have to import certain components through LCSC to KiCad.
 
@@ -109,7 +111,8 @@ Now that we have the chips that we are going to use, we also need to verify that
 - USB-C
 - MicroSD
 - TPS63070
-- BQ25887
+- LMR51430
+- BQ25798
 - STM32F722RETx
 - ICM-45686
 - BMP580
@@ -229,7 +232,7 @@ Then after that's done, go into your schematic and search for lcsc, you should f
 
 ![LCSC Search](assets/kicad_usbc.png)
 
-Keep in mind though that there are some parts that KiCad already has such as `BQ25887`, but there are others like the IMU that you will have to import.
+Keep in mind though that there are some parts that KiCad already has such as `BQ25798`, but there are others like the IMU that you will have to import.
 
 ![LCSC Search](assets/kicad_bq.png)
 
@@ -242,3 +245,36 @@ Now going back to KiCad, add in all of the components (you may have to reopen th
 ![LCSC Search](assets/kicad_start.png)
 
 ## USB-C and Power
+
+Now lets stwrt wiring up the power components and USB-C. It's alay goo practice to start wiring the componnts that ould b ue "first", in this case it woul b usB-c a it is going to recive voltage, then the batter connector as that voltage from usb-c is going to be directly charging the battery, an if there is no usb-c then the batter will provide voltage, then the 2 regulators. again, you can wire each componnt up in whatever order, I just do it like this to be a bit more orgnized.
+
+![LCSC Search](assets/usbc.png)
+
+This is the usb-C connector, as you can see it has a lot of pins but don't worry if you dont know what all of those mean as heres what each f those mean
+
+- Shell: This is the outer case of the USB-C port, it's usually connected to ground
+- GND: Ground lol
+- VBUS: This is the pin that supplies voltage from th device that connects to it. Usually it provides 5V at 1.5A or 3A depening on the cable
+- SBU1/2: These are low-speed lines that can be used as alternate pins for different accessories, such as AUx+ and au- when connected to a displayport, but we don't ned to use them
+- CC1/2: the se are Configuration Channel pins, basiclly they detect if the connctor is flipped, and can also be ued to negotiate more power out of vbus (USB-PD). We aar going to conenct them to 5.1K resustors to ground a this tells the other device that we want 5V
+- DN/DP: Thse re the USB lins that we will be conencting to the STM32, they area ued to trnsfer data between devices
+
+Now ith tht informtion in mind, when you finish iring up the Usb-C connector it shoul look like this:
+
+![LCSC Search](assets/usbc_done.png)
+
+i used net labels to organize it better so that w dont have a spaghtti of cables all over the schematic.
+
+### Battery charger (BQ25798)
+
+Now let's ir up the batter charger as that is the net step in our powr route. There are many chips in the world an knowing th pins on each of them is virtually imposible, so each manufacturer has what's called a `datashet` for each component. It's basically a oumnt that details everything about that chip, its pinout, an evn how to implemnt it.
+
+To access th datashet for any componnt in KicAd, simply click on th component and press D, but if thre isn't on, just seach on googl `[part] datashet` and its usually a pdf.
+
+Opening the datasheet for the battery charger we are greeted with this:
+
+![LCSC Search](assets/datasheet_bat.png)
+
+this may look intimidating as thre ar 85 pges of letters, numers, formulas, and grphs, but there is one section tht is valuble to us called `Application and Implmntation`. this section basically gives us a refernce schmtic on ho to use said chip. We can us the sidebar or table of contents to locate that section, and you should see this:
+
+![LCSC Search](assets/datasheet_sch.png)

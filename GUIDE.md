@@ -319,9 +319,9 @@ Here we can see that for those pins there are descriptions like `active low`, `o
 
 Now let's talk about the different ways chips can talk to each other. There are several common protocols you'll encounter:
 
-#### I2C (Inter-Integrated Circuit)
+#### I2C/I3C (Inter-Integrated Circuit)
 
-I2C uses only **2 wires**: SDA (data) and SCL (clock). Multiple devices can share the same two wires, and each device has a unique address. Think of it like a conference call where everyone shares the same phone line, but each person has a unique ID.
+I2C uses only **2 wires**: SDA (data) and SCL (clock). Multiple devices can share the same two wires, and each device has a unique address. Think of it like a conference call where everyone shares the same phone line, but each person has a unique ID. Both wires need 1 pull up resistor each (in total as well) in order to function correctly.
 
 **Pros:**
 
@@ -457,3 +457,47 @@ When wiring things based off of schematics, make sure to use the recommended siz
 Using the fixed schematic (and taking into account the correct footprint sizes), wire it up in KiCad and you should get something like this:
 
 ![TPS63070 Schematic Complete](assets/tps63070_schematic_complete.png)
+
+With VIN connecting to VSYS (battery or usb voltage) and VOUT connecting to +5V. Seperate grounds are not needed here so they are GND.
+
+If you don't know what footprint size to add to the other components (resistors, inductors, etc), don't worry as we will revise this later.
+
+Now moving on to the final power part, the `LMR51430`.
+
+Repeat the same as the other 2 parts, open the datasheet and look for the `Application and Implementation`. Now switching regulators (like the name implies), switch MOSFETS (tiny gates) open and close very fast in order to regulate voltage, and this can be measured by the `switching frequency` of the chip. In this case, we have 2 tables under the schamatic.
+
+![alt text](image.png)
+
+One for a switchign frequency of 500 kHz and another one for 1.1 mHz (1100 kHz). With a higher switchign frequency, it is less efficient and also can produce more heat, but overall, the space it takes up is less than with the lower frequency. On the other hand, a lower switchign frequency is more stable/efficient and doesn't heat up as fast and also produces alot less noise (which is what we need). So in this case we will go with the lower switching frequency at 3.3V. If you want to wire it up based on the higher frequency then feel free to do so, just take into account the pros and cons of each one. (all of this information is from the datasheet bwt)
+
+![alt text](image-1.png)
+
+After routing it, you should get something like this (for a 500kHz switchign frequency at 3.3v):
+
+![alt text](image-2.png)
+
+Like the 5V regulator, VIN = VSYS but VOUT = +3.3V as this chip is giving us 3.3V output.
+
+Double check the values ont he resistor divider as that is what determines the output voltage. Also in the reference schematic it shows one capacitor of 44uF but in the table it's 2 capacitors of 22uF so I used those.
+
+## Sensors and Peripherals
+
+Now that we've got power out of the way, it's time to route the sensors and the MicroSD
+
+Starting with the BMP580, for me when I try to open the datasheet it says that no datasheet is defined so you have to look it up on google and found [this](https://cdn-shop.adafruit.com/product-files/6411/BMP580.pdf).
+
+Looking around the table of contents, there is no `Aplication and Implementation` section but there is a `Pinout and Connection diagrams` which is close enough:
+
+![alt text](image-3.png)
+
+Taking a look at the different schematics, there are different ways of connecting the chip, through `SPI`, `I2C`, and `I3C`. Above in the **Communication Protocols** section I explained what each of these mean, and for this chip I plan on using `I2C` as its the default mode of communication for thei chip. (This is personal preference, feel free to use whichever mode of communication you wish.)
+
+WHen implementint `I2C` you need to have pull up resistors on each line, but if you recall, the battery charging circuit uses I2C as well and we already put pullup resistors there so it isnt nessecary to add them on here.
+
+![alt text](image-4.png)
+
+Following this schematic, after wiring it up in KiCad you should get this:
+
+![alt text](image-5.png)
+
+I wired both VDD and VDDIO to 3.3V as that is the voltage that all of the other chips are running at (microcontroller and sensors).

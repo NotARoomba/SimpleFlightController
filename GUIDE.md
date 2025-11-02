@@ -484,6 +484,8 @@ Double check the values ont he resistor divider as that is what determines the o
 
 Now that we've got power out of the way, it's time to route the sensors and the MicroSD
 
+### BMP580
+
 Starting with the BMP580, for me when I try to open the datasheet it says that no datasheet is defined so you have to look it up on google and found [this](https://cdn-shop.adafruit.com/product-files/6411/BMP580.pdf).
 
 Looking around the table of contents, there is no `Aplication and Implementation` section but there is a `Pinout and Connection diagrams` which is close enough:
@@ -501,3 +503,219 @@ Following this schematic, after wiring it up in KiCad you should get this:
 ![alt text](image-5.png)
 
 I wired both VDD and VDDIO to 3.3V as that is the voltage that all of the other chips are running at (microcontroller and sensors).
+
+### ICM-45686
+
+Looking at the `ICM-45686` [datasheet](https://invensense.tdk.com/wp-content/uploads/documentation/DS-000577_ICM-45686.pdf), it has different modes of operation like the BMP580, but the one that interests us is this one:
+![alt text](image-6.png)
+
+Changing things up a bit, we are going to conenct the sensors to the microcontrolelr through SPI. This gives us the advantage of faster data and also allows us to learn how to implement it later on in code.
+
+Also in the schematic, looking at pin 14 it serves the dual purpose of being a SDIO or SDI, but in our case we want to use it as SDI to use the full capacity of SPI.
+
+You should end up with something like this after:
+
+![alt text](image-7.png)
+
+### MicroSD Card
+
+MicroSD works on the same principle as SPI but can have more channels for faster data throughput. This form of communication is called SDIO (Secure Digital Input Output) and can work in 1-bit or 4-bit data modes (4-bit has more channels and faster data trasnfers).
+
+Here is an example schematic of how the SD card should be wired but we are going to modify it a bit to fit our needs. There are 8 pins on the microSD and heres a table showing wheir meaning:
+
+![alt text](image-8.png)
+
+In SDIO (SDMMC) Mode, DAT0-3 are used for data transfer, CLK for clock, and CMD for sending/recieving commands between the microcontroller and microSD card. DAT3 Can also be considered a CD (Card Detect) pin but usually there is a 9th pin on most symbols that uses the case directly to detect if there is an sd card or not.
+
+Another thing to keep in mind when wiring up the microSD card, 10K PULLUPS ARE REQUIRED FOR EVERY PIN ON THE MICROSD CARD (excluding the 9th pin/GND/VCC)
+
+![alt text](70d9b5177979f4ed131b8acf6d75e27911024cf6.png)
+
+After wiring it up you should get something liek this:
+
+![alt text](image-9.png)
+
+Now all that's left is to conenct everything to the microcontroller!
+
+# Microcontroller Break
+
+Since we are using an STM32, there is a really cool piece of software called STM32MX. It basically allows you to select the functions and types of communication that you need and it automatically selects the pins so that we don't have to read the datasheet and get stuff wrong.
+
+To start, [download it here](https://www.st.com/en/development-tools/stm32cubemx.html) and wait for it to install.
+
+After isntalling it and opening it, you should be presented with this screen:
+
+![alt text](image-10.png)
+
+Click on `ACCESS TO MCU SELECTOR` as we are going to create a new project based on the MCU that we are using, in this case, `STM32F722RET`.
+
+After searching fo the MCU you should see this screen:
+
+![alt text](image-11.png)
+
+Here it shows different variations of that version for the STM32 but we are going to select the `STM32F722RET6` version as it is the one that has the most in stock on LCSC.
+
+![alt text](image-12.png)
+
+After that hit start project at the top and if any windows pop up say yes.
+
+After loading/downloading the firmware, you should be greeted with this window:
+
+![alt text](image-13.png)
+
+This is where you will be configuring the pinout for the STM32. On the left you can see the different sections that are able to be configured but the only ones that concern us for now is the `System Core`, `Timers`, and `Connectivity` sections.
+
+## Connectivity
+
+Here we can see the different ways that we can conenct the STM32 to different peropherals through `I2C`, `SPI`, `UART`, `SDMMC`, `USB_OTG_FS` and more. For now, enable the first I2C channel. This will be for the battery charger and pressure sensor. It should look like this:
+
+![alt text](image-14.png)
+
+ALso be sure to select the pins on either side for the battery charger interrupt and select pins. The BQ_INT pin should be set as an GPIO_EXTIx (x is any number) pin as this lets the STM32 know that this pin is going to be an interrupt pin.
+
+![alt text](image-18.png)
+
+For BQ_CE, make sure that there's a pin set to GPIO_Output as reading the datasheed says that when low, the charge is on, and when high, the battery doesnt charge. We can change this later in the code and is for further customizeability in case you don't want the battery charge controller running during flight.
+
+![alt text](image-19.png)
+
+**MAKE SURE TO ADD THE INTERRUPT PIN FOR THE BMP580**
+
+When selecting an interrupt, if it deletes another interrupt, choose another pin as some interrupts use multiple pins.
+
+![alt text](image-20.png)
+
+Then enable an SPI channel for the IMU, you are free to use whichever channel you wish but I am going to select the first one. Select `Full Duplex Master` as the STM32 will be the master and the IMU the slave, and full duplex because we are using both MOSI and MISO and not just one channel for input output (half duplex/SDIO). There is also an option under the selection to activate a `Hardware NSS Signal`, this is used if we have just one device under the SPI bus and make it so that the STM32 manages the `Chip Select` pin instead of us having to select a GPIO for it. I enabled it as an `Hardware NSS Signal Output` as the IMU will be the input. After selecting SPI it should look like this (can be different if you want to use a different pin for the Chip Select):
+
+![alt text](image-15.png)
+
+Also don't forget to add the 2 interrupt pins on the IMU as GPIO_EXTIx (x is any number):
+
+![alt text](image-21.png)
+
+After you've done that, it's tiem to select `USB_OTG_FS`. this means USB On-The-Go Full speed and it differes from USB_OTG_HS (USB On-The-Go High Speed) as it is slower and doesnt need any extra pins to configure and its sufficient for our needs of flashing and sending serial data. Set it to host or device, you'll be changing this later anyways depending on your needs. For now I will leave it as host and it shows where the USB pins are on the chip.
+
+![alt text](image-16.png)
+
+Now enable `SDMMC` as this is the communicataion protocol that we will be using to write/read to our microSD. This should be enabled and set to a 4-bit Bus.
+
+![alt text](image-17.png)
+
+Also remember to add an extra pin next to it for the extra detect pin and make it a GPIO_Input:
+
+![alt text](image-22.png)
+
+Now that we are done with our peripherals/sensors we are going to configure some other stuff that would be important in starting the STM32 and configuring the serovs.
+
+GO to the `System Core` tab then click on `RCC` and set both the highspeed clock and low speed clock as a crystal/ceramic resonantor. By doing this, we are telling the STM32 that we will have some external clocks that it can use to acheive faster/stabler clock timing throught the entire chip. We will edit this in KiCad later along with the pins.
+
+![alt text](image-23.png)
+
+Now go to the `Timers` section. Here is where we can edit the PWM pins for the servos. Select any timer that has channels that support PWM and select 2 `PWM Generation CH` channels. We will be able to edit the **duty cycle** later in the firmware. Also edit the `Clock Source` and set it to the internal clock, this is needed for the PWM generation as it needs a clock to time the signals correctly.
+
+![alt text](image-25.png)
+
+**MAKE SURE TO SAVE USING CTRL-S AND CREATE A NEW FOLDER IN THE ROOT OF YOU GITHUB REPOSITORY CALLED `software` OR `firmware`**
+
+![alt text](image-24.png)
+
+THis is how my STM32 looks after selecting all of the pins:
+
+![alt text](image-33.png)
+![alt text](image-34.png)
+![alt text](image-35.png)
+
+Keep this open while we configure the rest of the microcontrolelr in KiCad.
+
+# Back to KiCad
+
+Now after adding all of the pins and peripherals and knowing which pins you are going to use, we are going to finish wiring up the STM32 with whats called a `reference schematic`. If you want to learn more about this specific type of chip, or any STM32 MCU in general, there is a documentation tab ([example](https://www.st.com/en/microcontrollers-microprocessors/stm32f722re.html#documentation)) that shows you all the implmentations/peripherals that you can have with the STM32. After scrolling around I found a [reference design](https://www.st.com/resource/en/application_note/an4661-getting-started-with-stm32f7-series-mcu-hardware-development-stmicroelectronics.pdf) to use with our STM32.
+
+Going to the section named `Reference Design` we are greeted with this:
+
+![alt text](image-26.png)
+
+## Wiring up power
+
+Starting with the `decoupling capacitors` (capacitors that are placed near ICs to stabilize voltage on power supply lines, they are in parallel with voltage and conenct to ground), it is generally good practice to place one **100nF** per VDD pin and then use a bigger **1uF** capacitor per section (eg. VDD/VDDA/VBAT), finally finishing off with a big **4.7uF** or **10uF** capacitor on the main voltage line before the STM32 to hold off larger voltage spikes. If you have analog voltage (VDDA), it's also good practice to put a `ferrite bead` (like a capacitor but it suppresses high-frequency noise currents) before connecting it to VCC as to prevent noise from digital switching from interfering with sensitive analog functions.
+
+It is also needed to place a 2.2uF capacitor in series with VCAP and GND.
+
+**VERY IMPORTANT TO PUT A 2.2uF DECOUPLINC CAPACITOR ON EACH VCAP PIN OF THE STM32 OR IT WONT BOOT UP** (from experience)
+
+Based on this information (and the schematic), try to sire up your STM32's VDD/VSS Pins (VSS IS GND BTW). You should get somethign like this:
+
+![alt text](image-27.png)
+
+I placed the capacitors off to the side to make it look cleaner but its the same as if you were to connect them directly, just make sure that when you are placing/routing them on the PCB to make sure that they are **AS CLOSE AS POSIBLE TO THE PIN THAT THEY ARE DECOUPLING OR IT DEFEATS THE PURPOSE**.
+
+## Clocks
+
+Looking at the reference design above, it shows that we need some buttons for the reset and boot pins. These buttons allow us to restart the MCU and allow it to boot into it's bootlaoder to allow for programming through USB.
+
+We also have to add the 32.768 kHz and 25 mHz clocks mentioned in teh datasheet. These clocks are important for PWM and other functionality that requires timing that you may want to add.
+
+I am going to improt all of these parts from LCSC using the script that we used before (including the ferrite bead). Here are the updated part numbers:
+
+- C720477 (Button)
+- C9006 (25MHz Crystal)
+- C32346 (32.768kHz Crystal)
+- C141723 (Ferrite Bead)
+
+Aer running the script, import all of the parts in. I replaced the ferrite bead with the part from LCSC:
+
+![alt text](image-28.png)
+
+Now it's time to place the crystals. These crystal oscilators use a `piezoelectric` (ability of certain materials to generate an electric charge when subjected to mechanical stress, and conversely, to deform when an electric field is applied to them) `crystal` to generate a stable and accurate frequency reference signal. When using these crystals you need to place `load capacitors`:
+
+![alt text](1-207950.png)
+
+Think of the crystal like a kid on a swing, it is going back and forth ar a certain oscilation. The `load capacitors` would be weights that you add onto the swing to speed it up or slow it down to get the exact frequency. The same applies to the crystal oscilators. the capacitors are used to fine-tune the oscilations (clock speed) of the crystal.
+
+Each crystal has a datasheet that specifies the load capacitance that it needs and I have already looked them up for the crystals mentioned above. **REMEMBER THAT EACH CRYSTAL IS DIFFERENT EVEN IF THEY MIGHT HAVE THE SAME FREQUENCY**
+
+The capacitors for the 25MHz crystal should be 20pF and for the 32kHz should be 6.8pF. After you're done addign them, it shoudl look like this:
+![alt text](image-38.png)
+
+## Buttons
+
+Now for the reset and boot butons. These are super important for flashing or working with your STM32 in general. Taking a look at the reference design above we need to connect the reset pin to a button parallel with a capacitor to ground. For the boot pin, we need to create a button that will set the boot pin to 3V3 when we press it (look at the datasheet to learn mroe), this allows us to change the boot configuration depending on the boot pin if it is a 1 or a 0. In the end it should look somthing like this:
+
+![alt text](image-30.png)
+
+## Servo Headers
+
+Almost done, just need to add in some 3 pin headers to controll the servos. THey tipically have a pinout of 5V - PWM - GND so it's good to keep the pinout int hat same order. Mine looks like this in the end:
+
+![alt text](image-32.png)
+
+# Finish Schematic
+
+Now all that's left to do is to finish the schematic by adding net labesl on all of the pins that we have used in STM32CubeMX. You'rs might look different from my layout if you're using a different chip or sensors but heres how my STM32 looks after adding all of the net labels:
+
+![alt text](image-31.png)
+
+For the USB lines, DM = DN, and DP = DP.
+
+For the ICM SPI lines, SDI = MOSI (For the ICM its an input, so it woule be MOSI (Master Out Slave In) for the STM32). By that logic, SDO = MISO.
+
+Note that for the I2C lines, I changed the name to be able to conenct to each of the devices like so:
+
+![alt text](image-36.png)
+![alt text](image-37.png)
+
+You may have a different pinout as me but as long as you know which pins you are using and for what then you'll be fine.
+
+**DOUBLE TRIPLE CHECK THAT YOUR PINS MATCH THE ONES IN STM32CUBEMX**
+
+Now that you're done with your schematic, organize everything tos that it looks nice. You might have to change the page settings `File > Page Settings` in order to change the size of it:
+
+![alt text](image-39.png)
+
+Now after organzing it a bit you schematic should look like this:
+
+![alt text](image-40.png)
+
+I placed text to name each block and added a title at the bottom right.
+
+**Finally we're done with the schematic!**

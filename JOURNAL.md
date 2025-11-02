@@ -15,3 +15,10 @@ I then started the schematic and just finished routing the battery charger and a
 ![image](https://blueprint.hackclub.com/user-attachments/blobs/proxy/eyJfcmFpbHMiOnsiZGF0YSI6NTg4NiwicHVyIjoiYmxvYl9pZCJ9fQ==--452b9441526ea0be4c6fbe8e5972c305d0bc66d1/image.png)
   
 
+## 11/2/2025 - Finished the schematic  
+
+I finally finished the schematic and tutorial up to that part. I had to read through the datasheets and wire each component and then update the guide explaining everything in detail. I also added a section explaining STM32CubeMX and how to configure it and get all of the pins set up.
+
+![image](https://blueprint.hackclub.com/user-attachments/blobs/proxy/eyJfcmFpbHMiOnsiZGF0YSI6Nzg0NiwicHVyIjoiYmxvYl9pZCJ9fQ==--cfef447d6253ea84dfe6186de617f9d5c2ffcd22/image.png)
+  
+

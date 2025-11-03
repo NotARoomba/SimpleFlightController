@@ -1,10 +1,10 @@
 # How to make a flight controller (from scratch)
 
-This is an advanced project. I recommend learning the basics of KiCad by making a small dev board or hackpad first. That said, anyone can follow along, as I'll go **_in-depth_** (emphasis on in-depth) on how to build a flight controller.
+This is an advanced project. I recommend learning the basics of KiCad by making a small dev board or breadboard first. That said, anyone can follow along, as I'll go **_in-depth_** on how to build a flight controller.
 
-First, define what type of flight controller you want. Is it for a rocket or a drone? Keep that in mind when starting your own design. In this guide, we'll build a flight controller specifically for rockets.
+First, define what type of flight controller you want: for a rocket or a drone? Keep that in mind when starting your own design. In this guide, we'll build a flight controller specifically for rockets.
 
-To start, create a new repository on GitHub and add two folders: `hardware` and `firmware`. These folders will hold most of the project files. Then create a new KiCad project inside the `hardware` folder.
+To start, create a new repository on GitHub and add two folders: `hardware` and `software`. These folders will hold most of the project files. Then create a new KiCad project inside the `hardware` folder.
 
 ![Folder Structure](assets/folder-structure.png)
 (Folder structure)
@@ -16,7 +16,7 @@ To start, create a new repository on GitHub and add two folders: `hardware` and 
 
 Before starting any engineering project, define the problem you're solving and the constraints you have. Imagine you want to build a rocket. All flight controllers include a `microcontroller`, which is a small computer that can be programmed to do various tasks. To control the rocket's flight, you'll use servos to move fins or a TVC system (`Thrust Vector Control`- tilting the engine nozzle to steer the rocket).
 
-If you only build a board to drive servos, the rocket won't know which way it's pointing or how to correct its trajectory. You also need position and motion data (rotation and acceleration), plus altitude data. Finally, you'll want to store data persistently (even when powered off) for debugging and post‑flight analysis.
+If you only build a board to drive servos, the rocket won't know which way it's pointing or how to correct its trajectory. You also need position and motion data (rotation and acceleration), plus altitude data. Finally, you'll want to store data persistently (even when powered off) for debugging and post-flight analysis.
 
 Now that we have the rocket's functionality defined, we also need a way to power it, so we can use a battery that can power both the rocket's computer and its servos.
 
@@ -31,9 +31,9 @@ Putting this together, we want these features in our rocket's flight controller:
 
 Now that we have our requirements, let's see how to meet them. Some requirements depend on others. For example, we want battery power - but how large should the battery be? That depends on the voltages and current the servos and microcontroller need, so let's define those first.
 
-Depending on the size of your rocket, current needs will vary because larger servos draw more current. Most hobby servos run on 5–6V and draw ~1A. A 2‑cell LiPo (Lithium Polymer) battery (7.4V nominal) is common in RC applications (each cell is ~3.7V) and can be regulated down to 5V for servos.
+Depending on the size of your rocket, current needs will vary because larger servos draw more current. Most hobby servos run on 5–6V and draw ~1A. A 2-cell LiPo (Lithium Polymer) battery (7.4V nominal) is common in RC applications (each cell is ~3.7V) and can be regulated down to 5V for servos.
 
-Most microcontrollers and sensors run on 3.3V, so with a 2‑cell (7.4V) LiPo we have more than enough input voltage - as long as we regulate it down to a clean 3.3V line.
+Most microcontrollers and sensors run on 3.3V, so with a 2-cell (7.4V) LiPo we have more than enough input voltage—as long as we regulate it down to a clean 3.3V line.
 
 Now, after ticking off one of the features, we need to tackle the three others.
 
@@ -42,7 +42,7 @@ Now, after ticking off one of the features, we need to tackle the three others.
 - Can store data even when powered off
 - ~~Can be powered by a battery~~
 
-After choosing servos, we need to know how to control them. Most hobby servos use `PWM (Pulse Width Modulation)` - a method of control where the microcontroller sends rapid on/off pulses, and the pulse width (duration) determines the servo's position.
+After choosing servos, we need to know how to control them. Most hobby servos use `PWM (Pulse Width Modulation)`—a method of control where the microcontroller sends rapid on/off pulses, and the pulse width (duration) determines the servo's position.
 
 ![Servo PWM Signal](assets/servo-pwm-50hz.png)
 
@@ -57,13 +57,13 @@ The `duty cycle` is the percentage of the period that the signal is high (on).
 - Needs to store data even when the rocket is off
 - ~~Needs to be able to be powered by a battery~~
 
-For position and motion data, we use an `IMU` - an Inertial Measurement Unit. The IMU measures acceleration and rotation (and some devices also estimate altitude). We'll use the `ICM-45686`. While there are many IMUs with different features, this one is robust and well‑supported.
+For position and motion data, we use an `IMU`—an Inertial Measurement Unit. The IMU measures acceleration and rotation (and some devices also estimate altitude). We'll use the `ICM-45686`. While there are many IMUs with different features, this one is robust and well-supported.
 
-For altitude, we'll use a dedicated sensor called a barometer. It measures air pressure and uses that to estimate altitude. We'll use the `BMP580` - a versatile and common choice for flight controllers.
+For altitude, we'll use a dedicated sensor called a barometer. It measures air pressure and uses that to estimate altitude. We'll use the `BMP580`—a versatile and common choice for flight controllers.
 
 Finally, to store data, we'll use a microSD card. While you can use onboard flash, microSD is more versatile when you want to access flight logs directly from a computer.
 
-Now that we've defined the sensors and peripherals, we need to select a microcontroller. In this tutorial, we'll use an STM32, but you can adapt it to another MCU like the ESP32 if you want Bluetooth/Wi‑Fi support. I prefer STM32 because it's easy(ish) to program and widely used in flight controllers. After reviewing STM32 options, we'll use the STM32F722RET6 for its high clock speed and lots of peripherals. Feel free to choose another package or part for larger designs.
+Now that we've defined the sensors and peripherals, we need to select a microcontroller. In this tutorial, we'll use an STM32, but you can adapt it to another MCU like the ESP32 if you want Bluetooth/Wi-Fi support. I prefer STM32 because it's easy(ish) to program and widely used in flight controllers. After reviewing STM32 options, we'll use the STM32F722RET6 for its high clock speed and lots of peripherals. Feel free to choose another package or part for larger designs.
 
 - ~~Needs to be able to control servos for fins or TVC~~
 - ~~Needs a way to get position/altitude data~~
@@ -72,39 +72,39 @@ Now that we've defined the sensors and peripherals, we need to select a microcon
 
 ## Power Management
 
-We have two power sources: USB‑C from your computer (5V) and a battery (about 7–8.4V for a 2‑cell LiPo). You cannot just wire them together. They need circuitry to choose which one feeds the board and to set the right voltages. The microcontroller typically runs at 3.3V, so we must lower the voltage (from the battery or USB-C) before it touches the MCU.
+We have two power sources: USB-C from your computer (5V) and a battery (about 7–8.4V for a 2-cell LiPo). You cannot just wire them together. They need circuitry to choose which one feeds the board and to set the right voltages. The microcontroller typically runs at 3.3V, so we must lower the voltage (from the battery or USB-C) before it touches the MCU.
 
-To change the voltages we need to use a regulator, and there are two common kinds of regulators you'll hear about:
+To change the voltages, we need to use a regulator, and there are two common kinds of regulators you'll hear about:
 
-- `LDO` – Low Dropout regulator. It only turns higher voltage into a slightly lower one. Easy and quiet, but it wastes the extra as heat.
-- `Switching regulator` – A more efficient regulator. It can:
+- `LDO`—Low Dropout regulator. It only turns higher voltage into a slightly lower one. Easy and quiet, but it wastes the extra as heat.
+- `Switching regulator`—A more efficient regulator. It can:
   - `buck` (turn higher voltage down),
   - `boost` (push lower voltage up), or
-  - `buck‑boost` (keep the output steady even if the input goes above or below it).
+  - `buck-boost` (keep the output steady even if the input goes above or below it).
 
 What we'll do on this board:
 
 - Make a 3.3V line (for the MCU and sensors) using a buck regulator.
-- Make a 5V line (for servos or accessories) using a buck‑boost regulator so it stays 5V even as the battery goes up and down.
-- Get a battery charging IC (Integrated Circuit, e.g., chip) that can charge a 2 cell battery from 5V
+- Make a 5V line (for servos or accessories) using a buck-boost regulator so it stays 5V even as the battery goes up and down.
+- Get a battery charging IC (Integrated Circuit—a chip) that can charge a 2-cell battery from 5V
 
-Now that we've specified what functionality we need, we need to select the chips that have that. I personally love to use IC's from Texas Instruments as they have good documentation and also a huge selection of power management chips and everything and anything to do with USB.
+Now that we've specified what functionality we need, we need to select the chips that provide that. I personally love to use ICs from Texas Instruments as they have good documentation and a huge selection of power management chips for everything related to USB.
 
 Go to their website (https://www.ti.com/), select "Products", then "Battery Management ICs", and finally "Battery Charging ICs". Here you can find all sorts of battery charging chips to fit your requirements for future projects.
 
 ![TI Battery Charger Page](assets/ti-battery-charger-page.png)
 
-After looking around a bit, I found the `BQ25883`. It's a 2 Li-Ion/LiPo cell charger (which meets our requirement). You could add a more complicated battery charger if you want more cells/power, but they take up more space and are more complex to route.
+After looking around a bit, I found the `BQ25883`. It's a 2-cell Li-Ion/LiPo charger (which meets our requirement). You could add a more complicated battery charger if you want more cells/power, but they take up more space and are more complex to route.
 
-For the regulators, go back to the TI main page, then navigate to "Power Management", then "DC/DC Power Modules". Here you can find all the regulators you would ever need, complete with excellent datasheets.
+For the regulators, go back to the TI main page, then navigate to "Power Management," then "DC/DC Power Modules." Here you can find all the regulators you would ever need, complete with excellent datasheets.
 
 ![TI DC/DC Power Modules](assets/ti-dcdc-power-modules.png)
 
-Here is where we can choose the right regulators for our needs. For this tutorial we are going to use the `TPS63070` which supports 2-16V input and can output a steady 5V with high current for the servos.
+Here is where we can choose the right regulators for our needs. For this tutorial, we are going to use the `TPS63070`, which supports 2–16V input and can output a steady 5V with high current for the servos.
 
-Now all that's missing is to find another regulator for 3.3V, for this we are going to use `LMR51430` as it is one that supplies a lot of amperage for the various sensors that we will be using.
+Now all that's missing is to find another regulator for 3.3V. For this, we are going to use `LMR51430` as it is one that supplies a lot of amperage for the various sensors that we will be using.
 
-Now that we have the chips that we are going to use, we also need to verify that they are available on some platform like [LCSC](https://lcsc.com) or wherever else you are going to manufacture your PCB. We also might have to import certain components through LCSC to KiCad.
+Now that we have the chips that we are going to use, we also need to verify that they are available on some platform like [LCSC](https://lcsc.com) or wherever else you are going to manufacture your PCB. We also might have to import certain components through LCSC into KiCad.
 
 ## Final component list
 
@@ -122,9 +122,9 @@ Now that we have the chips that we are going to use, we also need to verify that
 
 Now that we have the components that we are going to use, let's start importing them into our project.
 
-Although KiCad has a large selection of components, it still is a bit outdated and there are tons of chips that we would have to import in order to use them. Thankfully there is a library called [`easyeda2kicad.py`](https://github.com/uPesy/easyeda2kicad.py) that can import these components from LCSC for us.
+Although KiCad has a large selection of components, it is still a bit outdated and there are tons of chips that we would have to import in order to use them. Thankfully, there is a library called [`easyeda2kicad.py`](https://github.com/uPesy/easyeda2kicad.py) that can import these components from LCSC for us.
 
-I have made a simple helper script to import all of the LCSC ID's from a text file so all you have to do is append the part numbers and run the script again.
+I have made a simple helper script to import all of the LCSC IDs from a text file, so all you have to do is append the part numbers and run the script again.
 
 ## Adding Custom Parts
 
@@ -199,15 +199,15 @@ if __name__ == "__main__":
     main()
 ```
 
-This code basically calls the `easyeda2kicad.py` library for every line that is present in `lcsc.txt` and adds it to a kicad library in `/hardware/lib/lcsc`. (make sure to install it first using `pip install easyeda2kicad.py`)
+This code basically calls the `easyeda2kicad.py` library for every line that is present in `lcsc.txt` and adds it to a KiCad library in `/hardware/lib/lcsc`. (Make sure to install it first using `pip install easyeda2kicad.py`)
 
 Now after creating both of those files, in your favorite IDE, edit `lcsc.txt` with the part numbers of the chips that you are going to use.
 
-For example, let's say I want to add a USB-C port from LCSC. Go to [`www.lcsc.com`](www.lcsc.com) and search for usb-c.
+For example, let's say I want to add a USB-C port from LCSC. Go to [`www.lcsc.com`](www.lcsc.com) and search for USB-C.
 
 ![LCSC Search](assets/lcsc.png)
 
-After searching I found a good part with a large stock (important) so I then copy the part number (always starts with C followed by numbers, and it's under the name) into `lcsc.txt`.
+After searching, I found a good part with large stock (important!), so I then copy the part number (always starts with C followed by numbers, and it's under the name) into `lcsc.txt`.
 
 ![LCSC Search](assets/lcsc_usbc.png)
 
@@ -215,24 +215,24 @@ It should look like this:
 
 ![LCSC Search](assets/lcsc_txt.png)
 
-Then run the python script to convert that part number into a KiCad library. `IMPORTANT, YOU NEED TO RUN THE SCRIPT EVERY TIME YOU UPDATE lcsc.txt`. If you get an error that you can't find `lcsc.txt`, make sure to run the file from the root of your project or add arguments to specify the path of the library/lcsc txt file.
+Then run the python script to convert that part number into a KiCad library. **IMPORTANT: YOU NEED TO RUN THE SCRIPT EVERY TIME YOU UPDATE `lcsc.txt`.** If you get an error that you can't find `lcsc.txt`, make sure to run the file from the root of your project or add arguments to specify the path of the library/lcsc txt file.
 
-If you have done everything correctly you should have something that looks like this:
+If you have done everything correctly, you should have something that looks like this:
 
 ![LCSC Search](assets/lcsc_script.png)
 
-If in the future you get an error that the script couldn't find/parse a 3D model, those errors are safe to ignore as you can add the 3D model later, but if the script can't find/parse a footprint for a specific part then you should probably find another one through LCSC.
+If in the future you get an error that the script couldn't find/parse a 3D model, those errors are safe to ignore as you can add the 3D model later. However, if the script can't find/parse a footprint for a specific part, then you should probably find another one through LCSC.
 
 After running the script for the first time, add the library to your KiCad project and also the footprint library (the folder that ends with .pretty). It should look like this when you are done.
 
 ![LCSC Search](assets/kicad_symbol.png)
 ![LCSC Search](assets/kicad_footprint.png)
 
-Then after that's done, go into your schematic and search for lcsc, you should find the library with the USB-C connector (or whatever other part you imported)
+Then after that's done, go into your schematic and search for "lcsc". You should find the library with the USB-C connector (or whatever other part you imported)
 
 ![LCSC Search](assets/kicad_usbc.png)
 
-Keep in mind though that there are some parts that KiCad already has such as `STM32F722RETx`, but there are others like the IMU that you will have to import.
+Keep in mind that there are some parts that KiCad already has, such as `STM32F722RETx`, but there are others like the IMU that you will have to import.
 
 ![LCSC Search](assets/kicad_pre.png)
 
@@ -240,42 +240,42 @@ After finding the components on LCSC, my `lcsc.txt` looks like this:
 
 ![LCSC Search](assets/lcsc_done.png)
 
-Now run the script again and once its done, go back to KiCad, add in all of the components (you may have to reopen the choose parts screen for the lcsc library to update).
+Now run the script again. Once it's done, go back to KiCad and add in all of the components (you may have to reopen the choose parts screen for the LCSC library to update).
 
 ![LCSC Search](assets/kicad_start.png)
 
 ## USB-C and Power
 
-Now let's start wiring up the power components and USB-C. It's always good practice to start wiring the components that would be used "first", in this case it would be USB-C as it is going to receive voltage, then the battery connector as that voltage from USB-C is going to be directly charging the battery, and if there is no USB-C then the battery will provide voltage, then the 2 regulators. Again, you can wire each component up in whatever order, I just do it like this to be a bit more organized.
+Now let's start wiring up the power components and USB-C. It's always good practice to start wiring the components that would be used first. In this case, it would be USB-C as it is going to receive voltage, then the battery connector as that voltage from USB-C is going to directly charge the battery. If there is no USB-C, then the battery will provide voltage, and then the 2 regulators. Again, you can wire each component up in whatever order. I just do it like this to be a bit more organized.
 
 ![LCSC Search](assets/usbc.png)
 
-This is the USB-C connector, as you can see it has a lot of pins but don't worry if you don't know what all of those mean as here's a quick explanation
+This is the USB-C connector. As you can see, it has a lot of pins, but don't worry if you don't know what all of those mean. Here's a quick explanation:
 
-- Shell: This is the outer case of the USB-C port, it's usually connected to ground
-- GND: Ground lol
-- VBUS: This is the pin that supplies voltage from the device that connects to it. Usually it provides 5V at 3A depending on the cable
-- SBU1/2: These are low-speed lines that can be used as alternate pins for different accessories, such as AUX+ and AUX- when connected to a displayport, but we don't need to use them
-- CC1/2: These are Configuration Channel pins, basically they detect if the connector is flipped, and can also be used to negotiate more power out of VBUS (USB-PD). We are going to connect them to 5.1K resistors to ground as this tells the other device that we want 5V
-- DN/DP: These are the USB lines that we will be connecting to the STM32, they are used to transfer data between devices
+- **Shell**: This is the outer case of the USB-C port. It's usually connected to ground.
+- **GND**: Ground.
+- **VBUS**: This is the pin that supplies voltage from the device that connects to it. Usually it provides 5V at 3A, depending on the cable.
+- **SBU1/2**: These are low-speed lines that can be used as alternate pins for different accessories, such as AUX+ and AUX- when connected to a DisplayPort. We don't need to use them.
+- **CC1/2**: These are Configuration Channel pins. Basically, they detect if the connector is flipped and can also be used to negotiate more power out of VBUS (USB-PD). We are going to connect them to 5.1K resistors to ground as this tells the other device that we want 5V.
+- **DN/DP**: These are the USB lines that we will be connecting to the STM32. They are used to transfer data between devices.
 
-Now with that information in mind, when you finish wiring up the USB-C connector it should look like this:
+Now with that information in mind, when you finish wiring up the USB-C connector, it should look like this:
 
 ![LCSC Search](assets/usbc_done.png)
 
 I used net labels to organize it better so that we don't have a spaghetti of cables all over the schematic.
 
-### Battery charger (BQ25883)
+### Battery Charger (BQ25883)
 
-Now let's wire up the battery charger as that is the next step in our power route. There are many chips in the world and knowing the pins on each of them is virtually impossible, so each manufacturer has what's called a `datasheet` for each component. It's basically a document that details everything about that chip, its pinout, and even how to implement it.
+Now let's wire up the battery charger. This is the next step in our power route. There are many chips in the world, and knowing the pins on each of them is virtually impossible. So, each manufacturer has what's called a `datasheet` for each component. It's basically a document that details everything about that chip—its pinout and how to implement it.
 
-To access the datasheet for any component in KiCad, simply click on the component and press D, but if there isn't one, just search on Google "`[part] datasheet`" and it's usually a PDF.
+To access the datasheet for any component in KiCad, simply click on the component and press D. If there isn't one, just search on Google "`[part] datasheet`" and it's usually a PDF.
 
-Opening the datasheet for the battery charger we are greeted with this:
+Opening the datasheet for the battery charger, we are greeted with this:
 
 ![LCSC Search](assets/datasheet_bat.png)
 
-This may look intimidating as there are 86 pages of letters, numbers, formulas, and graphs, but there is one section that is valuable to us called `Application and Implementation`. This section basically gives us a reference schematic on how to use said chip. We can use the sidebar or table of contents to locate that section, and you should see this:
+This may look intimidating as there are 86 pages of letters, numbers, formulas, and graphs. However, there is one section that is valuable to us called `Application and Implementation`. This section basically gives us a reference schematic on how to use said chip. We can use the sidebar or table of contents to locate that section. You should see this:
 
 ![LCSC Search](assets/datasheet_sch.png)
 
@@ -287,17 +287,17 @@ Here we can see the different parameters that influence the design of the schema
 
 ### Design Parameters Explained:
 
-- **VBUS voltage**: How much voltage the chip needs to charge the battery, our 5V from the USB-c fits withing the range so we're good
-- **Input current limit**: Determines how much of the available 3A current will be consumed
-- **Fast charge current limit**: Sets how much current will be used to charge the battery
-- **Minimum system voltage**: If the battery falls below this voltage, the internal regulator activates to maintain this voltage until the battery completely dies
-- **Battery regulation voltage**: The maximum voltage the chip will charge the batteries to. In this case: 4.2V per Li-ion cell x 2 cells = 8.4V maximum
+- **VBUS voltage**: How much voltage the chip needs to charge the battery. Our 5V from the USB-C fits within the range, so we're good.
+- **Input current limit**: Determines how much of the available 3A current will be consumed.
+- **Fast charge current limit**: Sets how much current will be used to charge the battery.
+- **Minimum system voltage**: If the battery falls below this voltage, the internal regulator activates to maintain this voltage until the battery completely dies.
+- **Battery regulation voltage**: The maximum voltage the chip will charge the batteries to. In this case: 4.2V per Li-ion cell × 2 cells = 8.4V maximum.
 
 These parameters determine the specific resistor and capacitor values needed in the schematic. If we scroll down further in the datasheet, we can see the calculations needed to determine the inductor and capacitor values:
 
 ![LCSC Search](assets/datasheet_calc.png)
 
-If you need a chip that has a reference schematic that doesn't fit your needs then you need to calculate a bit in order to get the right component values, but usually you don't have to do that.
+If you need a chip that has a reference schematic that doesn't fit your needs, then you need to calculate a bit in order to get the right component values. However, usually you don't have to do that.
 
 ### Extra Info
 
@@ -309,11 +309,11 @@ Here we can see that for those pins there are descriptions like `active low`, `o
 
 #### Active Low
 
-**Active low** means the pin is "active" (doing its job) when the voltage is LOW (0V or close to ground), not when it's HIGH (3.3V or 5V). Think of it like a backwards switch - when you pull the pin to ground, that's when it triggers the function. Many reset pins work this way: pull the reset pin low to reset the chip, let it go high to run normally.
+**Active low** means the pin is "active" (doing its job) when the voltage is LOW (0V or close to ground), not when it's HIGH (3.3V or 5V). Think of it like a backwards switch—when you pull the pin to ground, that's when it triggers the function. Many reset pins work this way: pull the reset pin low to reset the chip, let it go high to run normally.
 
 #### Open Drain
 
-**Open drain** is a type of output that can only pull a pin down to 0V (LOW), but cannot push it up to 3.3V (HIGH). Think of it like a one-way switch - it can only connect the wire to ground, not to power. When the switch is "off", the wire is left floating with no connection. This is why open drain pins need a "pull-up resistor" - a resistor that connects the wire to 3.3V and keeps it HIGH when nothing is pulling it down. Multiple chips can share the same wire this way without interfering with each other.
+**Open drain** is a type of output that can only pull a pin down to 0V (LOW), but cannot push it up to 3.3V (HIGH). Think of it like a one-way switch—it can only connect the wire to ground, not to power. When the switch is "off", the wire is left floating with no connection. This is why open drain pins need a "pull-up resistor"—a resistor that connects the wire to 3.3V and keeps it HIGH when nothing is pulling it down. Multiple chips can share the same wire this way without interfering with each other.
 
 ### Communication Protocols
 
@@ -321,21 +321,21 @@ Now let's talk about the different ways chips can talk to each other. There are 
 
 #### I2C/I3C (Inter-Integrated Circuit)
 
-I2C uses only **2 wires**: SDA (data) and SCL (clock). Multiple devices can share the same two wires, and each device has a unique address. Think of it like a conference call where everyone shares the same phone line, but each person has a unique ID. Both wires need 1 pull up resistor each (in total as well) in order to function correctly.
+I2C uses only **2 wires**: SDA (data) and SCL (clock). Multiple devices can share the same two wires, and each device has a unique address. Think of it like a conference call where everyone shares the same phone line, but each person has a unique ID. Both wires need one pull-up resistor each (in total, as well) in order to function correctly.
 
 **Pros:**
 
-- Only needs 2 wires regardless of how many devices you connect
-- Built-in addressing system allows multiple devices on same bus
-- Relatively simple to implement
-- Good for sensors and simple peripherals
+- Only needs 2 wires regardless of how many devices you connect.
+- Built-in addressing system allows multiple devices on same bus.
+- Relatively simple to implement.
+- Good for sensors and simple peripherals.
 
 **Cons:**
 
-- Slower than SPI (typically 100kHz to 3.4MHz)
-- Limited distance - long wires can cause signal problems
-- Can get complex with timing issues and error handling
-- Address conflicts if two devices have the same address
+- Slower than SPI (typically 100 kHz to 3.4 MHz).
+- Limited distance—long wires can cause signal problems.
+- Can get complex with timing issues and error handling.
+- Address conflicts if two devices have the same address.
 
 #### SPI (Serial Peripheral Interface)
 
@@ -343,17 +343,17 @@ SPI uses **at least 3 wires** plus one additional wire for each device: MISO (Ma
 
 **Pros:**
 
-- Much faster than I2C (can go 10MHz+ easily)
-- Full duplex (can send and receive simultaneously)
-- Simpler protocol
-- More reliable over longer distances
+- Much faster than I2C (can go 10 MHz+ easily).
+- Full duplex (can send and receive simultaneously).
+- Simpler protocol.
+- More reliable over longer distances.
 
 **Cons:**
 
-- Needs more wires (especially with multiple devices)
-- No built-in error checking
-- Only one master device allowed
-- Can use up many pins quickly with multiple devices
+- Needs more wires (especially with multiple devices).
+- No built-in error checking.
+- Only one master device allowed.
+- Can use up many pins quickly with multiple devices.
 
 #### UART (Universal Asynchronous Receiver-Transmitter)
 
@@ -361,18 +361,18 @@ UART uses **2 wires**: TX (transmit) and RX (receive). It's a point-to-point con
 
 **Pros:**
 
-- Very simple - just 2 wires
-- No clock signal needed (asynchronous)
-- Long distance capable with proper drivers
-- Universal - almost every microcontroller has it
-- Good for debugging and console output
+- Very simple—just 2 wires.
+- No clock signal needed (asynchronous).
+- Long distance capable with proper drivers.
+- Universal—almost every microcontroller has it.
+- Good for debugging and console output.
 
 **Cons:**
 
-- Only connects two devices directly
-- Both devices must agree on baud rate (how fast the data goes) beforehand
-- No built-in error correction
-- Can lose sync if timing is off
+- Only connects two devices directly.
+- Both devices must agree on baud rate (how fast the data goes) beforehand.
+- No built-in error correction.
+- Can lose sync if timing is off.
 
 #### USB (Universal Serial Bus)
 
@@ -380,30 +380,30 @@ USB uses **2 data wires** (D+ and D-) plus power and ground. It's like a smart p
 
 **Pros:**
 
-- Standardized connector and protocol
-- Provides power to devices
-- Hot-pluggable (can connect/disconnect while powered)
-- High speed (up to 10Gbps on USB 3.1)
-- Built-in error correction and flow control
-- Can connect many devices through hubs
+- Standardized connector and protocol.
+- Provides power to devices.
+- Hot-pluggable (can connect/disconnect while powered).
+- High speed (up to 10 Gbps on USB 3.1).
+- Built-in error correction and flow control.
+- Can connect many devices through hubs.
 
 **Cons:**
 
-- Complex protocol requiring dedicated hardware/software
-- More expensive to implement
-- Requires specific connectors and cables
-- Power management can be tricky
-- Not suitable for real-time applications due to variable latency
+- Complex protocol requiring dedicated hardware/software.
+- More expensive to implement.
+- Requires specific connectors and cables.
+- Power management can be tricky.
+- Not suitable for real-time applications due to variable latency.
 
 ---
 
-We will not be connecting the USB to the battery charging chip as we need to connect the STM32 to USB-C to be able to program it. Looking through the datasheet it says that those pins are used to determine how much current can be used but they can also be set through the `I2C` interface that the IC has so we can later change that with the STM32.
+We will not be connecting the USB to the battery charging chip as we need to connect the STM32 to USB-C to be able to program it. Looking through the datasheet, it says that those pins are used to determine how much current can be used. However, they can also be set through the `I2C` interface that the IC has, so we can later change that with the STM32.
 
-Now that we know that the schematic suits our needs, we can start copying it in KiCad. When copying a schematic from a datasheet, any pins that can be connected externally should use `Net Labels` like so (obviously with the pull up resistors added later):
+Now that we know that the schematic suits our needs, we can start copying it in KiCad. When copying a schematic from a datasheet, any pins that can be connected externally should use `Net Labels` like so (obviously with the pull-up resistors added later):
 
 ![Net Labels Example](assets/net_labels_example.png)
 
-Also because we are dealing with power, we have to use `separate grounds` such as `power ground` and `digital ground`. Usually for most chips we will use the digital ground but sometimes we have to work with power components and need to have a cleaner ground reference. In the datasheet you can see that there are different symbols for ground.
+Also, because we are dealing with power, we have to use `separate grounds` such as `power ground` and `digital ground`. Usually, for most chips, we will use the digital ground. However, sometimes we have to work with power components and need to have a cleaner ground reference. In the datasheet, you can see that there are different symbols for ground.
 
 **Digital ground** is used for all the digital components like microcontrollers, sensors, and logic chips. Digital circuits switch on and off rapidly, creating noise on the ground plane. This is fine for digital circuits since they only care about HIGH (1) or LOW (0), not the exact voltage.
 
@@ -415,19 +415,19 @@ Also because we are dealing with power, we have to use `separate grounds` such a
 
 #### Why Separate Them?
 
-The noise from digital switching or high-current power circuits can interfere with sensitive analog measurements from the sensors .
+The noise from digital switching or high-current power circuits can interfere with sensitive analog measurements from the sensors.
 
-The trick is to keep these grounds separate on the PCB traces, but connect them together at a single point. The datasheet says to connect them below the `thermal pad` (a conductive area under ICs to dissipate heat/reduce noise) of the chip. This gives each type of circuit its own clean ground reference while still maintaining a common ground for the entire board.
+The trick is to keep these grounds separate on the PCB traces but connect them together at a single point. The datasheet says to connect them below the `thermal pad` (a conductive area under ICs to dissipate heat/reduce noise) of the chip. This gives each type of circuit its own clean ground reference while still maintaining a common ground for the entire board.
 
-Now wire up the rest of the schematic and you should end up with something similar to this:
+Now wire up the rest of the schematic, and you should end up with something similar to this:
 
 ![Battery Charger Schematic Complete](assets/battery_charger_complete.png)
 
-Mind the mess, but I have different ground names for PGND and GND although I used the same symbol. I added a battery screw terminal and also connected the battery ground to PGND and also shorted PGND and GND. I plan on connecting PGND and GND on the bottom of the thermal pad as advised in the datasheet.
+Note the mess, but I have different ground names for PGND and GND, although I used the same symbol. I added a battery screw terminal and also connected the battery ground to PGND, and I also shorted PGND and GND. I plan on connecting PGND and GND on the bottom of the thermal pad as advised in the datasheet.
 
 ### Regulators
 
-Now after finishing the battery charger I am going to start wiring up the regulators, starting with the `TPS630701`.
+Now after finishing the battery charger, I am going to start wiring up the regulators, starting with the `TPS63070`.
 
 Apply the same methodology as wiring up the battery charger: look up the datasheet, go to the `Application and Implementation` section, and look at the schematic. In this case, there are 2 schematics:
 
@@ -437,9 +437,9 @@ A typical application that can be adjusted depending on your needs.
 And if you scroll down a bit more:
 ![TPS63070 Fixed Voltage Application](assets/tps63070_fixed.png)
 
-Another typical application but this time it outputs a fixed voltage.
+Another typical application, but this time it outputs a fixed voltage.
 
-Really the only difference is that for the adjustable version, there's a `voltage divider` - a pair of resistors that can be used to create a voltage less than or equal to the input voltage:
+Really, the only difference is that for the adjustable version, there's a `voltage divider`—a pair of resistors that can be used to create a voltage less than or equal to the input voltage:
 
 ![Voltage Divider Circuit](assets/voltage_divider_circuit.png)
 
@@ -449,36 +449,36 @@ In our case, we are going to use the fixed version as it uses fewer components a
 
 ## TIP
 
-When wiring things based off of schematics, make sure to use the recommended size capacitor/inductor values (if mentioned) and set it in KiCad like so when you are going to place the part:
+When wiring things based on schematics, make sure to use the recommended size capacitor/inductor values (if mentioned) and set it in KiCad like so when you are going to place the part:
 ![KiCad Component Value Setting](assets/kicad_component_value.png)
 
 ---
 
-Using the fixed schematic (and taking into account the correct footprint sizes), wire it up in KiCad and you should get something like this:
+Using the fixed schematic (and taking into account the correct footprint sizes), wire it up in KiCad. You should get something like this:
 
 ![TPS63070 Schematic Complete](assets/tps63070_schematic_complete.png)
 
-With VIN connecting to VSYS (battery or usb voltage) and VOUT connecting to +5V. Seperate grounds are not needed here so they are GND.
+With VIN connecting to VSYS (battery or USB voltage) and VOUT connecting to +5V. Separate grounds are not needed here, so they are GND.
 
-If you don't know what footprint size to add to the other components (resistors, inductors, etc), don't worry as we will revise this later.
+If you don't know what footprint size to add to the other components (resistors, inductors, etc.), don't worry. We will revise this later.
 
 Now moving on to the final power part, the `LMR51430`.
 
-Repeat the same as the other 2 parts, open the datasheet and look for the `Application and Implementation`. Now switching regulators (like the name implies), switch MOSFETS (tiny gates) open and close very fast in order to regulate voltage, and this can be measured by the `switching frequency` of the chip. In this case, we have 2 tables under the schamatic.
+Repeat the same as the other 2 parts: open the datasheet and look for the `Application and Implementation`. Switching regulators (like the name implies) switch MOSFETs (tiny gates) open and close very fast in order to regulate voltage. This can be measured by the `switching frequency` of the chip. In this case, we have 2 tables under the schematic.
 
-![alt text](image.png)
+![LMR51430 Switching Frequency Tables](assets/lmr51430_switching_tables.png)
 
-One for a switchign frequency of 500 kHz and another one for 1.1 mHz (1100 kHz). With a higher switchign frequency, it is less efficient and also can produce more heat, but overall, the space it takes up is less than with the lower frequency. On the other hand, a lower switchign frequency is more stable/efficient and doesn't heat up as fast and also produces alot less noise (which is what we need). So in this case we will go with the lower switching frequency at 3.3V. If you want to wire it up based on the higher frequency then feel free to do so, just take into account the pros and cons of each one. (all of this information is from the datasheet bwt)
+One for a switching frequency of 500 kHz and another one for 1.1 MHz (1100 kHz). With a higher switching frequency, it is less efficient and also can produce more heat. However, overall, the space it takes up is less than with the lower frequency. On the other hand, a lower switching frequency is more stable/efficient and doesn't heat up as fast. It also produces a lot less noise (which is what we need). So in this case, we will go with the lower switching frequency at 3.3V. If you want to wire it up based on the higher frequency, then feel free to do so. Just take into account the pros and cons of each one. (All of this information is from the datasheet, by the way.)
 
-![alt text](image-1.png)
+![LMR51430 Adjustable vs Fixed Schematic](assets/lmr51430_adjustable_vs_fixed.png)
 
 After routing it, you should get something like this (for a 500kHz switchign frequency at 3.3v):
 
-![alt text](image-2.png)
+![LMR51430 Schematic Complete](assets/lmr51430_schematic.png)
 
-Like the 5V regulator, VIN = VSYS but VOUT = +3.3V as this chip is giving us 3.3V output.
+Like the 5V regulator, VIN = VSYS, but VOUT = +3.3V as this chip is giving us 3.3V output.
 
-Double check the values ont he resistor divider as that is what determines the output voltage. Also in the reference schematic it shows one capacitor of 44uF but in the table it's 2 capacitors of 22uF so I used those.
+Double-check the values on the resistor divider as that is what determines the output voltage. Also, in the reference schematic, it shows one capacitor of 44 µF, but in the table, it's 2 capacitors of 22 µF, so I used those.
 
 ## Sensors and Peripherals
 
@@ -486,236 +486,237 @@ Now that we've got power out of the way, it's time to route the sensors and the 
 
 ### BMP580
 
-Starting with the BMP580, for me when I try to open the datasheet it says that no datasheet is defined so you have to look it up on google and found [this](https://cdn-shop.adafruit.com/product-files/6411/BMP580.pdf).
+Starting with the BMP580, when I try to open the datasheet, it says that no datasheet is defined. So you have to look it up on Google and found [this](https://cdn-shop.adafruit.com/product-files/6411/BMP580.pdf).
 
-Looking around the table of contents, there is no `Aplication and Implementation` section but there is a `Pinout and Connection diagrams` which is close enough:
+Looking around the table of contents, there is no `Application and Implementation` section, but there is a `Pinout and Connection Diagrams` which is close enough:
 
-![alt text](image-3.png)
+![BMP580 Pinout Diagram](assets/bmp580_pinout.png)
 
-Taking a look at the different schematics, there are different ways of connecting the chip, through `SPI`, `I2C`, and `I3C`. Above in the **Communication Protocols** section I explained what each of these mean, and for this chip I plan on using `I2C` as its the default mode of communication for thei chip. (This is personal preference, feel free to use whichever mode of communication you wish.)
+Taking a look at the different schematics, there are different ways of connecting the chip through `SPI`, `I2C`, and `I3C`. Above in the **Communication Protocols** section, I explained what each of these mean. For this chip, I plan on using `I2C` as it's the default mode of communication for this chip. (This is personal preference; feel free to use whichever mode of communication you wish.)
 
-WHen implementint `I2C` you need to have pull up resistors on each line, but if you recall, the battery charging circuit uses I2C as well and we already put pullup resistors there so it isnt nessecary to add them on here.
+When implementing `I2C`, you need to have pull-up resistors on each line. However, if you recall, the battery charging circuit uses I2C as well, and we already put pull-up resistors there, so it isn't necessary to add them here.
 
-![alt text](image-4.png)
+![BMP580 I2C Schematic](assets/bmp580_i2c_schematic.png)
 
-Following this schematic, after wiring it up in KiCad you should get this:
+Following this schematic, after wiring it up in KiCad, you should get this:
 
-![alt text](image-5.png)
+![BMP580 KiCad Wired](assets/bmp580_kicad_wired.png)
 
 I wired both VDD and VDDIO to 3.3V as that is the voltage that all of the other chips are running at (microcontroller and sensors).
 
 ### ICM-45686
 
-Looking at the `ICM-45686` [datasheet](https://invensense.tdk.com/wp-content/uploads/documentation/DS-000577_ICM-45686.pdf), it has different modes of operation like the BMP580, but the one that interests us is this one:
-![alt text](image-6.png)
+Looking at the `ICM-45686` [datasheet](https://invensense.tdk.com/wp-content/uploads/documentation/DS-000577_ICM-45686.pdf), it has different modes of operation like the BMP580. However, the one that interests us is this one:
 
-Changing things up a bit, we are going to conenct the sensors to the microcontrolelr through SPI. This gives us the advantage of faster data and also allows us to learn how to implement it later on in code.
+![ICM-45686 SPI Schematic](assets/icm45686_spi_schematic.png)
 
-Also in the schematic, looking at pin 14 it serves the dual purpose of being a SDIO or SDI, but in our case we want to use it as SDI to use the full capacity of SPI.
+Changing things up a bit, we are going to connect the sensors to the microcontroller through SPI. This gives us the advantage of faster data and also allows us to learn how to implement it later on in code.
+
+Also, in the schematic, looking at pin 14, it serves the dual purpose of being a SDIO or SDI. However, in our case, we want to use it as SDI to use the full capacity of SPI.
 
 You should end up with something like this after:
 
-![alt text](image-7.png)
+![ICM-45686 KiCad Wired](assets/icm45686_kicad_wired.png)
 
 ### MicroSD Card
 
-MicroSD works on the same principle as SPI but can have more channels for faster data throughput. This form of communication is called SDIO (Secure Digital Input Output) and can work in 1-bit or 4-bit data modes (4-bit has more channels and faster data trasnfers).
+MicroSD works on the same principle as SPI but can have more channels for faster data throughput. This form of communication is called SDIO (Secure Digital Input Output) and can work in 1-bit or 4-bit data modes (4-bit has more channels and faster data transfers).
 
-Here is an example schematic of how the SD card should be wired but we are going to modify it a bit to fit our needs. There are 8 pins on the microSD and heres a table showing wheir meaning:
+Here is an example schematic of how the SD card should be wired, but we are going to modify it a bit to fit our needs. There are 8 pins on the microSD, and here's a table showing their meaning:
 
-![alt text](image-8.png)
+![MicroSD Pinout Table](assets/microsd_pinout.png)
 
-In SDIO (SDMMC) Mode, DAT0-3 are used for data transfer, CLK for clock, and CMD for sending/recieving commands between the microcontroller and microSD card. DAT3 Can also be considered a CD (Card Detect) pin but usually there is a 9th pin on most symbols that uses the case directly to detect if there is an sd card or not.
+In SDIO (SDMMC) mode, DAT0-3 are used for data transfer, CLK for clock, and CMD for sending/receiving commands between the microcontroller and microSD card. DAT3 can also be considered a CD (Card Detect) pin, but usually, there is a 9th pin on most symbols that uses the case directly to detect if there is an SD card or not.
 
-Another thing to keep in mind when wiring up the microSD card, 10K PULLUPS ARE REQUIRED FOR EVERY PIN ON THE MICROSD CARD (excluding the 9th pin/GND/VCC)
+Another thing to keep in mind when wiring up the microSD card: **10K PULLUPS ARE REQUIRED FOR EVERY PIN ON THE MICROSD CARD** (excluding the 9th pin/GND/VCC)
 
-![alt text](70d9b5177979f4ed131b8acf6d75e27911024cf6.png)
+![MicroSD Pullup Requirements](assets/microsd_pullup_requirements.png)
 
-After wiring it up you should get something liek this:
+After wiring it up, you should get something like this:
 
-![alt text](image-9.png)
+![MicroSD KiCad Wired](assets/microsd_kicad_wired.png)
 
 Now all that's left is to conenct everything to the microcontroller!
 
 # Microcontroller Break
 
-Since we are using an STM32, there is a really cool piece of software called STM32MX. It basically allows you to select the functions and types of communication that you need and it automatically selects the pins so that we don't have to read the datasheet and get stuff wrong.
+Since we are using an STM32, there is a really cool piece of software called STM32CubeMX. It basically allows you to select the functions and types of communication that you need, and it automatically selects the pins so that we don't have to read the datasheet and get stuff wrong.
 
 To start, [download it here](https://www.st.com/en/development-tools/stm32cubemx.html) and wait for it to install.
 
-After isntalling it and opening it, you should be presented with this screen:
+After installing it and opening it, you should be presented with this screen:
 
-![alt text](image-10.png)
+![STM32CubeMX Startup Screen](assets/stm32cubemx_startup.png)
 
-Click on `ACCESS TO MCU SELECTOR` as we are going to create a new project based on the MCU that we are using, in this case, `STM32F722RET`.
+Click on `ACCESS TO MCU SELECTOR` as we are going to create a new project based on the MCU that we are using: in this case, `STM32F722RET`.
 
-After searching fo the MCU you should see this screen:
+After searching for the MCU, you should see this screen:
 
-![alt text](image-11.png)
+![STM32CubeMX MCU Selector](assets/stm32cubemx_mcu_selector.png)
 
-Here it shows different variations of that version for the STM32 but we are going to select the `STM32F722RET6` version as it is the one that has the most in stock on LCSC.
+Here, it shows different variations of that version for the STM32, but we are going to select the `STM32F722RET6` version as it is the one that has the most in stock on LCSC.
 
-![alt text](image-12.png)
+![STM32F722RET6 Selected](assets/stm32cubemx_mcu_selected.png)
 
-After that hit start project at the top and if any windows pop up say yes.
+After that, hit "Start Project" at the top. If any windows pop up, say yes.
 
 After loading/downloading the firmware, you should be greeted with this window:
 
-![alt text](image-13.png)
+![STM32CubeMX Pinout Configuration](assets/stm32cubemx_pinout_config.png)
 
-This is where you will be configuring the pinout for the STM32. On the left you can see the different sections that are able to be configured but the only ones that concern us for now is the `System Core`, `Timers`, and `Connectivity` sections.
+This is where you will be configuring the pinout for the STM32. On the left, you can see the different sections that are able to be configured. However, the only ones that concern us for now are the `System Core`, `Timers`, and `Connectivity` sections.
 
 ## Connectivity
 
-Here we can see the different ways that we can conenct the STM32 to different peropherals through `I2C`, `SPI`, `UART`, `SDMMC`, `USB_OTG_FS` and more. For now, enable the first I2C channel. This will be for the battery charger and pressure sensor. It should look like this:
+Here, we can see the different ways that we can connect the STM32 to different peripherals through `I2C`, `SPI`, `UART`, `SDMMC`, `USB_OTG_FS`, and more. For now, enable the first I2C channel. This will be for the battery charger and pressure sensor. It should look like this:
 
-![alt text](image-14.png)
+![STM32CubeMX I2C Enabled](assets/stm32cubemx_i2c_enabled.png)
 
-ALso be sure to select the pins on either side for the battery charger interrupt and select pins. The BQ_INT pin should be set as an GPIO_EXTIx (x is any number) pin as this lets the STM32 know that this pin is going to be an interrupt pin.
+Also, be sure to select the pins on either side for the battery charger interrupt and select pins. The BQ_INT pin should be set as a GPIO_EXTIx (x is any number) pin as this lets the STM32 know that this pin is going to be an interrupt pin.
 
-![alt text](image-18.png)
+![STM32CubeMX BQ_INT GPIO Configuration](assets/stm32cubemx_bq_int_gpio.png)
 
-For BQ_CE, make sure that there's a pin set to GPIO_Output as reading the datasheed says that when low, the charge is on, and when high, the battery doesnt charge. We can change this later in the code and is for further customizeability in case you don't want the battery charge controller running during flight.
+For BQ_CE, make sure that there's a pin set to GPIO_Output. According to the datasheet, when the pin is low, charging is on, and when it's high, the battery doesn't charge. We can change this later in the code and is for further customization in case you don't want the battery charge controller running during flight.
 
-![alt text](image-19.png)
+![STM32CubeMX BQ_CE GPIO Configuration](assets/stm32cubemx_bq_ce_gpio.png)
 
 **MAKE SURE TO ADD THE INTERRUPT PIN FOR THE BMP580**
 
 When selecting an interrupt, if it deletes another interrupt, choose another pin as some interrupts use multiple pins.
 
-![alt text](image-20.png)
+![STM32CubeMX BMP580 Interrupt Configuration](assets/stm32cubemx_bmp_interrupt.png)
 
-Then enable an SPI channel for the IMU, you are free to use whichever channel you wish but I am going to select the first one. Select `Full Duplex Master` as the STM32 will be the master and the IMU the slave, and full duplex because we are using both MOSI and MISO and not just one channel for input output (half duplex/SDIO). There is also an option under the selection to activate a `Hardware NSS Signal`, this is used if we have just one device under the SPI bus and make it so that the STM32 manages the `Chip Select` pin instead of us having to select a GPIO for it. I enabled it as an `Hardware NSS Signal Output` as the IMU will be the input. After selecting SPI it should look like this (can be different if you want to use a different pin for the Chip Select):
+Then enable an SPI channel for the IMU. You are free to use whichever channel you wish, but I am going to select the first one. Select `Full Duplex Master` as the STM32 will be the master and the IMU the slave, and full duplex because we are using both MOSI and MISO and not just one channel for input/output (half duplex/SDIO). There is also an option under the selection to activate a `Hardware NSS Signal`. This is used if we have just one device under the SPI bus and makes it so that the STM32 manages the `Chip Select` pin instead of us having to select a GPIO for it. I enabled it as `Hardware NSS Signal Output` as the IMU will be the input. After selecting SPI, it should look like this (it can be different if you want to use a different pin for the Chip Select):
 
-![alt text](image-15.png)
+![STM32CubeMX SPI Configured](assets/stm32cubemx_spi_configured.png)
 
-Also don't forget to add the 2 interrupt pins on the IMU as GPIO_EXTIx (x is any number):
+Also, don't forget to add the 2 interrupt pins on the IMU as GPIO_EXTIx (x is any number):
 
-![alt text](image-21.png)
+![STM32CubeMX IMU Interrupts](assets/stm32cubemx_imu_interrupts.png)
 
-After you've done that, it's tiem to select `USB_OTG_FS`. this means USB On-The-Go Full speed and it differes from USB_OTG_HS (USB On-The-Go High Speed) as it is slower and doesnt need any extra pins to configure and its sufficient for our needs of flashing and sending serial data. Set it to host or device, you'll be changing this later anyways depending on your needs. For now I will leave it as host and it shows where the USB pins are on the chip.
+After you've done that, it's time to select `USB_OTG_FS`. This means USB On-The-Go Full Speed, and it differs from `USB_OTG_HS` (USB On-The-Go High Speed) as it is slower and doesn't need any extra pins to configure. It's sufficient for our needs of flashing and sending serial data. Set it to host or device (you'll be changing this later depending on your needs). For now, I will leave it as host, and it shows where the USB pins are on the chip.
 
-![alt text](image-16.png)
+![STM32CubeMX USB OTG Configuration](assets/stm32cubemx_usb_otg.png)
 
-Now enable `SDMMC` as this is the communicataion protocol that we will be using to write/read to our microSD. This should be enabled and set to a 4-bit Bus.
+Now enable `SDMMC` as this is the communication protocol that we will be using to write/read to our microSD. This should be enabled and set to a 4-bit bus.
 
-![alt text](image-17.png)
+![STM32CubeMX SDMMC Enabled](assets/stm32cubemx_sdmmc_enabled.png)
 
-Also remember to add an extra pin next to it for the extra detect pin and make it a GPIO_Input:
+Also, remember to add an extra pin next to it for the card detect pin and make it a GPIO_Input:
 
-![alt text](image-22.png)
+![STM32CubeMX SDMMC Card Detect](assets/stm32cubemx_sdmmc_card_detect.png)
 
-Now that we are done with our peripherals/sensors we are going to configure some other stuff that would be important in starting the STM32 and configuring the serovs.
+Now that we are done with our peripherals/sensors, we are going to configure some other stuff that would be important in starting the STM32 and configuring the servos.
 
-GO to the `System Core` tab then click on `RCC` and set both the highspeed clock and low speed clock as a crystal/ceramic resonantor. By doing this, we are telling the STM32 that we will have some external clocks that it can use to acheive faster/stabler clock timing throught the entire chip. We will edit this in KiCad later along with the pins.
+Go to the `System Core` tab, then click on `RCC`, and set both the high-speed clock and low-speed clock as a crystal/ceramic resonator. By doing this, we are telling the STM32 that we will have some external clocks that it can use to achieve faster/stable clock timing throughout the entire chip. We will edit this in KiCad later along with the pins.
 
-![alt text](image-23.png)
+![STM32CubeMX RCC Configuration](assets/stm32cubemx_rcc_config.png)
 
-Now go to the `Timers` section. Here is where we can edit the PWM pins for the servos. Select any timer that has channels that support PWM and select 2 `PWM Generation CH` channels. We will be able to edit the **duty cycle** later in the firmware. Also edit the `Clock Source` and set it to the internal clock, this is needed for the PWM generation as it needs a clock to time the signals correctly.
+Now go to the `Timers` section. Here is where we can edit the PWM pins for the servos. Select any timer that has channels that support PWM and select 2 `PWM Generation CH` channels. We will be able to edit the **duty cycle** later in the firmware. Also edit the `Clock Source` and set it to the internal clock. This is needed for the PWM generation as it needs a clock to time the signals correctly.
 
-![alt text](image-25.png)
+![STM32CubeMX PWM Configuration](assets/stm32cubemx_pwm_config.png)
 
-**MAKE SURE TO SAVE USING CTRL-S AND CREATE A NEW FOLDER IN THE ROOT OF YOU GITHUB REPOSITORY CALLED `software` OR `firmware`**
+**MAKE SURE TO SAVE USING CTRL+S AND CREATE A NEW FOLDER IN THE ROOT OF YOUR GITHUB REPOSITORY CALLED `software` OR `firmware`**
 
-![alt text](image-24.png)
+![STM32CubeMX Save Location](assets/stm32cubemx_save_location.png)
 
-THis is how my STM32 looks after selecting all of the pins:
+This is how my STM32 looks after selecting all of the pins:
 
-![alt text](image-33.png)
-![alt text](image-34.png)
-![alt text](image-35.png)
+![STM32CubeMX Final Pinout 1](assets/stm32cubemx_final_pinout1.png)
+![STM32CubeMX Final Pinout 2](assets/stm32cubemx_final_pinout2.png)
+![STM32CubeMX Final Pinout 3](assets/stm32cubemx_final_pinout3.png)
 
 Keep this open while we configure the rest of the microcontrolelr in KiCad.
 
 # Back to KiCad
 
-Now after adding all of the pins and peripherals and knowing which pins you are going to use, we are going to finish wiring up the STM32 with whats called a `reference schematic`. If you want to learn more about this specific type of chip, or any STM32 MCU in general, there is a documentation tab ([example](https://www.st.com/en/microcontrollers-microprocessors/stm32f722re.html#documentation)) that shows you all the implmentations/peripherals that you can have with the STM32. After scrolling around I found a [reference design](https://www.st.com/resource/en/application_note/an4661-getting-started-with-stm32f7-series-mcu-hardware-development-stmicroelectronics.pdf) to use with our STM32.
+Now after adding all of the pins and peripherals and knowing which pins you are going to use, we are going to finish wiring up the STM32 with what's called a `reference schematic`. If you want to learn more about this specific type of chip or any STM32 MCU in general, there is a documentation tab ([example](https://www.st.com/en/microcontrollers-microprocessors/stm32f722re.html#documentation)) that shows you all the implementations/peripherals that you can have with the STM32. After scrolling around, I found a [reference design](https://www.st.com/resource/en/application_note/an4661-getting-started-with-stm32f7-series-mcu-hardware-development-stmicroelectronics.pdf) to use with our STM32.
 
-Going to the section named `Reference Design` we are greeted with this:
+Going to the section named `Reference Design`, we are greeted with this:
 
-![alt text](image-26.png)
+![STM32 Reference Schematic](assets/stm32_reference_schematic.png)
 
-## Wiring up power
+## Wiring up Power
 
-Starting with the `decoupling capacitors` (capacitors that are placed near ICs to stabilize voltage on power supply lines, they are in parallel with voltage and conenct to ground), it is generally good practice to place one **100nF** per VDD pin and then use a bigger **1uF** capacitor per section (eg. VDD/VDDA/VBAT), finally finishing off with a big **4.7uF** or **10uF** capacitor on the main voltage line before the STM32 to hold off larger voltage spikes. If you have analog voltage (VDDA), it's also good practice to put a `ferrite bead` (like a capacitor but it suppresses high-frequency noise currents) before connecting it to VCC as to prevent noise from digital switching from interfering with sensitive analog functions.
+Starting with the `decoupling capacitors` (capacitors that are placed near ICs to stabilize voltage on power supply lines—they are in parallel with voltage and connect to ground), it is generally good practice to place one **100 nF** per VDD pin and then use a bigger **1 µF** capacitor per section (e.g., VDD/VDDA/VBAT). Finally, finish off with a big **4.7 µF** or **10 µF** capacitor on the main voltage line before the STM32 to hold off larger voltage spikes. If you have analog voltage (VDDA), it's also good practice to put a `ferrite bead` (like a capacitor, but it suppresses high-frequency noise currents) before connecting it to VCC as to prevent noise from digital switching from interfering with sensitive analog functions.
 
-It is also needed to place a 2.2uF capacitor in series with VCAP and GND.
+It is also needed to place a 2.2 µF capacitor in series with VCAP and GND.
 
-**VERY IMPORTANT TO PUT A 2.2uF DECOUPLINC CAPACITOR ON EACH VCAP PIN OF THE STM32 OR IT WONT BOOT UP** (from experience)
+**VERY IMPORTANT: PUT A 2.2 µF DECOUPLING CAPACITOR ON EACH VCAP PIN OF THE STM32 OR IT WONT BOOT UP.** (from experience)
 
-Based on this information (and the schematic), try to sire up your STM32's VDD/VSS Pins (VSS IS GND BTW). You should get somethign like this:
+Based on this information (and the schematic), try to wire up your STM32's VDD/VSS pins (VSS is GND, by the way). You should get something like this:
 
-![alt text](image-27.png)
+![STM32 VDD/VSS Wiring](assets/stm32_vdd_vss_wiring.png)
 
-I placed the capacitors off to the side to make it look cleaner but its the same as if you were to connect them directly, just make sure that when you are placing/routing them on the PCB to make sure that they are **AS CLOSE AS POSIBLE TO THE PIN THAT THEY ARE DECOUPLING OR IT DEFEATS THE PURPOSE**.
+I placed the capacitors off to the side to make it look cleaner, but it's the same as if you were to connect them directly. Just make sure that when you are placing/routing them on the PCB, they are **AS CLOSE AS POSSIBLE TO THE PIN THAT THEY ARE DECOUPLING OR IT DEFEATS THE PURPOSE.**
 
 ## Clocks
 
-Looking at the reference design above, it shows that we need some buttons for the reset and boot pins. These buttons allow us to restart the MCU and allow it to boot into it's bootlaoder to allow for programming through USB.
+Looking at the reference design above, it shows that we need some buttons for the reset and boot pins. These buttons allow us to restart the MCU and allow it to boot into its bootloader to allow for programming through USB.
 
-We also have to add the 32.768 kHz and 25 mHz clocks mentioned in teh datasheet. These clocks are important for PWM and other functionality that requires timing that you may want to add.
+We also have to add the 32.768 kHz and 25 MHz clocks mentioned in the datasheet. These clocks are important for PWM and other functionality that requires timing that you may want to add.
 
-I am going to improt all of these parts from LCSC using the script that we used before (including the ferrite bead). Here are the updated part numbers:
+I am going to import all of these parts from LCSC using the script that we used before (including the ferrite bead). Here are the updated part numbers:
 
 - C720477 (Button)
-- C9006 (25MHz Crystal)
-- C32346 (32.768kHz Crystal)
+- C9006 (25 MHz Crystal)
+- C32346 (32.768 kHz Crystal)
 - C141723 (Ferrite Bead)
 
-Aer running the script, import all of the parts in. I replaced the ferrite bead with the part from LCSC:
+After running the script, import all of the parts in. I replaced the ferrite bead with the part from LCSC:
 
-![alt text](image-28.png)
+![KiCad Crystal Imports](assets/kicad_crystal_imports.png)
 
-Now it's time to place the crystals. These crystal oscilators use a `piezoelectric` (ability of certain materials to generate an electric charge when subjected to mechanical stress, and conversely, to deform when an electric field is applied to them) `crystal` to generate a stable and accurate frequency reference signal. When using these crystals you need to place `load capacitors`:
+Now it's time to place the crystals. These crystal oscillators use a `piezoelectric` (ability of certain materials to generate an electric charge when subjected to mechanical stress, and conversely, to deform when an electric field is applied to them) `crystal` to generate a stable and accurate frequency reference signal. When using these crystals, you need to place `load capacitors`:
 
-![alt text](1-207950.png)
+![Crystal Load Capacitors Concept](assets/crystal_load_capacitors_concept.png)
 
-Think of the crystal like a kid on a swing, it is going back and forth ar a certain oscilation. The `load capacitors` would be weights that you add onto the swing to speed it up or slow it down to get the exact frequency. The same applies to the crystal oscilators. the capacitors are used to fine-tune the oscilations (clock speed) of the crystal.
+Think of the crystal like a kid on a swing. It is going back and forth at a certain oscillation. The `load capacitors` would be weights that you add onto the swing to speed it up or slow it down to get the exact frequency. The same applies to the crystal oscillators. The capacitors are used to fine-tune the oscillations (clock speed) of the crystal.
 
-Each crystal has a datasheet that specifies the load capacitance that it needs and I have already looked them up for the crystals mentioned above. **REMEMBER THAT EACH CRYSTAL IS DIFFERENT EVEN IF THEY MIGHT HAVE THE SAME FREQUENCY**
+Each crystal has a datasheet that specifies the load capacitance that it needs, and I have already looked them up for the crystals mentioned above. **REMEMBER THAT EACH CRYSTAL IS DIFFERENT EVEN IF THEY MIGHT HAVE THE SAME FREQUENCY.**
 
-The capacitors for the 25MHz crystal should be 20pF and for the 32kHz should be 6.8pF. After you're done addign them, it shoudl look like this:
-![alt text](image-38.png)
+The capacitors for the 25 MHz crystal should be 20 pF and for the 32 kHz should be 6.8 pF. After you're done adding them, it should look like this:
+![KiCad Crystals Wired](assets/kicad_crystals_wired.png)
 
 ## Buttons
 
-Now for the reset and boot butons. These are super important for flashing or working with your STM32 in general. Taking a look at the reference design above we need to connect the reset pin to a button parallel with a capacitor to ground. For the boot pin, we need to create a button that will set the boot pin to 3V3 when we press it (look at the datasheet to learn mroe), this allows us to change the boot configuration depending on the boot pin if it is a 1 or a 0. In the end it should look somthing like this:
+Now for the reset and boot buttons. These are super important for flashing or working with your STM32 in general. Taking a look at the reference design above, we need to connect the reset pin to a button parallel with a capacitor to ground. For the boot pin, we need to create a button that will set the boot pin to 3.3V when we press it. (Look at the datasheet to learn more.) This allows us to change the boot configuration depending on whether the boot pin is a 1 or a 0. In the end, it should look something like this:
 
-![alt text](image-30.png)
+![KiCad Reset and Boot Buttons](assets/kicad_reset_boot_buttons.png)
 
 ## Servo Headers
 
-Almost done, just need to add in some 3 pin headers to controll the servos. THey tipically have a pinout of 5V - PWM - GND so it's good to keep the pinout int hat same order. Mine looks like this in the end:
+Almost done, just need to add in some 3 pin headers to controll the servos. THey tipically have a pinout of 5V - PWM - GND so it's good to keep the pinout in that same order. Mine looks like this in the end:
 
-![alt text](image-32.png)
+![KiCad Servo Headers](assets/kicad_servo_headers.png)
 
 # Finish Schematic
 
-Now all that's left to do is to finish the schematic by adding net labesl on all of the pins that we have used in STM32CubeMX. You'rs might look different from my layout if you're using a different chip or sensors but heres how my STM32 looks after adding all of the net labels:
+Now all that's left to do is to finish the schematic by adding net labels on all of the pins that we have used in STM32CubeMX. Your layout might look different from my layout if you're using a different chip or sensors, but here's how my STM32 looks after adding all of the net labels:
 
-![alt text](image-31.png)
+![KiCad Net Labels Schematic](assets/kicad_net_labels_schematic.png)
 
 For the USB lines, DM = DN, and DP = DP.
 
-For the ICM SPI lines, SDI = MOSI (For the ICM its an input, so it woule be MOSI (Master Out Slave In) for the STM32). By that logic, SDO = MISO.
+For the ICM SPI lines, SDI = MOSI. (For the ICM, it's an input, so it would be MOSI (Master Out Slave In) for the STM32.) By that logic, SDO = MISO.
 
-Note that for the I2C lines, I changed the name to be able to conenct to each of the devices like so:
+Note that for the I2C lines, I changed the names to be able to connect to each of the devices like so:
 
-![alt text](image-36.png)
-![alt text](image-37.png)
+![KiCad I2C Connections 1](assets/kicad_i2c_connections.png)
+![KiCad I2C Connections 2](assets/kicad_i2c_connections2.png)
 
-You may have a different pinout as me but as long as you know which pins you are using and for what then you'll be fine.
+You may have a different pinout than me, but as long as you know which pins you are using and for what, then you'll be fine.
 
-**DOUBLE TRIPLE CHECK THAT YOUR PINS MATCH THE ONES IN STM32CUBEMX**
+**DOUBLE TRIPLE CHECK THAT YOUR PINS MATCH THE ONES IN STM32CUBEMX.**
 
-Now that you're done with your schematic, organize everything tos that it looks nice. You might have to change the page settings `File > Page Settings` in order to change the size of it:
+Now that you're done with your schematic, organize everything so that it looks nice. You might have to change the page settings via `File > Page Settings` in order to change the size of it:
 
-![alt text](image-39.png)
+![KiCad Page Settings](assets/kicad_page_settings.png)
 
-Now after organzing it a bit you schematic should look like this:
+Now after organizing it a bit, your schematic should look like this:
 
-![alt text](image-40.png)
+![KiCad Final Schematic](assets/kicad_final_schematic.png)
 
 I placed text to name each block and added a title at the bottom right.
 
-**Finally we're done with the schematic!**
+**Finally, we're done with the schematic!**

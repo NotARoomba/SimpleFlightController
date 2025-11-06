@@ -1,10 +1,12 @@
 # How to make a flight controller (from scratch)
 
+I'm [@NotARoomba](https://github.com/notaroomba) and I have a (sort of) obsession with making flight controllers so heres a guide so that you too have the knowledge of making something [cool](https://github.com/notaroomba/athena).
+
 This is an advanced project. I recommend learning the basics of KiCad by making a small dev board or breadboard first. That said, anyone can follow along, as I'll go **_in-depth_** on how to build a flight controller.
 
 First, define what type of flight controller you want: for a rocket or a drone? Keep that in mind when starting your own design. In this guide, we'll build a flight controller specifically for rockets.
 
-To start, create a new repository on GitHub and add two folders: `hardware` and `software`. These folders will hold most of the project files. Then create a new KiCad project inside the `hardware` folder.
+To start, create a new repository on GitHub and add two folders: `hardware` and `software`. These folders will hold most of the project files. Then, create a new KiCad project inside the `hardware` folder.
 
 ![Folder Structure](assets/folder-structure.png)
 (Folder structure)
@@ -18,7 +20,7 @@ Before starting any engineering project, define the problem you're solving and t
 
 If you only build a board to drive servos, the rocket won't know which way it's pointing or how to correct its trajectory. You also need position and motion data (rotation and acceleration), plus altitude data. Finally, you'll want to store data persistently (even when powered off) for debugging and post-flight analysis.
 
-Now that we have the rocket's functionality defined, we also need a way to power it, so we can use a battery that can power both the rocket's computer and its servos.
+Now that we have the rocket's functionality defined, we also need a way to power it. We can use a battery that can power both the rocket's computer and its servos.
 
 Putting this together, we want these features in our rocket's flight controller:
 
@@ -35,7 +37,7 @@ Depending on the size of your rocket, current needs will vary because larger ser
 
 Most microcontrollers and sensors run on 3.3V, so with a 2-cell (7.4V) LiPo we have more than enough input voltage—as long as we regulate it down to a clean 3.3V line.
 
-Now, after ticking off one of the features, we need to tackle the three others.
+Now, after checking off one of the features, we need to tackle the three others.
 
 - Can control servos for fins or TVC
 - Can obtain position/altitude data
@@ -63,7 +65,7 @@ For altitude, we'll use a dedicated sensor called a barometer. It measures air p
 
 Finally, to store data, we'll use a microSD card. While you can use onboard flash, microSD is more versatile when you want to access flight logs directly from a computer.
 
-Now that we've defined the sensors and peripherals, we need to select a microcontroller. In this tutorial, we'll use an STM32, but you can adapt it to another MCU like the ESP32 if you want Bluetooth/Wi-Fi support. I prefer STM32 because it's easy(ish) to program and widely used in flight controllers. After reviewing STM32 options, we'll use the STM32F722RET6 for its high clock speed and lots of peripherals. Feel free to choose another package or part for larger designs.
+Now that we've defined the sensors and peripherals, we need to select a microcontroller. In this tutorial, we'll use an STM32, but you can adapt it to another MCU like the ESP32 if you want Bluetooth/Wi-Fi support. I prefer STM32 because it's relatively easy to program and widely used in flight controllers. After reviewing STM32 options, we'll use the STM32F722RET6 for its high clock speed and lots of peripherals. Feel free to choose another package or part for larger designs.
 
 - ~~Needs to be able to control servos for fins or TVC~~
 - ~~Needs a way to get position/altitude data~~
@@ -72,11 +74,11 @@ Now that we've defined the sensors and peripherals, we need to select a microcon
 
 ## Power Management
 
-We have two power sources: USB-C from your computer (5V) and a battery (about 7–8.4V for a 2-cell LiPo). You cannot just wire them together. They need circuitry to choose which one feeds the board and to set the right voltages. The microcontroller typically runs at 3.3V, so we must lower the voltage (from the battery or USB-C) before it touches the MCU.
+We have two power sources: USB-C from your computer (5V) and a battery (about 7–8.4V for a 2-cell LiPo). You cannot just wire them together. They need circuitry to choose which one feeds the board and to set the right voltages. The microcontroller typically runs at 3.3V, so we must lower the voltage (from the battery or USB-C) before it reaches the MCU.
 
-To change the voltages, we need to use a regulator, and there are two common kinds of regulators you'll hear about:
+To change the voltages, we need to use a regulator. There are two common kinds of regulators you'll hear about:
 
-- `LDO`—Low Dropout regulator. It only turns higher voltage into a slightly lower one. Easy and quiet, but it wastes the extra as heat.
+- `LDO`—Low Dropout regulator. It only turns higher voltage into a slightly lower one. Easy and quiet, but it wastes the excess as heat.
 - `Switching regulator`—A more efficient regulator. It can:
   - `buck` (turn higher voltage down),
   - `boost` (push lower voltage up), or
@@ -85,10 +87,10 @@ To change the voltages, we need to use a regulator, and there are two common kin
 What we'll do on this board:
 
 - Make a 3.3V line (for the MCU and sensors) using a buck regulator.
-- Make a 5V line (for servos or accessories) using a buck-boost regulator so it stays 5V even as the battery goes up and down.
-- Get a battery charging IC (Integrated Circuit—a chip) that can charge a 2-cell battery from 5V
+- Make a 5V line (for servos or accessories) using a buck-boost regulator so it stays at 5V even as the battery voltage fluctuates.
+- Get a battery charging IC (Integrated Circuit—a chip) that can charge a 2-cell battery from 5V.
 
-Now that we've specified what functionality we need, we need to select the chips that provide that. I personally love to use ICs from Texas Instruments as they have good documentation and a huge selection of power management chips for everything related to USB.
+Now that we've specified what functionality we need, we need to select the chips that provide it. I personally love to use ICs from Texas Instruments as they have good documentation and a huge selection of power management chips for everything related to USB.
 
 Go to their website (https://www.ti.com/), select "Products", then "Battery Management ICs", and finally "Battery Charging ICs". Here you can find all sorts of battery charging chips to fit your requirements for future projects.
 
@@ -102,9 +104,9 @@ For the regulators, go back to the TI main page, then navigate to "Power Managem
 
 Here is where we can choose the right regulators for our needs. For this tutorial, we are going to use the `TPS63070`, which supports 2–16V input and can output a steady 5V with high current for the servos.
 
-Now all that's missing is to find another regulator for 3.3V. For this, we are going to use `LMR51430` as it is one that supplies a lot of amperage for the various sensors that we will be using.
+Now all that's missing is to find another regulator for 3.3V. For this, we are going to use the `LMR51430` as it supplies a lot of amperage for the various sensors that we will be using.
 
-Now that we have the chips that we are going to use, we also need to verify that they are available on some platform like [LCSC](https://lcsc.com) or wherever else you are going to manufacture your PCB. We also might have to import certain components through LCSC into KiCad.
+Now that we have the chips that we are going to use, we also need to verify that they are available on some platform like [LCSC](https://lcsc.com) or wherever else you are going to manufacture your PCB. We also might have to import certain components from LCSC into KiCad.
 
 ## Final component list
 
@@ -118,7 +120,7 @@ Now that we have the chips that we are going to use, we also need to verify that
 - BMP580
 - Optional LED
 
-# Starting the schematic
+# Starting the Schematic
 
 Now that we have the components that we are going to use, let's start importing them into our project.
 
@@ -215,20 +217,20 @@ It should look like this:
 
 ![LCSC Search](assets/lcsc_txt.png)
 
-Then run the python script to convert that part number into a KiCad library. **IMPORTANT: YOU NEED TO RUN THE SCRIPT EVERY TIME YOU UPDATE `lcsc.txt`.** If you get an error that you can't find `lcsc.txt`, make sure to run the file from the root of your project or add arguments to specify the path of the library/lcsc txt file.
+Then run the Python script to convert that part number into a KiCad library. **IMPORTANT: YOU NEED TO RUN THE SCRIPT EVERY TIME YOU UPDATE `lcsc.txt`.** If you get an error that you can't find `lcsc.txt`, make sure to run the file from the root of your project or add arguments to specify the path of the library/lcsc txt file.
 
 If you have done everything correctly, you should have something that looks like this:
 
 ![LCSC Search](assets/lcsc_script.png)
 
-If in the future you get an error that the script couldn't find/parse a 3D model, those errors are safe to ignore as you can add the 3D model later. However, if the script can't find/parse a footprint for a specific part, then you should probably find another one through LCSC.
+If in the future you get an error that the script couldn't find/parse a 3D model, those errors are safe to ignore as you can add the 3D model later. However, if the script can't find/parse a footprint for a specific part, then you should probably find another one on LCSC.
 
 After running the script for the first time, add the library to your KiCad project and also the footprint library (the folder that ends with .pretty). It should look like this when you are done.
 
 ![LCSC Search](assets/kicad_symbol.png)
 ![LCSC Search](assets/kicad_footprint.png)
 
-Then after that's done, go into your schematic and search for "lcsc". You should find the library with the USB-C connector (or whatever other part you imported)
+Then after that's done, go into your schematic and search for "lcsc". You should find the library with the USB-C connector (or whatever other part you imported).
 
 ![LCSC Search](assets/kicad_usbc.png)
 
@@ -246,7 +248,7 @@ Now run the script again. Once it's done, go back to KiCad and add in all of the
 
 ## USB-C and Power
 
-Now let's start wiring up the power components and USB-C. It's always good practice to start wiring the components that would be used first. In this case, it would be USB-C as it is going to receive voltage, then the battery connector as that voltage from USB-C is going to directly charge the battery. If there is no USB-C, then the battery will provide voltage, and then the 2 regulators. Again, you can wire each component up in whatever order. I just do it like this to be a bit more organized.
+Now let's start wiring up the power components and USB-C. It's always good practice to start wiring the components that would be used first. In this case, it would be USB-C as it is going to receive voltage, then the battery connector as that voltage from USB-C is going to directly charge the battery. If there is no USB-C, then the battery will provide voltage, followed by the 2 regulators. Again, you can wire each component up in whatever order. I just do it like this to be a bit more organized.
 
 ![LCSC Search](assets/usbc.png)
 
@@ -263,11 +265,11 @@ Now with that information in mind, when you finish wiring up the USB-C connector
 
 ![LCSC Search](assets/usbc_done.png)
 
-I used net labels to organize it better so that we don't have a spaghetti of cables all over the schematic.
+I used net labels to organize it better so that we don't have spaghetti cables all over the schematic.
 
 ### Battery Charger (BQ25883)
 
-Now let's wire up the battery charger. This is the next step in our power route. There are many chips in the world, and knowing the pins on each of them is virtually impossible. So, each manufacturer has what's called a `datasheet` for each component. It's basically a document that details everything about that chip—its pinout and how to implement it.
+Now let's wire up the battery charger. This is the next step in our power route. There are many chips in the world, and knowing the pins on each of them is virtually impossible. So, each manufacturer provides what's called a `datasheet` for each component. It's basically a document that details everything about that chip—its pinout and how to implement it.
 
 To access the datasheet for any component in KiCad, simply click on the component and press D. If there isn't one, just search on Google "`[part] datasheet`" and it's usually a PDF.
 
@@ -297,7 +299,7 @@ These parameters determine the specific resistor and capacitor values needed in 
 
 ![LCSC Search](assets/datasheet_calc.png)
 
-If you need a chip that has a reference schematic that doesn't fit your needs, then you need to calculate a bit in order to get the right component values. However, usually you don't have to do that.
+If you need a chip that has a reference schematic that doesn't fit your needs, then you need to do some calculations in order to get the right component values. However, usually you don't have to do that.
 
 ### Extra Info
 
@@ -309,7 +311,7 @@ Here we can see that for those pins there are descriptions like `active low`, `o
 
 #### Active Low
 
-**Active low** means the pin is "active" (doing its job) when the voltage is LOW (0V or close to ground), not when it's HIGH (3.3V or 5V). Think of it like a backwards switch—when you pull the pin to ground, that's when it triggers the function. Many reset pins work this way: pull the reset pin low to reset the chip, let it go high to run normally.
+**Active low** means the pin is "active" (doing its job) when the voltage is LOW (0V or close to ground), not when it's HIGH (3.3V or 5V). Think of it like a backwards switch—when you pull the pin to ground, that's when it triggers the function. Many reset pins work this way: pull the reset pin low to reset the chip, and let it go high to run normally.
 
 #### Open Drain
 
@@ -321,7 +323,7 @@ Now let's talk about the different ways chips can talk to each other. There are 
 
 #### I2C/I3C (Inter-Integrated Circuit)
 
-I2C uses only **2 wires**: SDA (data) and SCL (clock). Multiple devices can share the same two wires, and each device has a unique address. Think of it like a conference call where everyone shares the same phone line, but each person has a unique ID. Both wires need one pull-up resistor each (in total, as well) in order to function correctly.
+I2C uses only **2 wires**: SDA (data) and SCL (clock). Multiple devices can share the same two wires, and each device has a unique address. Think of it like a conference call where everyone shares the same phone line, but each person has a unique ID. Both wires need one pull-up resistor each (in total) in order to function correctly.
 
 **Pros:**
 
@@ -397,7 +399,7 @@ USB uses **2 data wires** (D+ and D-) plus power and ground. It's like a smart p
 
 ---
 
-We will not be connecting the USB to the battery charging chip as we need to connect the STM32 to USB-C to be able to program it. Looking through the datasheet, it says that those pins are used to determine how much current can be used. However, they can also be set through the `I2C` interface that the IC has, so we can later change that with the STM32.
+We will not be connecting the USB to the battery charging chip as we need to connect the STM32 to USB-C to be able to program it. Looking through the datasheet, it says that those pins are used to determine how much current can be used. However, they can also be set through the `I2C` interface that the IC has, so we can change that later with the STM32.
 
 Now that we know that the schematic suits our needs, we can start copying it in KiCad. When copying a schematic from a datasheet, any pins that can be connected externally should use `Net Labels` like so (obviously with the pull-up resistors added later):
 
@@ -464,7 +466,7 @@ If you don't know what footprint size to add to the other components (resistors,
 
 Now moving on to the final power part, the `LMR51430`.
 
-Repeat the same as the other 2 parts: open the datasheet and look for the `Application and Implementation`. Switching regulators (like the name implies) switch MOSFETs (tiny gates) open and close very fast in order to regulate voltage. This can be measured by the `switching frequency` of the chip. In this case, we have 2 tables under the schematic.
+Repeat the same as the other 2 parts: open the datasheet and look for the `Application and Implementation` section. Switching regulators (like the name implies) switch MOSFETs (tiny gates) open and close very fast in order to regulate voltage. This can be measured by the `switching frequency` of the chip. In this case, we have 2 tables under the schematic.
 
 ![LMR51430 Switching Frequency Tables](assets/lmr51430_switching_tables.png)
 
@@ -472,7 +474,7 @@ One for a switching frequency of 500 kHz and another one for 1.1 MHz (1100 kHz).
 
 ![LMR51430 Adjustable vs Fixed Schematic](assets/lmr51430_adjustable_vs_fixed.png)
 
-After routing it, you should get something like this (for a 500kHz switchign frequency at 3.3v):
+After routing it, you should get something like this (for a 500 kHz switching frequency at 3.3V):
 
 ![LMR51430 Schematic Complete](assets/lmr51430_schematic.png)
 
@@ -482,7 +484,7 @@ Double-check the values on the resistor divider as that is what determines the o
 
 ## Sensors and Peripherals
 
-Now that we've got power out of the way, it's time to route the sensors and the MicroSD
+Now that we've got power out of the way, it's time to route the sensors and the microSD.
 
 ### BMP580
 
@@ -528,7 +530,7 @@ Here is an example schematic of how the SD card should be wired, but we are goin
 
 In SDIO (SDMMC) mode, DAT0-3 are used for data transfer, CLK for clock, and CMD for sending/receiving commands between the microcontroller and microSD card. DAT3 can also be considered a CD (Card Detect) pin, but usually, there is a 9th pin on most symbols that uses the case directly to detect if there is an SD card or not.
 
-Another thing to keep in mind when wiring up the microSD card: **10K PULLUPS ARE REQUIRED FOR EVERY PIN ON THE MICROSD CARD** (excluding the 9th pin/GND/VCC)
+Another thing to keep in mind when wiring up the microSD card: **10K PULL-UPS ARE REQUIRED FOR EVERY PIN ON THE MICROSD CARD** (excluding the 9th pin/GND/VCC).
 
 ![MicroSD Pullup Requirements](assets/microsd_pullup_requirements.png)
 
@@ -536,7 +538,7 @@ After wiring it up, you should get something like this:
 
 ![MicroSD KiCad Wired](assets/microsd_kicad_wired.png)
 
-Now all that's left is to conenct everything to the microcontroller!
+Now all that's left is to connect everything to the microcontroller!
 
 # Microcontroller Break
 
@@ -572,15 +574,15 @@ Here, we can see the different ways that we can connect the STM32 to different p
 
 ![STM32CubeMX I2C Enabled](assets/stm32cubemx_i2c_enabled.png)
 
-Also, be sure to select the pins on either side for the battery charger interrupt and select pins. The BQ_INT pin should be set as a GPIO_EXTIx (x is any number) pin as this lets the STM32 know that this pin is going to be an interrupt pin.
+Also, be sure to select pins on either side for the battery charger interrupt and chip enable pins. The BQ_INT pin should be set as a GPIO_EXTIx (x is any number) pin as this lets the STM32 know that this pin is going to be an interrupt pin.
 
 ![STM32CubeMX BQ_INT GPIO Configuration](assets/stm32cubemx_bq_int_gpio.png)
 
-For BQ_CE, make sure that there's a pin set to GPIO_Output. According to the datasheet, when the pin is low, charging is on, and when it's high, the battery doesn't charge. We can change this later in the code and is for further customization in case you don't want the battery charge controller running during flight.
+For BQ_CE, make sure that there's a pin set to GPIO_Output. According to the datasheet, when the pin is low, charging is on, and when it's high, the battery doesn't charge. We can change this later in the code for further customization in case you don't want the battery charge controller running during flight.
 
 ![STM32CubeMX BQ_CE GPIO Configuration](assets/stm32cubemx_bq_ce_gpio.png)
 
-**MAKE SURE TO ADD THE INTERRUPT PIN FOR THE BMP580**
+**MAKE SURE TO ADD THE INTERRUPT PIN FOR THE BMP580.**
 
 When selecting an interrupt, if it deletes another interrupt, choose another pin as some interrupts use multiple pins.
 
@@ -616,7 +618,7 @@ Now go to the `Timers` section. Here is where we can edit the PWM pins for the s
 
 ![STM32CubeMX PWM Configuration](assets/stm32cubemx_pwm_config.png)
 
-**MAKE SURE TO SAVE USING CTRL+S AND CREATE A NEW FOLDER IN THE ROOT OF YOUR GITHUB REPOSITORY CALLED `software` OR `firmware`**
+**MAKE SURE TO SAVE USING CTRL+S AND CREATE A NEW FOLDER IN THE ROOT OF YOUR GITHUB REPOSITORY CALLED `software` OR `firmware`.**
 
 ![STM32CubeMX Save Location](assets/stm32cubemx_save_location.png)
 
@@ -626,7 +628,7 @@ This is how my STM32 looks after selecting all of the pins:
 ![STM32CubeMX Final Pinout 2](assets/stm32cubemx_final_pinout2.png)
 ![STM32CubeMX Final Pinout 3](assets/stm32cubemx_final_pinout3.png)
 
-Keep this open while we configure the rest of the microcontrolelr in KiCad.
+Keep this open while we configure the rest of the microcontroller in KiCad.
 
 # Back to KiCad
 
@@ -638,11 +640,11 @@ Going to the section named `Reference Design`, we are greeted with this:
 
 ## Wiring up Power
 
-Starting with the `decoupling capacitors` (capacitors that are placed near ICs to stabilize voltage on power supply lines—they are in parallel with voltage and connect to ground), it is generally good practice to place one **100 nF** per VDD pin and then use a bigger **1 µF** capacitor per section (e.g., VDD/VDDA/VBAT). Finally, finish off with a big **4.7 µF** or **10 µF** capacitor on the main voltage line before the STM32 to hold off larger voltage spikes. If you have analog voltage (VDDA), it's also good practice to put a `ferrite bead` (like a capacitor, but it suppresses high-frequency noise currents) before connecting it to VCC as to prevent noise from digital switching from interfering with sensitive analog functions.
+Starting with the `decoupling capacitors` (capacitors that are placed near ICs to stabilize voltage on power supply lines—they are in parallel with voltage and connect to ground), it is generally good practice to place one **100 nF** per VDD pin and then use a bigger **1 µF** capacitor per section (e.g., VDD/VDDA/VBAT). Finally, finish off with a big **4.7 µF** or **10 µF** capacitor on the main voltage line before the STM32 to handle larger voltage spikes. If you have analog voltage (VDDA), it's also good practice to put a `ferrite bead` (like a capacitor, but it suppresses high-frequency noise currents) before connecting it to VCC to prevent noise from digital switching from interfering with sensitive analog functions.
 
 It is also needed to place a 2.2 µF capacitor in series with VCAP and GND.
 
-**VERY IMPORTANT: PUT A 2.2 µF DECOUPLING CAPACITOR ON EACH VCAP PIN OF THE STM32 OR IT WONT BOOT UP.** (from experience)
+**VERY IMPORTANT: PUT A 2.2 µF DECOUPLING CAPACITOR ON EACH VCAP PIN OF THE STM32 OR IT WON'T BOOT UP.** (From experience)
 
 Based on this information (and the schematic), try to wire up your STM32's VDD/VSS pins (VSS is GND, by the way). You should get something like this:
 
@@ -686,7 +688,7 @@ Now for the reset and boot buttons. These are super important for flashing or wo
 
 ## Servo Headers
 
-Almost done, just need to add in some 3 pin headers to controll the servos. THey tipically have a pinout of 5V - PWM - GND so it's good to keep the pinout in that same order. Mine looks like this in the end:
+Almost done, just need to add in some 3-pin headers to control the servos. They typically have a pinout of 5V - PWM - GND so it's good to keep the pinout in that same order. Mine looks like this in the end:
 
 ![KiCad Servo Headers](assets/kicad_servo_headers.png)
 
@@ -727,318 +729,322 @@ Before continuing on to the PCB, we have to `Assign Footprints` which basically 
 
 Click on this button to open the footprint selection screen:
 
-![alt text](image-1.png)
+![alt text](assets/footprint_assignment_button.png)
 
 The lines in yellow are components whose footprints we have to assign:
 
-![alt text](image-2.png)
+![alt text](assets/footprint_yellow_lines.png)
 
-But since it's mainly resistors and capacitors that makes it alot easier.
-Since we're designing a flight controller, this has to be as small as possible so I am going to be choosing the smallest footprints I can (while stayign within good practices), as the smaller the footprint, the more it can heat up and the less it can tolerate (for resistors and capacitors). A rule of thumb that I go by is any resistors under 80K I assign a 0201 footprint, over that and it's 0402. For capacitors, any `bulk capacitors` capacitors that have high values like 4.7uF or 10uF, I usually assign 0402. Any bigger than 10uF and I assign 0805, but it depends on the datasheet of the component. Under the application and implementation there is usually a table that specifies which footprints/components to use. 
+But since it's mainly resistors and capacitors, that makes it a lot easier.
+Since we're designing a flight controller, this has to be as small as possible, so I am going to be choosing the smallest footprints I can (while staying within good practices). The smaller the footprint, the more it can heat up and the less it can tolerate (for resistors and capacitors). A rule of thumb that I go by is any resistors under 80K I assign a 0201 footprint, over that and it's 0402. For capacitors, any `bulk capacitors` (capacitors that have high values like 4.7 µF or 10 µF) I usually assign 0402. Any bigger than 10 µF and I assign 0805, but it depends on the datasheet of the component. Under the application and implementation section there is usually a table that specifies which footprints/components to use. 
 
 
 Now all that's left is to finish adding the footprints for these symbols:
 
-![alt text](image-3.png)
+![alt text](assets/footprint_remaining_symbols.png)
 
-For the LED I am going to have it in a 0402 package. And the headers, I am going to use these footprints (basically the standard headers for jumper cables):
+For the LED, I am going to have it in a 0402 package. And for the headers, I am going to use these footprints (basically the standard headers for jumper cables):
 
-![alt text](image-4.png)
+![alt text](assets/footprint_header_selection.png)
 
-The inductors are a bit trickier, for this you're gonna have to go into the datasheet and see where it says the size:
+The inductors are a bit trickier. For this, you're gonna have to go into the datasheet and see where it says the size:
 
-![alt text](image-5.png)
+![alt text](assets/footprint_inductor_size.png)
 
 For that `5.6uH` inductor, I am going to be using `C18236327` (LCSC Part Number).
 
 
-For the 5V buck-boost I am going to be using `C3033018`, I also noticed that I had the inductor value wrong from the datasheet **THIS IS WHY DOUBLE CHECKING IS IMPORTANT**:
+For the 5V buck-boost, I am going to be using `C3033018`. I also noticed that I had the inductor value wrong from the datasheet. **THIS IS WHY DOUBLE CHECKING IS IMPORTANT:**
 
-![alt text](image-6.png)
+![alt text](assets/footprint_inductor_value_correction.png)
 
 For the final inductor in the battery charging IC, I am going to use `C435392`.
 
-Press `Apply, Save Schematic & Continue` to save the footprints you have already placed and then import the new inductors that you have selected. 
+Press `Apply, Save Schematic & Continue` to save the footprints you have already placed and then import the new inductors that you have selected.
 
 
 # PCB Layout
 
-Now go to the PCB section in KiCad. Theres a button at the top of the schematic page that says `Switch to PCB Editor` to go there.
+Now go to the PCB section in KiCad. There's a button at the top of the schematic page that says `Switch to PCB Editor` to go there.
 
-Then to import all of our components from the schematic we hit this button:
+Then to import all of our components from the schematic, we hit this button:
 
-![alt text](image.png)
+![alt text](assets/pcb_import_button.png)
 
 A screen should pop up:
 
-![alt text](image-7.png)
+![alt text](assets/pcb_import_dialog.png)
 
 There should be no errors or warnings. Then press Update PCB to import everything from the schematic.
 
-![alt text](image-8.png)
+![alt text](assets/pcb_imported_components.png)
 
 Now comes the fun part, part placement!
 
-## But wait, whats a PCB?
+## But wait, what's a PCB?
 
-A `PCB` (Printed CIrcuit Board) is a board used to mechanically support and electrically connect electronic components. It is composed of layers of copper and a `dielectric material` (a material that acts as an "insulator" and isn't conductive). PCBs can have from 2-32 layers although for this board, we will be working with 2 (maybe 4 if we need to).
+A `PCB` (Printed Circuit Board) is a board used to mechanically support and electrically connect electronic components. It is composed of layers of copper and a `dielectric material` (a material that acts as an "insulator" and isn't conductive). PCBs can have from 2-32 layers, although for this board, we will be working with 2 (maybe 4 if we need to).
 
-In Kicad if you look to the right it shows the different layers:
+In KiCad, if you look to the right, it shows the different layers:
 
-![alt text](image-15.png)
+![alt text](assets/pcb_layers_panel.png)
 
-`F.Cu` and `B.Cu` (Front Copper and Back Copper) are our copper layers (denoted by the `.Cu`), the only other layers that are important to us are `F/B.Silkscreen` and `Edge.Cuts` THe silkscreen layers allow us to put text/images and is usually that white text that you find on any PCB. `Edge.Cuts` is the layer for the edges of the board (eg where JLCPCB will cut to make the outline). For now we will fcus on the copper layers and routing. We can add mroe copper layers later in the board settings.
+`F.Cu` and `B.Cu` (Front Copper and Back Copper) are our copper layers (denoted by the `.Cu`). The only other layers that are important to us are `F/B.Silkscreen` and `Edge.Cuts`. The silkscreen layers allow us to put text/images and is usually that white text that you find on any PCB. `Edge.Cuts` is the layer for the edges of the board (e.g., where JLCPCB will cut to make the outline). For now we will focus on the copper layers and routing. We can add more copper layers later in the board settings.
 
-Now we have to conenct each of the components and `route` them (create copper lines between each of them).
+Now we have to connect each of the components and `route` them (create copper lines between each of them).
 
 ## Layout
 
-I personally have always relied on this one trick to route my PCB's and it has always helped me without fail. First, seperate the components into their respective groups (eg, all of the components for the battery garger, 5v regulator, 3v3 regulator, stm, etc.), then lay them out and route them in those groups, finally put the groups together on the PCB and route the connections between them.
+I personally have always relied on this one trick to route my PCBs and it has always helped me without fail. First, separate the components into their respective groups (e.g., all of the components for the battery charger, 5V regulator, 3.3V regulator, STM, etc.), then lay them out and route them in those groups, finally put the groups together on the PCB and route the connections between them.
 
 Starting with USB-C, go to the schematic and select the USB-C section:
 
-![alt text](image-9.png)
+![alt text](assets/pcb_usbc_schematic_select.png)
 
-Then going back to the PCB editor, you should see that the connector and its aprts are selected. Then drag them out off to one side.
+Then going back to the PCB editor, you should see that the connector and its parts are selected. Then drag them off to one side.
 
-![alt text](image-10.png)
+![alt text](assets/pcb_usbc_dragged.png)
 
-Do the same for each of the sections and after you've done that you should get somethin like this: 
+Do the same for each of the sections and after you've done that you should get something like this: 
 
-![alt text](image-11.png)
+![alt text](assets/pcb_sections_separated.png)
 
-Now go section by section and place the components close to where they're supposed to be connected. Make sure to place decouplinc capacitors close to the pins that they need to decouple or they won't work.
+Now go section by section and place the components close to where they're supposed to be connected. Make sure to place decoupling capacitors close to the pins that they need to decouple or they won't work.
 
 Example of the USB-C connector:
 
-![alt text](image-12.png)
+![alt text](assets/pcb_usbc_placement.png)
 
-I placed the resistors close to the pins that they need to decouple and in a good orientation so that I can conenct that ground pin easily.
+I placed the resistors close to the pins that they need to decouple and in a good orientation so that I can connect that ground pin easily.
 
 For the 3.3V Buck converter I routed it like this:
 
-![alt text](image-13.png)
+![alt text](assets/pcb_buck_converter_routing.png)
 
 But now I'm realizing that the components I chose are too small so I am going to make the capacitors and resistors a bit bigger:
 
-![alt text](image-14.png)
+![alt text](assets/pcb_buck_converter_updated.png)
 
-Ignore the silkscreen for now (the yellow) we are going to com eback to that later.
+Ignore the silkscreen for now (the yellow) we are going to come back to that later.
 
-Continue on for each of the chips, for example, here is how I placed the 5V buck-boost converter:
+Continue on for each of the chips. For example, here is how I placed the 5V buck-boost converter:
 
-![alt text](image-16.png)
+![alt text](assets/pcb_5v_buckboost_placement.png)
 
-as you can see, the capacitors are close to the pin and to eachother, and all of theh components I have them placed in a way where I can create easy conenctions like so:
+As you can see, the capacitors are close to the pin and to each other, and all of the components I have placed in a way where I can create easy connections like so:
 
-![alt text](image-17.png)
+![alt text](assets/pcb_5v_buckboost_routing.png)
 
 Moving on to the battery charger:
 
-![alt text](image-18.png)
+![alt text](assets/pcb_battery_charger_routing.png)
 
 Crystals:
-![alt text](image-19.png)
+![alt text](assets/pcb_crystals_placement.png)
 
 microSD Card:
 
-![alt text](image-20.png)
+![alt text](assets/pcb_microsd_placement.png)
 
-For the STM32/microcontroller its personal preference of mine to rotate it 45 degrees so that its "easier" (subjectively) to route later, you can change this by editing the `orientation` property:
+For the STM32/microcontroller, it's a personal preference of mine to rotate it 45 degrees so that it's "easier" (subjectively) to route later. You can change this by editing the `orientation` property:
 
-![alt text](image-21.png)
+![alt text](assets/pcb_stm32_orientation_setting.png)
 
 Also for these decoupling caps:
-![alt text](image-22.png)
+![alt text](assets/pcb_decoupling_caps_size.png)
 
 I changed the sizes to be 0402 as they are bulk decoupling capacitors and should always be a bit bigger than the normal ones.
 
 After laying out the decoupling capacitors for the STM32, it looks like this:
 
-![alt text](image-23.png)
+![alt text](assets/pcb_stm32_decoupling_layout.png)
 
-That one capacitor that is by itself on the right is the big 10uF capacitor that I plan on laying out later depending on where the 3.3V is coming from.
+That one capacitor that is by itself on the right is the big 10 µF capacitor that I plan on laying out later depending on where the 3.3V is coming from.
 
 ### Final Layout
 
 After you're done laying out all of the `passive components` (resistors, inductors, capacitors, etc.) and their respective ICs, it's time to layout each of those groups on the board.
 
-![alt text](image-24.png)
+![alt text](assets/pcb_initial_board_layout.png)
 
-Here's what my "board" looks out and I'm not going to play around withthe placement of each of the groups before routing to make it mroe compact.
+Here's what my "board" layout is and I'm going to play around with the placement of each of the groups before routing to make it more compact.
 
 **TIP**
-![alt text](image-25.png)
+![alt text](assets/pcb_grouping_tip.png)
 It may be helpful to literally group them in KiCad to move them around easier.
 
 After a bit of laying out and thinking I came up with this:
 
-![alt text](image-26.png)
+![alt text](assets/pcb_final_component_layout.png)
 
-The battery charger is close to VBUS and then VSYS has an easy path through to the 3.3V buck converter and 5V buck-boost. THe battery conenctor is also on that side, on the top is the microSD card and has a connection to the STM32 directly inder it. on the top left are the buttons for boot and reset and also the 2 clocks and on the bottom left is the IMU that is kept seperated from the rest to reduce noise (happened by accident lol) and the STM32 in the middle whose USB DP and DN pins are inline with the USB-C port.
+The battery charger is close to VBUS and then VSYS has an easy path through to the 3.3V buck converter and 5V buck-boost. The battery connector is also on that side. On the top is the microSD card with a connection to the STM32 directly under it. On the top left are the buttons for boot and reset and also the 2 clocks. On the bottom left is the IMU that is kept separated from the rest to reduce noise (happened by accident lol) and the STM32 in the middle whose USB DP and DN pins are inline with the USB-C port.
 
-You don't have to use this exact layout but try to have one thats "organized".
+You don't have to use this exact layout but try to have one that's "organized".
 
-Now after defining the layout, go to the `Edge.Cuts` layer and create a rectangle with the toodl on the side:
+Now after defining the layout, go to the `Edge.Cuts` layer and create a rectangle with the tool on the side:
 
-![alt text](image-27.png)
+![alt text](assets/pcb_edge_cuts_tool.png)
 
 This will be the PCB outline.
 
-![alt text](image-29.png)
+![alt text](assets/pcb_board_outline_created.png)
 
-![alt text](image-28.png)
-When I originally creted the baord size to cover all ofthe parts, it had a size of 42.7mm x 47.8 mm so I decided to round it to 40mm x 46mm (optional). After creatign the board outlien, you may need to shuffle some stuff around for it to fit. It's good practice to put the USB-C connector hanging out a bit so that you have space to put the cable like so:
+![alt text](assets/pcb_board_size_measurement.png)
+When I originally created the board size to cover all of the parts, it had a size of 42.7mm x 47.8 mm so I decided to round it to 40mm x 46mm (optional). After creating the board outline, you may need to shuffle some stuff around for it to fit. It's good practice to put the USB-C connector hanging out a bit so that you have space to plug in the cable like so:
 
-![alt text](image-31.png)
+![alt text](assets/pcb_usbc_overhang.png)
 
-After organizing it, look at the board in the 3D viewer to get a good feel for how the components are going to look. Dont worry if the silkscreen/3D models look terrible for now, we will fix that at the end.
+After organizing it, look at the board in the 3D viewer to get a good feel for how the components are going to look. Don't worry if the silkscreen/3D models look terrible for now, we will fix that at the end.
 
-![alt text](image-32.png)
+![alt text](assets/pcb_3d_view_initial.png)
 
-![alt text](image-30.png)
+![alt text](assets/pcb_3d_view_angle.png)
 
 ## Routing
 
-Before we start routing, lets configure the `Design Rules`, these are rules that KiCad has to impose certain restrictions like spacing between components and track width and via size among other things. It is also where we can add default sizes for `vias` (holes that connect tracks between layers) and `tracks` (copper lines that conenct components).
+Before we start routing, let's configure the `Design Rules`. These are rules that KiCad has to impose certain restrictions like spacing between components and track width and via size, among other things. It is also where we can add default sizes for `vias` (holes that connect tracks between layers) and `tracks` (copper lines that connect components).
 
 Go to the `Pre-defined Sizes` section:
-![alt text](image-35.png)
+![alt text](assets/pcb_design_rules_sizes.png)
 
-I am going to add `0.6mm`, `0.4mm` and `0.2mm` track widths. FOr vias I usually go with vias that have `0.6mm Diameter / 0.3mm Hole` and `0.4 Diameter / 0.2mm Hole`.
+I am going to add `0.6mm`, `0.4mm` and `0.2mm` track widths. For vias, I usually go with vias that have `0.6mm Diameter / 0.3mm Hole` and `0.4 Diameter / 0.2mm Hole`.
 
-Now after that we have to edit the `constarints` of the board so that KiCad doesn't throw an error when we try to place them. Go to the `Board Setup` adn then `Constraints`
+Now after that we have to edit the `constraints` of the board so that KiCad doesn't throw an error when we try to place them. Go to the `Board Setup` and then `Constraints`.
 
-![alt text](image-33.png)
+![alt text](assets/pcb_board_setup_constraints.png)
 
-![alt text](image-34.png)
+![alt text](assets/pcb_constraints_settings.png)
 
-Here we are going to change a couple of settigsn due to the size of our board, we need to be able to place smaller vias and traces, so change the `Minimum via diameter` to `0.4mm` and the `Minimum through hole` to `0.2mm`. After that's done, click OK and you can start routing!
+Here we are going to change a couple of settings due to the size of our board. We need to be able to place smaller vias and traces, so change the `Minimum via diameter` to `0.4mm` and the `Minimum through hole` to `0.2mm`. After that's done, click OK and you can start routing!
 
-### How to route
+### How to Route
 
-Basically connect each of the pads to their connections and try to use as little vias as possible. I usually try to route the signal stuff (USB, sensors, microSD, crystals, etc.) first adn then the power.
+Basically connect each of the pads to their connections and try to use as few vias as possible. I usually try to route the signal stuff (USB, sensors, microSD, crystals, etc.) first and then the power.
 
 (Press x to start routing or use the buttons on the side).
 
-Starting with the USB-C data lines, these are what's known as a `diferential pair` so they have to be the same length as they carry a signal that needs to be in sync with the other and they only way for that to happen is if they're the same length. Start conencting them like so:
+Starting with the USB-C data lines, these are what's known as a `differential pair`, so they have to be the same length as they carry a signal that needs to be in sync with the other and the only way for that to happen is if they're the same length. Start connecting them like so:
 
-![alt text](image-37.png)
+![alt text](assets/pcb_usb_differential_start.png)
 
-Then go to `Route > Route DIfferential Pair` 
-![alt text](image-36.png)
+Then go to `Route > Route Differential Pair` 
+![alt text](assets/pcb_route_differential_menu.png)
 and then click on the USB_DP to the far right:
-![alt text](image-38.png)
-Then route it to the STM32. That's basically the only component that needs differential routing. 
+![alt text](assets/pcb_differential_pair_select.png)
+Then route it to the STM32. That's basically the only component that needs differential routing.
 
-Moving on, just some general tips, I personally like to use `0.6mm` or `0.4mm` width for power stuff, mainly anythign that runs either 5V (0.6mm) or 3.3V (0.4mm) and you can change the track width or via size from these drop downs at the top.
+Moving on, just some general tips. I personally like to use `0.6mm` or `0.4mm` width for power stuff, mainly anything that runs either 5V (0.6mm) or 3.3V (0.4mm), and you can change the track width or via size from these drop downs at the top.
 
-![alt text](image-39.png)
+![alt text](assets/pcb_track_width_dropdown.png)
 
-![alt text](image-40.png)
+![alt text](assets/pcb_via_size_dropdown.png)
 
-I also like to do the same as in the layout where I route all of the passive components to their respective IC's before then routing those groups together. eg routing the decoupling capacitors to the IMU before connecting it to the STM32:
+I also like to do the same as in the layout where I route all of the passive components to their respective ICs before then routing those groups together. For example, routing the decoupling capacitors to the IMU before connecting it to the STM32:
 
-![alt text](image-41.png)
+![alt text](assets/pcb_imu_decoupling_routing.png)
 
-you might have to rotate components as well to get a good placement. And for vias, i aim to use max 2 per line like so:
+You might have to rotate components as well to get a good placement. And for vias, I aim to use max 2 per line like so:
 
-![alt text](image-42.png)
+![alt text](assets/pcb_via_example.png)
 
-Don't worry about connecting the GND's for now as we are going to use whats called a `ground plane` (copper area of GND what can conenct to pins/pads.)
+Don't worry about connecting the GNDs for now as we are going to use what's called a `ground plane` (copper area of GND that can connect to pins/pads).
 
-Sometimes for VBUS or another component, you might have via's that can't apss through so I added `0.3mm` track width in the board settigns and it works:
-![alt text](image-43.png)
-![alt text](image-44.png)
+Sometimes for VBUS or another component, you might have vias that can't pass through, so I added `0.3mm` track width in the board settings and it works:
+![alt text](assets/pcb_vbus_narrow_track.png)
+![alt text](assets/pcb_narrow_track_settings.png)
 
-If KiCad doesn't let you place a via on a pad for whatever reason, you can edit the clearance in `Board Setup > Net Classes`, I set it to 0.15 but try not to set it any lower as the minimum for JLCPCB is `0.1mm` : 
+If KiCad doesn't let you place a via on a pad for whatever reason, you can edit the clearance in `Board Setup > Net Classes`. I set it to 0.15 but try not to set it any lower as the minimum for JLCPCB is `0.1mm`: 
 
-![alt text](image-45.png)
+![alt text](assets/pcb_net_classes_clearance.png)
 
-![alt text](image-46.png)
+![alt text](assets/pcb_clearance_setting.png)
 
 
-THis is how I routed the Battery charger:
-![alt text](image-47.png)
+This is how I routed the Battery charger:
+![alt text](assets/pcb_battery_charger_routed.png)
 
 See how I used wider traces for power lines and thinner traces for the other pins. I plan on wiring the I2C lines and INT pins connecting to the BMP580 like so:
 
-![alt text](image-48.png)
+![alt text](assets/pcb_bmp580_i2c_routing.png)
 
-I conencted them to the STM32 through the underside to save space (very useful sometimes), also I hid the silkscreen layer so that I can route easier.
+I connected them to the STM32 through the underside to save space (very useful sometimes). Also, I hid the silkscreen layer so that I can route easier.
 
 Then routed the microSD card:
 
-![alt text](image-49.png)
+![alt text](assets/pcb_microsd_routed.png)
 
-Then Finally I routed the 3.3V line, using 0.6mm tracks and then branching off into smalelr 0.3mm tracks to connect to the diccerent ICs. 
+Then finally I routed the 3.3V line, using 0.6mm tracks and then branching off into smaller 0.3mm tracks to connect to the different ICs.
 
-**REMEMBER THAT THE 3.3V MUST GO THROUGH THE DECOUPLINC CAPACITORS FIRST BEFORE TOUCHING THE PIN LIKE SO:**
-![alt text](image-50.png)
+**REMEMBER THAT THE 3.3V MUST GO THROUGH THE DECOUPLING CAPACITORS FIRST BEFORE REACHING THE PIN LIKE SO:**
+![alt text](assets/pcb_decoupling_cap_order.png)
 
 After routing your board should look something like this:
 
-![alt text](image-51.png)
+![alt text](assets/pcb_routing_complete.png)
 
-Now we are going to add the ground pours, this is so that we dont have to manually connect all of the ground pads and it also helps with interference and noise across the board.
+Now we are going to add the ground pours. This is so that we don't have to manually connect all of the ground pads and it also helps with interference and noise across the board.
 
 Go to the right and click on `Draw filled zones` and click on one corner and a window should pop up:
 
-![alt text](image-52.png)
+![alt text](assets/pcb_ground_pour_dialog.png)
 
-Here you need to select both layers of copper and select the GND net. THen you need to change the clearance and minimum width to both 0.2mm and also change the `Pad connection` to Solid, this allows the ground plane connect to the pads better. Press OK and start creating the zone like so:
+Here you need to select both layers of copper and select the GND net. Then you need to change the clearance and minimum width to both 0.2mm and also change the `Pad connection` to Solid. This allows the ground plane to connect to the pads better. Press OK and start creating the zone like so:
 
-![alt text](image-53.png)
+![alt text](assets/pcb_ground_pour_drawing.png)
 
 You want it to look something like this:
 
-![alt text](image-54.png)
+![alt text](assets/pcb_ground_pour_outline.png)
 
-then press `b` on your keyboard and it should fill the zone aautomatically (`Ctrl-b` to clear them).
+Then press `b` on your keyboard and it should fill the zone automatically (`Ctrl-b` to clear them).
 
-![alt text](image-55.png)
+![alt text](assets/pcb_ground_pour_filled.png)
 
-Now you should check if you have any `ratlines` (blue lines that signal unconnected pins) and fix them, in my case I forgot to conenct the servo's so I will do that now.
+Now you should check if you have any `ratlines` (blue lines that signal unconnected pins) and fix them. In my case, I forgot to connect the servos so I will do that now.
 
-Now you got to check if there are any holes that don't have any ground plane and add a `stitching via` (via that connects ground/power planes to cover everything) like so:
+Now you need to check if there are any holes that don't have any ground plane and add a `stitching via` (via that connects ground/power planes to cover everything) like so:
 
-![alt text](image-56.png)
+![alt text](assets/pcb_stitching_via_location.png)
 
-![alt text](image-57.png)
+![alt text](assets/pcb_stitching_via_placed.png)
 
-You also might see a ratline connecting a piece of the ground plane, this usually means that you need a stitching via in that area.
+You also might see a ratline connecting a piece of the ground plane. This usually means that you need a stitching via in that area.
 
-![alt text](image-58.png)
+![alt text](assets/pcb_ground_plane_disconnected.png)
 
-As you can see, the ground plane connectint to Pin 18 isn't connected to the rest of the ground plane so we need to add a stiching via there like so:
+As you can see, the ground plane connecting to Pin 18 isn't connected to the rest of the ground plane, so we need to add a stitching via there like so:
 
-![alt text](image-59.png)
+![alt text](assets/pcb_ground_plane_connected.png)
 
-**SUPER IMPROTANT FOR ANY COMPONENTS THAT HAVE A THERMAL PAD, CONNECT IT TO GND WITH A STITCHING VIA (depends on the chip but check the datasheet to be sure):**
+**SUPER IMPORTANT: FOR ANY COMPONENTS THAT HAVE A THERMAL PAD, CONNECT IT TO GND WITH A STITCHING VIA (depends on the chip but check the datasheet to be sure):**
 
-![alt text](image-85.png)
-(You can edit the properties by right cligking the pad and editing the `Net name`)
+![alt text](assets/pcb_thermal_pad_via.png)
+(You can edit the properties by right clicking the pad and editing the `Net name`.)
 
-![alt text](image-86.png)
+![alt text](assets/pcb_thermal_pad_net_edit.png)
+
+Also Notice how I didn't connect the grounds together and connected both PGND and GND, that was made automatically by KiCad when I connected the EP Pin of the battery charger:
+
+![alt text](assets/pcb_pgnd_gnd_connection.png)
 
 After connecting everything we are going to run `Check DRC` which basically checks the design rules and makes sure our board is ready for production.
 
-![alt text](image-60.png)
+![alt text](assets/pcb_drc_button.png)
 
 
 Then click on `Run DRC`:
 
-![alt text](image-61.png)
+![alt text](assets/pcb_drc_dialog.png)
 
-![alt text](image-62.png)
+![alt text](assets/pcb_drc_running.png)
 
-unselect the warnings and look at the errors. If there are any errors about unconnected pads then you should probably go back and make sure that everythign is connected. There are some errors but those are from the parts that we imported like the USB-C and microSD card that KiCad is complaining about the holes:
+Unselect the warnings and look at the errors. If there are any errors about unconnected pads then you should probably go back and make sure that everything is connected. There are some errors but those are from the parts that we imported like the USB-C and microSD card that KiCad is complaining about the holes:
 
-![alt text](image-63.png)
+![alt text](assets/pcb_drc_errors.png)
 
 Those errors are safe to ignore but any others you should probably fix.
 
-And with that out of the way congrats, you've finished the PCB!
+And with that out of the way, congrats! You've finished the PCB!
 
 Now all that's left is to add silkscreen and make it look pretty and then get the files ready so you can order it on JLCPCB (or any other board manufacturer).
 
@@ -1046,98 +1052,98 @@ Now all that's left is to add silkscreen and make it look pretty and then get th
 
 Now I'm going to fix the silkscreen component names so that they look better (and a bit smaller). Go to `Edit > Text & Graphics Properties`
 
-![alt text](image-64.png)
+![alt text](assets/pcb_text_graphics_menu.png)
 
 This window should show up:
-![alt text](image-65.png)
+![alt text](assets/pcb_text_graphics_dialog.png)
 
 Here you're going to select `Reference designators` as this will select all of the designators (R1, C1, etc...) on the board so we can edit their properties. Then in the action I am going to change the font and the size:
 
-![alt text](image-66.png)
+![alt text](assets/pcb_text_graphics_settings.png)
 
 You can set these values to whatever you want but I am going to go with this. Then click `Apply` to test it out and `Apply and Close` when you are done.
 
 Now all I'm going to do is organize the references like this:
 
-![alt text](image-67.png)
+![alt text](assets/pcb_silkscreen_before.png)
 (before)
-![alt text](image-68.png)
+![alt text](assets/pcb_silkscreen_after.png)
 (after)
 
-This is completely otional but look at how neat it looks now with all the desiignators/references properly sized and placed:
+This is completely optional but look at how neat it looks now with all the designators/references properly sized and placed:
 
-![alt text](image-69.png)
+![alt text](assets/pcb_silkscreen_organized.png)
 
-I Even added text to the battery conenctor to show which side is + and -.
+I even added text to the battery connector to show which side is + and -.
 
 If you want to add the 3D models to render then just go to properties and find a 3D model that works for you:
 
-![alt text](image-70.png)
+![alt text](assets/pcb_3d_model_properties.png)
 
-But I'm going to skip this as its not nessecary.
+But I'm going to skip this as it's not necessary.
 
-aaaaand youre done!
+And you're done!
 
-![alt text](image-71.png)
+![alt text](assets/pcb_final_complete.png)
 
 # Exporting Production Files
 
-To get your project ready for submission we need to export the production files (gerbers etc...), these files tell JLCPCB or whatever board manufacture how to make the board and the components to place.
+To get your project ready for submission, we need to export the production files (gerbers, etc.). These files tell JLCPCB or whatever board manufacturer how to make the board and which components to place.
 
-Thankfully there's a plugin thats KiCad has to make this export easy.
+Thankfully, there's a plugin that KiCad has to make this export easy.
 
-![alt text](image-72.png)
+![alt text](assets/kicad_plugin_manager.png)
 
-GO to the `Plugin and Content Manager` and search for `jlc`.
+Go to the `Plugin and Content Manager` and search for `jlc`.
 
 You should see this plugin show up:
 
-![alt text](image-73.png)
+![alt text](assets/jlcpcb_plugin_install.png)
 
-Press the install button and then `Apply Pending Changes` to install it. FInally go back to your PCB screen and you should see this icon:
+Press the install button and then `Apply Pending Changes` to install it. Finally, go back to your PCB screen and you should see this icon:
 
-![alt text](image-74.png)
+![alt text](assets/jlcpcb_plugin_icon.png)
 
 A window should open and click `Generate`:
 
-![alt text](image-75.png)
+![alt text](assets/jlcpcb_plugin_generate.png)
 
-It Should create this directory in the `hardware` folder:
+It should create this directory in the `hardware` folder:
 
-![alt text](image-76.png)
+![alt text](assets/jlcpcb_output_directory.png)
 
 But I'm going to copy it out of that folder and move it to the root so that reviewing is much easier.
 
-![alt text](image-77.png)
+![alt text](assets/jlcpcb_production_folder.png)
 
-Now open [JLCPCB](https://jlcpcb.com/) and upload the gerbers (ZIP file that has the name of the KiCad proejct) in the `production` folder to see how much it costs.
+Now open [JLCPCB](https://jlcpcb.com/) and upload the gerbers (ZIP file that has the name of the KiCad project) in the `production` folder to see how much it costs.
 
-![alt text](image-78.png)
+![alt text](assets/jlcpcb_upload_gerbers.png)
 
 Select `PCBA` and make sure that it is only one side and that you order 2 and not 5 boards assembled to minimize cost:
 
-![alt text](image-79.png)
+![alt text](assets/jlcpcb_pcba_settings.png)
 
-Continue and upload the `BOM and CPL` (BOM = bom.csv, basically the components and their ID, CPL = positions.csv, where exactly the components are placed):
+Continue and upload the `BOM and CPL` (BOM = bom.csv, basically the components and their ID; CPL = positions.csv, where exactly the components are placed):
 
-![alt text](image-80.png)
+![alt text](assets/jlcpcb_bom_cpl_upload.png)
 
-depending on the sensors you use, you may have to use standard PCBA:
+Depending on the sensors you use, you may have to use standard PCBA:
 
-![alt text](image-81.png)
+![alt text](assets/jlcpcb_standard_pcba.png)
 
-If there are any components that have shortfall then you need to order them apart and add them to your library before ordering:
+If there are any components that have shortfall, then you need to order them separately and add them to your library before ordering:
 
-![alt text](image-82.png)
+![alt text](assets/jlcpcb_component_shortfall.png)
 
-![alt text](image-83.png)
+![alt text](assets/jlcpcb_parts_list.png)
 
-Continue without palcing the parts for now to get the general cost fo the board:
+Continue without placing the parts for now to get the general cost of the board:
 
-![alt text](image-84.png)
+![alt text](assets/jlcpcb_final_cost.png)
 
-**CONGRATS YOU'VE MADE YOUR FIRST FLIGHT CONTROLLER**
+**CONGRATS! YOU'VE MADE YOUR FIRST FLIGHT CONTROLLER!**
 
 Feel free to modify this board to include more sensors, servos, peripherals, microSD cards (lmao), literally anything you can put your mind to.
 
-If you have any questions feel free to DM me on slack @NotARoomba and if you want to checkout my other projects heres my [GitHub](https://github.com/notaroomba).
+If you have any questions feel free to DM me on Slack (@NotARoomba) and if you want to check out my other projects, here's my [GitHub](https://github.com/notaroomba) / [Website](https://notaroomba.dev).

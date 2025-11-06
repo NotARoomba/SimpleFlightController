@@ -505,168 +505,6 @@
 			)
 			(embedded_fonts no)
 		)
-		(symbol "Device:L"
-			(pin_numbers
-				(hide yes)
-			)
-			(pin_names
-				(offset 1.016)
-				(hide yes)
-			)
-			(exclude_from_sim no)
-			(in_bom yes)
-			(on_board yes)
-			(property "Reference" "L"
-				(at -1.27 0 90)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Value" "L"
-				(at 1.905 0 90)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Footprint" ""
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Datasheet" "~"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Description" "Inductor"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "ki_keywords" "inductor choke coil reactor magnetic"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "ki_fp_filters" "Choke_* *Coil* Inductor_* L_*"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(symbol "L_0_1"
-				(arc
-					(start 0 2.54)
-					(mid 0.6323 1.905)
-					(end 0 1.27)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(arc
-					(start 0 1.27)
-					(mid 0.6323 0.635)
-					(end 0 0)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(arc
-					(start 0 0)
-					(mid 0.6323 -0.635)
-					(end 0 -1.27)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(arc
-					(start 0 -1.27)
-					(mid 0.6323 -1.905)
-					(end 0 -2.54)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-			)
-			(symbol "L_1_1"
-				(pin passive line
-					(at 0 3.81 270)
-					(length 1.27)
-					(name "1"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "1"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin passive line
-					(at 0 -3.81 90)
-					(length 1.27)
-					(name "2"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "2"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-			)
-			(embedded_fonts no)
-		)
 		(symbol "Device:LED"
 			(pin_numbers
 				(hide yes)
@@ -3496,6 +3334,150 @@
 			)
 			(embedded_fonts no)
 		)
+		(symbol "lcsc:DFE252012F-1R0M=P2"
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(property "Reference" "L"
+				(at 0 5.08 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "DFE252012F-1R0M=P2"
+				(at 0 -5.08 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" "lcsc:L2520"
+				(at 0 -7.62 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Datasheet" "https://lcsc.com/product-detail/Inductors-SMD_Murata-Electronics-DFE252012F-1R0M-P2_C435392.html"
+				(at 0 -10.16 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Description" ""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "LCSC Part" "C435392"
+				(at 0 -12.7 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(symbol "DFE252012F-1R0M=P2_0_1"
+				(arc
+					(start -2.27 -0.02)
+					(mid -3.28 -0.9427)
+					(end -4.29 -0.02)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(arc
+					(start -0.11 -0.02)
+					(mid -1.12 -0.9471)
+					(end -2.13 -0.02)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(arc
+					(start 2.04 -0.02)
+					(mid 1.03 -0.9471)
+					(end 0.02 -0.02)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(arc
+					(start 4.23 -0.02)
+					(mid 3.22 -0.9471)
+					(end 2.21 -0.02)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(pin unspecified line
+					(at -5.08 0 0)
+					(length 0.762)
+					(name "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin unspecified line
+					(at 5.08 0 180)
+					(length 0.762)
+					(name "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
 		(symbol "lcsc:FCM1608KF-601T03"
 			(exclude_from_sim no)
 			(in_bom yes)
@@ -5525,6 +5507,294 @@
 			)
 			(embedded_fonts no)
 		)
+		(symbol "lcsc:XFL4020-152MEC"
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(property "Reference" "L"
+				(at 0 5.08 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "XFL4020-152MEC"
+				(at 0 -5.08 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" "lcsc:IND-SMD_L4.0-W4.0-A"
+				(at 0 -7.62 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Datasheet" ""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Description" ""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "LCSC Part" "C3033018"
+				(at 0 -10.16 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(symbol "XFL4020-152MEC_0_1"
+				(arc
+					(start -4.06 -0.01)
+					(mid -2.83 0.99)
+					(end -2.03 0.01)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(arc
+					(start -2.03 -0.01)
+					(mid -0.8 0.99)
+					(end 0 0.01)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(arc
+					(start 0 -0.01)
+					(mid 1.23 0.99)
+					(end 2.03 0.01)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(arc
+					(start 2.03 -0.01)
+					(mid 3.26 0.99)
+					(end 4.06 0.01)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(pin unspecified line
+					(at -5.08 0 0)
+					(length 1.016)
+					(name "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin unspecified line
+					(at 5.08 0 180)
+					(length 1.016)
+					(name "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
+		(symbol "lcsc:YHNR3015-5R6M"
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(property "Reference" "L"
+				(at 0 5.08 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "YHNR3015-5R6M"
+				(at 0 -5.08 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" "lcsc:IND-SMD_L3.0-W3.0"
+				(at 0 -7.62 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Datasheet" ""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Description" ""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "LCSC Part" "C18236327"
+				(at 0 -10.16 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(symbol "YHNR3015-5R6M_0_1"
+				(arc
+					(start -4.06 -0.01)
+					(mid -2.83 0.99)
+					(end -2.03 0.01)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(arc
+					(start -2.03 -0.01)
+					(mid -0.8 0.99)
+					(end 0 0.01)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(arc
+					(start 0 -0.01)
+					(mid 1.23 0.99)
+					(end 2.03 0.01)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(arc
+					(start 2.03 -0.01)
+					(mid 3.26 0.99)
+					(end 4.06 0.01)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(pin unspecified line
+					(at -5.08 0 0)
+					(length 1.016)
+					(name "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin unspecified line
+					(at 5.08 0 180)
+					(length 1.016)
+					(name "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
 		(symbol "power:+3.3V"
 			(power)
 			(pin_numbers
@@ -6488,6 +6758,12 @@
 		(uuid "4a5d21fd-5336-42b2-99f6-ad3e33ae9b3f")
 	)
 	(junction
+		(at 64.77 167.64)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "4b7ad654-e4bd-4185-b655-ae4f3ae5913f")
+	)
+	(junction
 		(at 99.06 264.16)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -6978,12 +7254,12 @@
 		(uuid "b9c44be7-79d2-4d48-8766-0e6d85cba7fb")
 	)
 	(no_connect
-		(at 64.77 167.64)
-		(uuid "cb0255cf-a3b9-4782-a2ac-459f11158ecb")
-	)
-	(no_connect
 		(at 226.06 180.34)
 		(uuid "cce215cd-d968-43bb-b917-6b344155ffca")
+	)
+	(no_connect
+		(at 226.06 154.94)
+		(uuid "cd011302-7bbe-4f66-bc4f-96204d4f2c03")
 	)
 	(no_connect
 		(at 381 217.17)
@@ -6996,6 +7272,10 @@
 	(no_connect
 		(at 281.94 212.09)
 		(uuid "dc182df0-01b0-4f53-8d8a-898f1cccf087")
+	)
+	(no_connect
+		(at 226.06 157.48)
+		(uuid "e03a800b-ca02-4e3a-8bc9-2955d1df0c9b")
 	)
 	(no_connect
 		(at 185.42 157.48)
@@ -7161,16 +7441,6 @@
 	)
 	(wire
 		(pts
-			(xy 240.03 157.48) (xy 226.06 157.48)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "0bf5bf17-1a57-4b27-a358-bc1f6e2db39b")
-	)
-	(wire
-		(pts
 			(xy 158.75 39.37) (xy 154.94 39.37)
 		)
 		(stroke
@@ -7248,16 +7518,6 @@
 			(type default)
 		)
 		(uuid "0f48cc84-c4a0-4fe6-acf0-e56b0dd6b480")
-	)
-	(wire
-		(pts
-			(xy 48.26 132.08) (xy 53.34 132.08)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "0fd35f02-61ac-422f-ae2e-a08765b604a5")
 	)
 	(wire
 		(pts
@@ -7508,16 +7768,6 @@
 			(type default)
 		)
 		(uuid "1f86b803-48a9-4a73-98e6-02ae32b2d2f9")
-	)
-	(wire
-		(pts
-			(xy 248.92 260.35) (xy 255.27 260.35)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "1f8e6c87-8ff5-4d03-8df6-700c99ab9fc8")
 	)
 	(wire
 		(pts
@@ -8384,6 +8634,16 @@
 	)
 	(wire
 		(pts
+			(xy 251.46 260.35) (xy 255.27 260.35)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "60c84150-f270-44a5-bd08-4b9c081d6c76")
+	)
+	(wire
+		(pts
 			(xy 76.2 63.5) (xy 77.47 63.5)
 		)
 		(stroke
@@ -8421,6 +8681,16 @@
 			(type default)
 		)
 		(uuid "630ec334-d560-44f6-a87a-12b165b2bf8b")
+	)
+	(wire
+		(pts
+			(xy 48.26 132.08) (xy 50.8 132.08)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "63b30ae0-20f6-4e90-acf5-6b2c826ee885")
 	)
 	(wire
 		(pts
@@ -8805,7 +9075,7 @@
 	)
 	(wire
 		(pts
-			(xy 63.5 257.81) (xy 63.5 265.43)
+			(xy 63.5 257.81) (xy 63.5 262.89)
 		)
 		(stroke
 			(width 0)
@@ -9126,16 +9396,6 @@
 			(type default)
 		)
 		(uuid "94dc2c03-3ea9-4ba6-b6a9-87b547a57211")
-	)
-	(wire
-		(pts
-			(xy 240.03 154.94) (xy 226.06 154.94)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "953df8b0-6434-4da3-b7a3-5384546f24c1")
 	)
 	(wire
 		(pts
@@ -9516,6 +9776,16 @@
 			(type default)
 		)
 		(uuid "b1dcfd0e-a547-4627-b2ba-a8402980ee69")
+	)
+	(wire
+		(pts
+			(xy 62.23 167.64) (xy 64.77 167.64)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "b248c23f-4216-452c-a322-2335aa669f2f")
 	)
 	(wire
 		(pts
@@ -9958,6 +10228,16 @@
 			(type default)
 		)
 		(uuid "c8338c59-9d40-44a0-a813-b819c35c27cf")
+	)
+	(wire
+		(pts
+			(xy 64.77 167.64) (xy 67.31 167.64)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "c84fa08e-37da-40d8-acda-e7f5f4df6c33")
 	)
 	(wire
 		(pts
@@ -10971,16 +11251,6 @@
 		)
 		(uuid "1f1089ae-c82a-4b65-bcb2-b588505d8c9c")
 	)
-	(label "ICM_INT2"
-		(at 240.03 157.48 180)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right bottom)
-		)
-		(uuid "245bce1f-6760-495d-9254-b2e2d1fa0feb")
-	)
 	(label "GND"
 		(at 349.25 107.95 180)
 		(effects
@@ -11471,16 +11741,6 @@
 		)
 		(uuid "d11d83d2-b823-46a4-854b-167b1a5ef862")
 	)
-	(label "ICM_INT1"
-		(at 240.03 154.94 180)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right bottom)
-		)
-		(uuid "d19a7c65-978a-446a-a826-3d24257c4410")
-	)
 	(label "SD_DAT1"
 		(at 171.45 177.8 0)
 		(effects
@@ -11664,7 +11924,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Capacitor_SMD:C_0402_1005Metric"
 			(at 233.9848 71.12 0)
 			(effects
 				(font
@@ -11733,7 +11993,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Capacitor_SMD:C_0402_1005Metric"
 			(at 50.4952 163.83 0)
 			(effects
 				(font
@@ -11869,7 +12129,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Capacitor_SMD:C_0201_0603Metric"
 			(at 231.4448 41.91 0)
 			(effects
 				(font
@@ -12003,7 +12263,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Capacitor_SMD:C_0201_0603Metric"
 			(at 135.5852 46.99 0)
 			(effects
 				(font
@@ -12073,7 +12333,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Capacitor_SMD:C_0201_0603Metric"
 			(at 155.2448 73.66 0)
 			(effects
 				(font
@@ -12110,75 +12370,6 @@
 			(project "SimpleFlightController"
 				(path "/d573b72c-4c8d-44f5-9723-b928bce1fadd"
 					(reference "C36")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Device:L")
-		(at 63.5 269.24 180)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "060544fb-ea7c-44c6-a46e-66ea76e19fa9")
-		(property "Reference" "L2"
-			(at 58.674 267.97 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-		)
-		(property "Value" "1uH"
-			(at 58.674 270.51 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-		)
-		(property "Footprint" ""
-			(at 63.5 269.24 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 63.5 269.24 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Inductor"
-			(at 63.5 269.24 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "f73d0a47-3769-4354-a22f-631484f34a0a")
-		)
-		(pin "2"
-			(uuid "39caaf07-fe8e-428d-b573-91daea84a168")
-		)
-		(instances
-			(project "SimpleFlightController"
-				(path "/d573b72c-4c8d-44f5-9723-b928bce1fadd"
-					(reference "L2")
 					(unit 1)
 				)
 			)
@@ -12276,7 +12467,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Capacitor_SMD:C_0402_1005Metric"
 			(at 256.2352 267.97 0)
 			(effects
 				(font
@@ -12343,7 +12534,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_SMD:R_0201_0603Metric"
 			(at 297.688 143.51 90)
 			(effects
 				(font
@@ -12789,7 +12980,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Capacitor_SMD:C_0402_1005Metric"
 			(at 266.3952 267.97 0)
 			(effects
 				(font
@@ -12859,7 +13050,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Capacitor_SMD:C_0201_0603Metric"
 			(at 354.0252 111.76 0)
 			(effects
 				(font
@@ -12994,7 +13185,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Capacitor_SMD:C_0201_0603Metric"
 			(at 265.1252 227.33 0)
 			(effects
 				(font
@@ -13393,7 +13584,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Capacitor_SMD:C_0201_0603Metric"
 			(at 106.68 251.7648 0)
 			(effects
 				(font
@@ -13462,7 +13653,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Capacitor_SMD:C_0402_1005Metric"
 			(at 115.2652 157.48 0)
 			(effects
 				(font
@@ -13532,7 +13723,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Capacitor_SMD:C_0201_0603Metric"
 			(at 181.9148 207.01 0)
 			(effects
 				(font
@@ -13599,7 +13790,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_SMD:R_0201_0603Metric"
 			(at 307.848 143.51 90)
 			(effects
 				(font
@@ -13669,7 +13860,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Capacitor_SMD:C_0201_0603Metric"
 			(at 239.0648 41.91 0)
 			(effects
 				(font
@@ -13736,7 +13927,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_SMD:R_0201_0603Metric"
 			(at 318.008 143.51 90)
 			(effects
 				(font
@@ -13909,6 +14100,84 @@
 		)
 	)
 	(symbol
+		(lib_id "lcsc:XFL4020-152MEC")
+		(at 63.5 267.97 90)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "513b32aa-7b8e-4749-9c00-94dc4f14be23")
+		(property "Reference" "L6"
+			(at 64.77 266.6999 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Value" "XFL4020-152MEC"
+			(at 56.134 274.574 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Footprint" "lcsc:IND-SMD_L4.0-W4.0-A"
+			(at 71.12 267.97 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 63.5 267.97 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 63.5 267.97 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC Part" "C3033018"
+			(at 73.66 267.97 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "2"
+			(uuid "f21e86f0-8537-465f-b59b-2255a72c0b88")
+		)
+		(pin "1"
+			(uuid "ae1f1ebb-c9e6-4ab3-acb1-8c4f58d4e24a")
+		)
+		(instances
+			(project ""
+				(path "/d573b72c-4c8d-44f5-9723-b928bce1fadd"
+					(reference "L6")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "Device:C")
 		(at 217.17 38.1 0)
 		(mirror y)
@@ -13936,7 +14205,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Capacitor_SMD:C_0201_0603Metric"
 			(at 216.2048 41.91 0)
 			(effects
 				(font
@@ -14005,7 +14274,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric"
 			(at 89.8652 134.62 0)
 			(effects
 				(font
@@ -14074,7 +14343,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Capacitor_SMD:C_0201_0603Metric"
 			(at 141.9352 73.66 0)
 			(effects
 				(font
@@ -14141,7 +14410,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_SMD:R_0201_0603Metric"
 			(at 312.928 143.51 90)
 			(effects
 				(font
@@ -14211,7 +14480,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric"
 			(at 197.1548 265.43 0)
 			(effects
 				(font
@@ -14280,7 +14549,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Connector_PinHeader_2.54mm:PinHeader_1x03_P2.54mm_Vertical"
 			(at 367.03 38.1 0)
 			(effects
 				(font
@@ -14353,7 +14622,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Capacitor_SMD:C_0201_0603Metric"
 			(at 208.5848 41.91 0)
 			(effects
 				(font
@@ -14834,7 +15103,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_SMD:R_0201_0603Metric"
 			(at 302.768 143.51 90)
 			(effects
 				(font
@@ -14877,6 +15146,82 @@
 		)
 	)
 	(symbol
+		(lib_id "lcsc:DFE252012F-1R0M=P2")
+		(at 55.88 132.08 180)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "746886c3-267f-460d-b87e-ff6790a0833f")
+		(property "Reference" "L5"
+			(at 55.88 125.73 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "DFE252012F-1R0M=P2"
+			(at 49.784 128.27 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "lcsc:L2520"
+			(at 55.88 124.46 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://lcsc.com/product-detail/Inductors-SMD_Murata-Electronics-DFE252012F-1R0M-P2_C435392.html"
+			(at 55.88 121.92 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 55.88 132.08 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC Part" "C435392"
+			(at 55.88 119.38 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "2"
+			(uuid "6e3258de-14e7-492d-bef7-816c5c8bd5c3")
+		)
+		(pin "1"
+			(uuid "ab4f875d-f3ab-460f-af9e-76eb83cd66de")
+		)
+		(instances
+			(project ""
+				(path "/d573b72c-4c8d-44f5-9723-b928bce1fadd"
+					(reference "L5")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "Device:R")
 		(at 234.95 271.78 180)
 		(unit 1)
@@ -14901,7 +15246,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_SMD:R_0402_1005Metric"
 			(at 236.728 271.78 90)
 			(effects
 				(font
@@ -15166,7 +15511,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Capacitor_SMD:C_0201_0603Metric"
 			(at 223.8248 41.91 0)
 			(effects
 				(font
@@ -15366,7 +15711,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Connector_PinHeader_2.54mm:PinHeader_1x03_P2.54mm_Vertical"
 			(at 367.03 54.61 0)
 			(effects
 				(font
@@ -15439,7 +15784,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Capacitor_SMD:C_0402_1005Metric"
 			(at 213.6648 71.12 0)
 			(effects
 				(font
@@ -15574,7 +15919,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Capacitor_SMD:C_0402_1005Metric"
 			(at 227.6348 71.12 0)
 			(effects
 				(font
@@ -15644,7 +15989,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Capacitor_SMD:C_0201_0603Metric"
 			(at 232.1052 260.35 0)
 			(effects
 				(font
@@ -15892,7 +16237,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Capacitor_SMD:C_0201_0603Metric"
 			(at 302.26 44.1452 0)
 			(effects
 				(font
@@ -16107,7 +16452,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_SMD:R_0402_1005Metric"
 			(at 236.728 264.16 90)
 			(effects
 				(font
@@ -16144,75 +16489,6 @@
 			(project "SimpleFlightController"
 				(path "/d573b72c-4c8d-44f5-9723-b928bce1fadd"
 					(reference "R14")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Device:L")
-		(at 245.11 260.35 90)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "918f8683-6f5b-49b2-9e1e-76a5faadddc1")
-		(property "Reference" "L3"
-			(at 243.459 255.905 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-		)
-		(property "Value" "5.6uH"
-			(at 243.459 258.445 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-		)
-		(property "Footprint" ""
-			(at 245.11 260.35 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 245.11 260.35 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Inductor"
-			(at 245.11 260.35 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "20fe5893-297c-4763-b376-af1a4f9d70e0")
-		)
-		(pin "2"
-			(uuid "013a24ed-41ba-44b2-9710-ef400d0f6ef0")
-		)
-		(instances
-			(project "SimpleFlightController"
-				(path "/d573b72c-4c8d-44f5-9723-b928bce1fadd"
-					(reference "L3")
 					(unit 1)
 				)
 			)
@@ -16438,7 +16714,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_SMD:R_0201_0603Metric"
 			(at 121.158 153.67 90)
 			(effects
 				(font
@@ -16505,7 +16781,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_SMD:R_0201_0603Metric"
 			(at 39.878 180.34 90)
 			(effects
 				(font
@@ -16708,7 +16984,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_SMD:R_0201_0603Metric"
 			(at 101.6 157.988 90)
 			(effects
 				(font
@@ -16842,7 +17118,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric"
 			(at 79.7052 127 0)
 			(effects
 				(font
@@ -16885,6 +17161,82 @@
 		)
 	)
 	(symbol
+		(lib_id "lcsc:YHNR3015-5R6M")
+		(at 246.38 260.35 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "a8e48c87-28e2-4ac9-842b-7f4ecc9c9232")
+		(property "Reference" "L7"
+			(at 246.38 254 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "YHNR3015-5R6M"
+			(at 251.206 257.556 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "lcsc:IND-SMD_L3.0-W3.0"
+			(at 246.38 267.97 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 246.38 260.35 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 246.38 260.35 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC Part" "C18236327"
+			(at 246.38 270.51 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "f8327379-df87-407d-8005-8efba9410c19")
+		)
+		(pin "2"
+			(uuid "1baa8537-53c4-49b2-bddf-8afc9f12d46b")
+		)
+		(instances
+			(project ""
+				(path "/d573b72c-4c8d-44f5-9723-b928bce1fadd"
+					(reference "L7")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "Device:R")
 		(at 321.31 143.51 180)
 		(unit 1)
@@ -16909,7 +17261,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_SMD:R_0201_0603Metric"
 			(at 323.088 143.51 90)
 			(effects
 				(font
@@ -17043,7 +17395,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Capacitor_SMD:C_0402_1005Metric"
 			(at 56.8452 143.51 0)
 			(effects
 				(font
@@ -17175,7 +17527,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_SMD:R_0201_0603Metric"
 			(at 51.308 180.34 90)
 			(effects
 				(font
@@ -17372,7 +17724,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_SMD:R_0201_0603Metric"
 			(at 307.848 67.31 90)
 			(effects
 				(font
@@ -17442,7 +17794,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Capacitor_SMD:C_0201_0603Metric"
 			(at 399.7452 232.41 0)
 			(effects
 				(font
@@ -17511,7 +17863,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_SMD:R_0201_0603Metric"
 			(at 54.102 245.11 90)
 			(effects
 				(font
@@ -17579,7 +17931,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_SMD:R_0201_0603Metric"
 			(at 58.42 177.038 90)
 			(effects
 				(font
@@ -18671,7 +19023,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_SMD:R_0201_0603Metric"
 			(at 113.538 139.7 90)
 			(effects
 				(font
@@ -18868,7 +19220,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_SMD:R_0201_0603Metric"
 			(at 131.318 163.83 90)
 			(effects
 				(font
@@ -19056,6 +19408,71 @@
 		)
 	)
 	(symbol
+		(lib_id "power:GNDA")
+		(at 67.31 167.64 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "cbfb5a5c-35bb-4f8c-b50e-3f936fed07d9")
+		(property "Reference" "#PWR051"
+			(at 67.31 173.99 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 67.31 171.45 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 67.31 167.64 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 67.31 167.64 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GNDA\" , analog ground"
+			(at 67.31 167.64 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "6ebb7c56-3160-4e41-ae7f-e874228091c9")
+		)
+		(instances
+			(project "SimpleFlightController"
+				(path "/d573b72c-4c8d-44f5-9723-b928bce1fadd"
+					(reference "#PWR051")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "Device:LED")
 		(at 67.31 175.26 0)
 		(unit 1)
@@ -19065,7 +19482,7 @@
 		(dnp no)
 		(uuid "cdd838ee-d1a0-426c-bac4-2a16894d7ec6")
 		(property "Reference" "D1"
-			(at 66.294 172.72 0)
+			(at 68.834 174.244 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -19082,7 +19499,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "LED_SMD:LED_0402_1005Metric"
 			(at 67.31 175.26 0)
 			(effects
 				(font
@@ -19295,7 +19712,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Capacitor_SMD:C_0201_0603Metric"
 			(at 303.8348 111.76 0)
 			(effects
 				(font
@@ -19338,6 +19755,71 @@
 		)
 	)
 	(symbol
+		(lib_id "power:GNDA")
+		(at 62.23 167.64 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "d6f36487-e43b-4c7a-8da7-f41c765871c7")
+		(property "Reference" "#PWR013"
+			(at 62.23 173.99 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "PGND"
+			(at 62.23 171.45 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 62.23 167.64 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 62.23 167.64 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GNDA\" , analog ground"
+			(at 62.23 167.64 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "f4c54396-3a7a-4507-b943-a98a3e3bfe2d")
+		)
+		(instances
+			(project "SimpleFlightController"
+				(path "/d573b72c-4c8d-44f5-9723-b928bce1fadd"
+					(reference "#PWR013")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "Device:R")
 		(at 72.39 48.26 90)
 		(unit 1)
@@ -19362,7 +19844,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_SMD:R_0201_0603Metric"
 			(at 72.39 50.038 90)
 			(effects
 				(font
@@ -19494,7 +19976,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_SMD:R_0201_0603Metric"
 			(at 121.158 163.83 90)
 			(effects
 				(font
@@ -19751,74 +20233,6 @@
 		)
 	)
 	(symbol
-		(lib_id "Device:L")
-		(at 57.15 132.08 90)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "e6882f3b-0f67-4c6d-bf86-a421275a185d")
-		(property "Reference" "L1"
-			(at 57.15 127 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "1uH"
-			(at 57.15 129.54 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 57.15 132.08 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 57.15 132.08 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Inductor"
-			(at 57.15 132.08 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "ba3874bb-f8db-45e6-a3fb-1af19b970521")
-		)
-		(pin "2"
-			(uuid "4591508f-d013-4dd4-a710-b0a220763f59")
-		)
-		(instances
-			(project ""
-				(path "/d573b72c-4c8d-44f5-9723-b928bce1fadd"
-					(reference "L1")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "lcsc:TS-1088-AR02016")
 		(at 294.64 63.5 0)
 		(unit 1)
@@ -19922,7 +20336,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Capacitor_SMD:C_0201_0603Metric"
 			(at 98.7552 143.51 0)
 			(effects
 				(font
@@ -19989,7 +20403,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_SMD:R_0201_0603Metric"
 			(at 44.958 180.34 90)
 			(effects
 				(font
@@ -20056,7 +20470,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_SMD:R_0201_0603Metric"
 			(at 72.39 65.278 90)
 			(effects
 				(font
@@ -20126,7 +20540,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Capacitor_SMD:C_0402_1005Metric"
 			(at 220.0148 71.12 0)
 			(effects
 				(font
@@ -20464,7 +20878,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Capacitor_SMD:C_0201_0603Metric"
 			(at 167.3352 41.91 0)
 			(effects
 				(font
@@ -20531,7 +20945,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_SMD:R_0201_0603Metric"
 			(at 119.888 254 90)
 			(effects
 				(font

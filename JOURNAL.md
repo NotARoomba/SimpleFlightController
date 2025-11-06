@@ -22,3 +22,10 @@ I finally finished the schematic and tutorial up to that part. I had to read thr
 ![image](https://blueprint.hackclub.com/user-attachments/blobs/proxy/eyJfcmFpbHMiOnsiZGF0YSI6Nzg0NiwicHVyIjoiYmxvYl9pZCJ9fQ==--cfef447d6253ea84dfe6186de617f9d5c2ffcd22/image.png)
   
 
+## 11/5/2025 - Finished the guide  
+
+I explained how to add footprints, how to place components on the PCB, and also how to route. I took a lot of images and here's how the board turned out:
+
+![image](https://blueprint.hackclub.com/user-attachments/blobs/proxy/eyJfcmFpbHMiOnsiZGF0YSI6ODgwMCwicHVyIjoiYmxvYl9pZCJ9fQ==--d7072fa371eaa74858cf7a7cb5718ed0470ca695/image.png)
+  
+

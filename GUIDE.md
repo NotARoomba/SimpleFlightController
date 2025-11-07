@@ -1146,4 +1146,27 @@ Continue without placing the parts for now to get the general cost of the board:
 
 Feel free to modify this board to include more sensors, servos, peripherals, microSD cards (lmao), literally anything you can put your mind to.
 
+# Firmware
+
+After you have recieved your board, you need to actually write the firmware to communicate with the STM32. From STM32CubeMX go to the `Project Manager` section and then click on  `Toolchain / IDE` and select `Makefile` this allows use to use `VSCode` or any other code editor to edit the files much easier without having to use ST's software.
+
+![alt text](image.png)
+
+Now go to the button `Generate Code` at the top and download/install any packages that are required.
+
+After that's done, open up `VSCode` and open the the `software` directory. You're also going to want to install this extension to make building the software much easier:
+
+![alt text](image-1.png)
+
+Then you should see this button on the size:
+![alt text](image-2.png)
+
+This will allow us to build and flash our flight controller all from VSCode!
+
+![alt text](image-3.png)
+
+If you need to edit the pinout or functions of any pin, rememebr to generate the code again from STM32CubeMX.
+
+Edit `main.c` and remember to keep your code inside the commented sections that say `USER CODE BEGIN` and `USER CODE END` to prevent it from being rewritten when you generate the code again. There are many tutorials online/on YouTube on how to program with STM32 so I'd reccommend looking on there. ([example](https://youtu.be/dnfuNT1dPiM?t=1343))
+
 If you have any questions feel free to DM me on Slack (@NotARoomba) and if you want to check out my other projects, here's my [GitHub](https://github.com/notaroomba) / [Website](https://notaroomba.dev).

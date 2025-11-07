@@ -1167,6 +1167,6 @@ This will allow us to build and flash our flight controller all from VSCode!
 
 If you need to edit the pinout or functions of any pin, rememebr to generate the code again from STM32CubeMX.
 
-Edit `main.c` and remember to keep your code inside the commented sections that say `USER CODE BEGIN` and `USER CODE END` to prevent it from being rewritten when you generate the code again. There are many tutorials online/on YouTube on how to program with STM32 so I'd reccommend looking on there. ([example](https://youtu.be/dnfuNT1dPiM?t=1343))
+Edit `main.c` and remember to keep your code inside the commented sections that say `USER CODE BEGIN` and `USER CODE END` to prevent it from being rewritten when you generate the code again. There are many tutorials online/on YouTube on how to program with STM32 so I'd reccommend looking on there. You will also need files called `drivers` to control each one of the chips/sensors that you use but those can be found on the internet/GitHub and can be imported into your project easily. ([example](https://youtu.be/dnfuNT1dPiM?t=1343)). 
 
 If you have any questions feel free to DM me on Slack (@NotARoomba) and if you want to check out my other projects, here's my [GitHub](https://github.com/notaroomba) / [Website](https://notaroomba.dev).

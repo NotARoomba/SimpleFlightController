@@ -925,12 +925,12 @@ Basically connect each of the pads to their connections and try to use as few vi
 
 Starting with the USB-C data lines, these are what's known as a `differential pair`, so they have to be the same length as they carry a signal that needs to be in sync with the other and the only way for that to happen is if they're the same length. Start connecting them like so:
 
-![alt text](assets/pcb_usb_differential_routing.png)
+![alt text](assets/pcb_usb_differential_start.png)
 
 Then go to `Route > Route Differential Pair` 
-![alt text](assets/pcb_route_differential_menu.png)
+![alt text](assets/pcb_route_differential_pair_menu.png)
 and then click on the USB_DP to the far right:
-![alt text](assets/pcb_differential_pair_select.png)
+![alt text](assets/pcb_usb_differential_routing.png)
 Then route it to the STM32. That's basically the only component that needs differential routing.
 
 Moving on, just some general tips. I personally like to use `0.6mm` or `0.4mm` width for power stuff, mainly anything that runs either 5V (0.6mm) or 3.3V (0.4mm), and you can change the track width or via size from these drop downs at the top.
@@ -959,7 +959,7 @@ If KiCad doesn't let you place a via on a pad for whatever reason, you can edit 
 
 ![alt text](assets/pcb_net_classes_clearance.png)
 
-![alt text](assets/pcb_clearance_setting.png)
+![alt text](assets/pcb_via_on_pad_placed.png)
 
 
 This is how I routed the Battery charger:
@@ -1116,7 +1116,7 @@ A window should open and click `Generate`:
 
 It should create this directory in the `hardware` folder:
 
-![alt text](assets/jlcpcb_fabrication_icon.png)
+![alt text](assets/jlcpcb_production_folder.png)
 
 But I'm going to copy it out of that folder and move it to the root so that reviewing is much easier.
 

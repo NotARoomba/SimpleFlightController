@@ -17649,7 +17649,7 @@
 				(font
 					(face "Blender Pro Bold")
 					(size 0.5 0.5)
-					(thickness 0.15)
+					(thickness 0.125)
 				)
 			)
 			(render_cache "U4" 0
@@ -17947,7 +17947,7 @@
 			(uuid "e45d9d99-55c7-47a9-9440-654f447cc894")
 		)
 		(embedded_fonts no)
-		(model "/hardware/lib/lcsc.3dshapes/LGA-10_L2.0-W2.0-P0.50-TL_BMP580.wrl"
+		(model "${KIPRJMOD}/lib/lcsc.3dshapes/LGA-10_L2.0-W2.0-P0.50-TL_BMP580.step"
 			(offset
 				(xyz 0 -0 0)
 			)

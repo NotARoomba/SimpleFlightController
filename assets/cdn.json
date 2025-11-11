@@ -1,0 +1,1531 @@
+{
+  "timestamp": "2025-11-10T22:54:57-05:00",
+  "source_directory": "c:/Users/Nathan/Documents/GitHub/SimpleFlightController/assets",
+  "total_images": 169,
+  "successful_uploads": 169,
+  "failed_uploads": 0,
+  "mappings": [
+    {
+      "original_filename": "battery_charger_complete.png",
+      "original_path": "c:/Users/Nathan/Documents/GitHub/SimpleFlightController/assets/battery_charger_complete.png",
+      "bucky_url": "https://imgutil.s3.us-east-2.amazonaws.com/ea8307d52dff831c40dad0432c7d5b48289136e009d9c8984b22cb1b59fa9925/battery_charger_complete.png",
+      "cdn_url": "https://hc-cdn.hel1.your-objectstorage.com/s/v3/f3339b7c990ce680447e4ab1f6781c8e76354703_battery_charger_complete.png",
+      "cdn_file": "0_f3339b7c990ce680447e4ab1f6781c8e76354703_battery_charger_complete.png",
+      "sha": "f3339b7c990ce680447e4ab1f6781c8e76354703",
+      "size": 24821
+    },
+    {
+      "original_filename": "bmp580_i2c_schematic.png",
+      "original_path": "c:/Users/Nathan/Documents/GitHub/SimpleFlightController/assets/bmp580_i2c_schematic.png",
+      "bucky_url": "https://imgutil.s3.us-east-2.amazonaws.com/b20abafce0e6050146c9c68f3cf1f412f5b396231b5475795d25aec5c234673d/bmp580_i2c_schematic.png",
+      "cdn_url": "https://hc-cdn.hel1.your-objectstorage.com/s/v3/cf7bc0cf2019990da40c8508102c893f75a1472d_bmp580_i2c_schematic.png",
+      "cdn_file": "0_cf7bc0cf2019990da40c8508102c893f75a1472d_bmp580_i2c_schematic.png",
+      "sha": "cf7bc0cf2019990da40c8508102c893f75a1472d",
+      "size": 77575
+    },
+    {
+      "original_filename": "bmp580_kicad_wired.png",
+      "original_path": "c:/Users/Nathan/Documents/GitHub/SimpleFlightController/assets/bmp580_kicad_wired.png",
+      "bucky_url": "https://imgutil.s3.us-east-2.amazonaws.com/3f59cba6fa2abef3c12a13710432f69f75734eec87550e7c84d4e893b8cf10b4/bmp580_kicad_wired.png",
+      "cdn_url": "https://hc-cdn.hel1.your-objectstorage.com/s/v3/d61a0d62bf40d2104ece87a58e6fff91399f384a_bmp580_kicad_wired.png",
+      "cdn_file": "0_d61a0d62bf40d2104ece87a58e6fff91399f384a_bmp580_kicad_wired.png",
+      "sha": "d61a0d62bf40d2104ece87a58e6fff91399f384a",
+      "size": 31809
+    },
+    {
+      "original_filename": "bmp580_pinout.png",
+      "original_path": "c:/Users/Nathan/Documents/GitHub/SimpleFlightController/assets/bmp580_pinout.png",
+      "bucky_url": "https://imgutil.s3.us-east-2.amazonaws.com/2a579836aad5066622ae46531f21aec3d2d7cb5bc1ca474259ae27f5e86b937e/bmp580_pinout.png",
+      "cdn_url": "https://hc-cdn.hel1.your-objectstorage.com/s/v3/fd3b0ecb0ef175d694bc3bcb97560aad700a3879_bmp580_pinout.png",
+      "cdn_file": "0_fd3b0ecb0ef175d694bc3bcb97560aad700a3879_bmp580_pinout.png",
+      "sha": "fd3b0ecb0ef175d694bc3bcb97560aad700a3879",
+      "size": 65863
+    },
+    {
+      "original_filename": "cart.png",
+      "original_path": "c:/Users/Nathan/Documents/GitHub/SimpleFlightController/assets/cart.png",
+      "bucky_url": "https://imgutil.s3.us-east-2.amazonaws.com/6f42e3d95a3770c0982c30dec309fcdf1bac8dc6b235843c0c697159d661491e/cart.png",
+      "cdn_url": "https://hc-cdn.hel1.your-objectstorage.com/s/v3/39ecc10043a4a2300ec63a8995b8cd47f63bf8e5_cart.png",
+      "cdn_file": "0_39ecc10043a4a2300ec63a8995b8cd47f63bf8e5_cart.png",
+      "sha": "39ecc10043a4a2300ec63a8995b8cd47f63bf8e5",
+      "size": 159809
+    },
+    {
+      "original_filename": "crystal_load_capacitors_concept.png",
+      "original_path": "c:/Users/Nathan/Documents/GitHub/SimpleFlightController/assets/crystal_load_capacitors_concept.png",
+      "bucky_url": "https://imgutil.s3.us-east-2.amazonaws.com/6ba5cb4361d0ad436ad39cb20029ebf0a0981108769231cc5270a418346b0599/crystal_load_capacitors_concept.png",
+      "cdn_url": "https://hc-cdn.hel1.your-objectstorage.com/s/v3/d3ba23499675e6512070856d276471b67ec2a60d_crystal_load_capacitors_concept.png",
+      "cdn_file": "0_d3ba23499675e6512070856d276471b67ec2a60d_crystal_load_capacitors_concept.png",
+      "sha": "d3ba23499675e6512070856d276471b67ec2a60d",
+      "size": 68204
+    },
+    {
+      "original_filename": "datasheet_bat.png",
+      "original_path": "c:/Users/Nathan/Documents/GitHub/SimpleFlightController/assets/datasheet_bat.png",
+      "bucky_url": "https://imgutil.s3.us-east-2.amazonaws.com/4cba43188dd4f76cfbec5efb86449af34c40e3e3fe8059ee56ae448a70c86c47/datasheet_bat.png",
+      "cdn_url": "https://hc-cdn.hel1.your-objectstorage.com/s/v3/4c28f281f13aebe8a9dbdd0ca940b8e641243f0b_datasheet_bat.png",
+      "cdn_file": "0_4c28f281f13aebe8a9dbdd0ca940b8e641243f0b_datasheet_bat.png",
+      "sha": "4c28f281f13aebe8a9dbdd0ca940b8e641243f0b",
+      "size": 325516
+    },
+    {
+      "original_filename": "datasheet_calc.png",
+      "original_path": "c:/Users/Nathan/Documents/GitHub/SimpleFlightController/assets/datasheet_calc.png",
+      "bucky_url": "https://imgutil.s3.us-east-2.amazonaws.com/0ad8b614fad9815c3c1623fd68ca53fd8027d5bf0d77f62cd4630af0b898d030/datasheet_calc.png",
+      "cdn_url": "https://hc-cdn.hel1.your-objectstorage.com/s/v3/9ea846f444e104f74bf68ad5cce77f6c93758de5_datasheet_calc.png",
+      "cdn_file": "0_9ea846f444e104f74bf68ad5cce77f6c93758de5_datasheet_calc.png",
+      "sha": "9ea846f444e104f74bf68ad5cce77f6c93758de5",
+      "size": 193035
+    },
+    {
+      "original_filename": "datasheet_pin_config.png",
+      "original_path": "c:/Users/Nathan/Documents/GitHub/SimpleFlightController/assets/datasheet_pin_config.png",
+      "bucky_url": "https://imgutil.s3.us-east-2.amazonaws.com/f562b343c8a3ef89a32a346d70aa9d7a2f022676265e412ad42482d2071f8cac/datasheet_pin_config.png",
+      "cdn_url": "https://hc-cdn.hel1.your-objectstorage.com/s/v3/f011cba7b3ac4e3753242034df4e72215f2feb0a_datasheet_pin_config.png",
+      "cdn_file": "0_f011cba7b3ac4e3753242034df4e72215f2feb0a_datasheet_pin_config.png",
+      "sha": "f011cba7b3ac4e3753242034df4e72215f2feb0a",
+      "size": 151803
+    },
+    {
+      "original_filename": "datasheet_sch.png",
+      "original_path": "c:/Users/Nathan/Documents/GitHub/SimpleFlightController/assets/datasheet_sch.png",
+      "bucky_url": "https://imgutil.s3.us-east-2.amazonaws.com/8ba9c1f23dbcd1faa77c1b859834a3b34b4f438cfd7e2e39eae4faccfbeeed2a/datasheet_sch.png",
+      "cdn_url": "https://hc-cdn.hel1.your-objectstorage.com/s/v3/e349d5af31c995f344ab90e6e34ae9a9a47b714c_datasheet_sch.png",
+      "cdn_file": "0_e349d5af31c995f344ab90e6e34ae9a9a47b714c_datasheet_sch.png",
+      "sha": "e349d5af31c995f344ab90e6e34ae9a9a47b714c",
+      "size": 116630
+    },
+    {
+      "original_filename": "datasheet_table.png",
+      "original_path": "c:/Users/Nathan/Documents/GitHub/SimpleFlightController/assets/datasheet_table.png",
+      "bucky_url": "https://imgutil.s3.us-east-2.amazonaws.com/d0c41525368bbd649ecf44b754695bcb9852f847a9eef444eda730a4aca09e76/datasheet_table.png",
+      "cdn_url": "https://hc-cdn.hel1.your-objectstorage.com/s/v3/5228fe7ee112b60df9369d919467b205e6f17e1b_datasheet_table.png",
+      "cdn_file": "0_5228fe7ee112b60df9369d919467b205e6f17e1b_datasheet_table.png",
+      "sha": "5228fe7ee112b60df9369d919467b205e6f17e1b",
+      "size": 64957
+    },
+    {
+      "original_filename": "digital_ground_symbol.png",
+      "original_path": "c:/Users/Nathan/Documents/GitHub/SimpleFlightController/assets/digital_ground_symbol.png",
+      "bucky_url": "https://imgutil.s3.us-east-2.amazonaws.com/874a682cc7d02722d995e01e8ebe97fc858df870d10242e06005c085ec481dec/digital_ground_symbol.png",
+      "cdn_url": "https://hc-cdn.hel1.your-objectstorage.com/s/v3/e749ca5629229308a49ba2be4295e5ca1dde2fc0_digital_ground_symbol.png",
+      "cdn_file": "0_e749ca5629229308a49ba2be4295e5ca1dde2fc0_digital_ground_symbol.png",
+      "sha": "e749ca5629229308a49ba2be4295e5ca1dde2fc0",
+      "size": 1519
+    },
+    {
+      "original_filename": "folder-structure.png",
+      "original_path": "c:/Users/Nathan/Documents/GitHub/SimpleFlightController/assets/folder-structure.png",
+      "bucky_url": "https://imgutil.s3.us-east-2.amazonaws.com/1775cd9bafa1051aa0215302d08a71e9a4b77537e013d794a83ca0407fbf97be/folder-structure.png",
+      "cdn_url": "https://hc-cdn.hel1.your-objectstorage.com/s/v3/2937dfbe0936703899cece511669a0edc54c7efd_folder-structure.png",
+      "cdn_file": "0_2937dfbe0936703899cece511669a0edc54c7efd_folder-structure.png",
+      "sha": "2937dfbe0936703899cece511669a0edc54c7efd",
+      "size": 13090
+    },
+    {
+      "original_filename": "footprint_assignment_button.png",
+      "original_path": "c:/Users/Nathan/Documents/GitHub/SimpleFlightController/assets/footprint_assignment_button.png",
+      "bucky_url": "https://imgutil.s3.us-east-2.amazonaws.com/2abced0a29921ebbd740e363daa810ee6b221853520f43c8e3f006d30bfc7530/footprint_assignment_button.png",
+      "cdn_url": "https://hc-cdn.hel1.your-objectstorage.com/s/v3/47bd7fde766bb2c548baa32176a3533c3103db33_footprint_assignment_button.png",
+      "cdn_file": "0_47bd7fde766bb2c548baa32176a3533c3103db33_footprint_assignment_button.png",
+      "sha": "47bd7fde766bb2c548baa32176a3533c3103db33",
+      "size": 12342
+    },
+    {
+      "original_filename": "footprint_assignment_list.png",
+      "original_path": "c:/Users/Nathan/Documents/GitHub/SimpleFlightController/assets/footprint_assignment_list.png",
+      "bucky_url": "https://imgutil.s3.us-east-2.amazonaws.com/8d7ec8d8e83366a25aad2c526e378407ef8c45deb199451c5405d73988c0499b/footprint_assignment_list.png",
+      "cdn_url": "https://hc-cdn.hel1.your-objectstorage.com/s/v3/1cb8be2bf72a5f041a41b00fd790e0ffd0edd4ce_footprint_assignment_list.png",
+      "cdn_file": "0_1cb8be2bf72a5f041a41b00fd790e0ffd0edd4ce_footprint_assignment_list.png",
+      "sha": "1cb8be2bf72a5f041a41b00fd790e0ffd0edd4ce",
+      "size": 119723
+    },
+    {
+      "original_filename": "footprint_remaining_symbols.png",
+      "original_path": "c:/Users/Nathan/Documents/GitHub/SimpleFlightController/assets/footprint_remaining_symbols.png",
+      "bucky_url": "https://imgutil.s3.us-east-2.amazonaws.com/ce36ef4e2132c29d4f31504fc9072e7381d625a17cf163a4f5363278f34846f7/footprint_remaining_symbols.png",
+      "cdn_url": "https://hc-cdn.hel1.your-objectstorage.com/s/v3/42be801f6fc4d7af4b65337780ca1afb4b01a196_footprint_remaining_symbols.png",
+      "cdn_file": "0_42be801f6fc4d7af4b65337780ca1afb4b01a196_footprint_remaining_symbols.png",
+      "sha": "42be801f6fc4d7af4b65337780ca1afb4b01a196",
+      "size": 9461
+    },
+    {
+      "original_filename": "header_footprints.png",
+      "original_path": "c:/Users/Nathan/Documents/GitHub/SimpleFlightController/assets/header_footprints.png",
+      "bucky_url": "https://imgutil.s3.us-east-2.amazonaws.com/39d6db1927d2a4f84489ed4d953708440ffb9a43d4e4799101c87992dbd62ea2/header_footprints.png",
+      "cdn_url": "https://hc-cdn.hel1.your-objectstorage.com/s/v3/f8246043724ffe459aa341c245cff08d1e198467_header_footprints.png",
+      "cdn_file": "0_f8246043724ffe459aa341c245cff08d1e198467_header_footprints.png",
+      "sha": "f8246043724ffe459aa341c245cff08d1e198467",
+      "size": 17294
+    },
+    {
+      "original_filename": "icm45686_kicad_wired.png",
+      "original_path": "c:/Users/Nathan/Documents/GitHub/SimpleFlightController/assets/icm45686_kicad_wired.png",
+      "bucky_url": "https://imgutil.s3.us-east-2.amazonaws.com/ca3f4a855bf5c24300074e23e14b9bdb32bd38b6e3e7b81c8c2bcbd70205a8c1/icm45686_kicad_wired.png",
+      "cdn_url": "https://hc-cdn.hel1.your-objectstorage.com/s/v3/17a5cc24631657793a6482987753cc03799cbf35_icm45686_kicad_wired.png",
+      "cdn_file": "0_17a5cc24631657793a6482987753cc03799cbf35_icm45686_kicad_wired.png",
+      "sha": "17a5cc24631657793a6482987753cc03799cbf35",
+      "size": 25883
+    },
+    {
+      "original_filename": "icm45686_spi_schematic.png",
+      "original_path": "c:/Users/Nathan/Documents/GitHub/SimpleFlightController/assets/icm45686_spi_schematic.png",
+      "bucky_url": "https://imgutil.s3.us-east-2.amazonaws.com/a6ee17a1e35f039680bb5702f67b500f4b8be11c1205ad67a6f68579550fc669/icm45686_spi_schematic.png",
+      "cdn_url": "https://hc-cdn.hel1.your-objectstorage.com/s/v3/91093a6afa2aab3180f57331f15e3a4953b419dc_icm45686_spi_schematic.png",
+      "cdn_file": "0_91093a6afa2aab3180f57331f15e3a4953b419dc_icm45686_spi_schematic.png",
+      "sha": "91093a6afa2aab3180f57331f15e3a4953b419dc",
+      "size": 29383
+    },
+    {
+      "original_filename": "inductor_datasheet_size.png",
+      "original_path": "c:/Users/Nathan/Documents/GitHub/SimpleFlightController/assets/inductor_datasheet_size.png",
+      "bucky_url": "https://imgutil.s3.us-east-2.amazonaws.com/a51211dec5ed763a68cdc9cb647fc0fefd7cf9ce33d61202b21229651255181c/inductor_datasheet_size.png",
+      "cdn_url": "https://hc-cdn.hel1.your-objectstorage.com/s/v3/d8449e733e2ae102ba2db187f6254531169b35b5_inductor_datasheet_size.png",
+      "cdn_file": "0_d8449e733e2ae102ba2db187f6254531169b35b5_inductor_datasheet_size.png",
+      "sha": "d8449e733e2ae102ba2db187f6254531169b35b5",
+      "size": 24666
+    },
+    {
+      "original_filename": "inductor_value_correction.png",
+      "original_path": "c:/Users/Nathan/Documents/GitHub/SimpleFlightController/assets/inductor_value_correction.png",
+      "bucky_url": "https://imgutil.s3.us-east-2.amazonaws.com/8c021e38f4c34469a0797c7ddd51b981672c45b0cbf217224c58342b616b8778/inductor_value_correction.png",
+      "cdn_url": "https://hc-cdn.hel1.your-objectstorage.com/s/v3/f5c011b94dcb8880132b1bfbf4c25f4e2ada8786_inductor_value_correction.png",
+      "cdn_file": "0_f5c011b94dcb8880132b1bfbf4c25f4e2ada8786_inductor_value_correction.png",
+      "sha": "f5c011b94dcb8880132b1bfbf4c25f4e2ada8786",
+      "size": 21200
+    },
+    {
+      "original_filename": "jlcpcb_bom_cpl_upload.png",
+      "original_path": "c:/Users/Nathan/Documents/GitHub/SimpleFlightController/assets/jlcpcb_bom_cpl_upload.png",
+      "bucky_url": "https://imgutil.s3.us-east-2.amazonaws.com/58ad69e96a1d93311731a6955c4b3ed43e79f02cbd43cce1edb7006a9d48c81e/jlcpcb_bom_cpl_upload.png",
+      "cdn_url": "https://hc-cdn.hel1.your-objectstorage.com/s/v3/5d416a7f80f2a1edde04c7cddce06ae755dbeabe_jlcpcb_bom_cpl_upload.png",
+      "cdn_file": "0_5d416a7f80f2a1edde04c7cddce06ae755dbeabe_jlcpcb_bom_cpl_upload.png",
+      "sha": "5d416a7f80f2a1edde04c7cddce06ae755dbeabe",
+      "size": 17616
+    },
+    {
+      "original_filename": "jlcpcb_component_shortfall.png",
+      "original_path": "c:/Users/Nathan/Documents/GitHub/SimpleFlightController/assets/jlcpcb_component_shortfall.png",
+      "bucky_url": "https://imgutil.s3.us-east-2.amazonaws.com/14cd2f82c7150c1156e416b9b2878e1e37aa0dc64f8c3b65744ff7123de9698c/jlcpcb_component_shortfall.png",
+      "cdn_url": "https://hc-cdn.hel1.your-objectstorage.com/s/v3/c228a66275da19d1c764edca0fd4b57594c1ec2d_jlcpcb_component_shortfall.png",
+      "cdn_file": "0_c228a66275da19d1c764edca0fd4b57594c1ec2d_jlcpcb_component_shortfall.png",
+      "sha": "c228a66275da19d1c764edca0fd4b57594c1ec2d",
+      "size": 65947
+    },
+    {
+      "original_filename": "jlcpcb_fabrication_icon.png",
+      "original_path": "c:/Users/Nathan/Documents/GitHub/SimpleFlightController/assets/jlcpcb_fabrication_icon.png",
+      "bucky_url": "https://imgutil.s3.us-east-2.amazonaws.com/5a544ab372a502bb90a91f1751754bd0a845c1d04e0c88790fb4d0d578d30b14/jlcpcb_fabrication_icon.png",
+      "cdn_url": "https://hc-cdn.hel1.your-objectstorage.com/s/v3/912cf846c397933d69b474862440ff35b3b6f185_jlcpcb_fabrication_icon.png",
+      "cdn_file": "0_912cf846c397933d69b474862440ff35b3b6f185_jlcpcb_fabrication_icon.png",
+      "sha": "912cf846c397933d69b474862440ff35b3b6f185",
+      "size": 8327
+    },
+    {
+      "original_filename": "jlcpcb_final_cost.png",
+      "original_path": "c:/Users/Nathan/Documents/GitHub/SimpleFlightController/assets/jlcpcb_final_cost.png",
+      "bucky_url": "https://imgutil.s3.us-east-2.amazonaws.com/de38357b1b55ffae3f8109334105a4c076246bb887aa14bc018960d4444d9d58/jlcpcb_final_cost.png",
+      "cdn_url": "https://hc-cdn.hel1.your-objectstorage.com/s/v3/d0959ff7ab616e8d3d994604bad7e69b68ada6ad_jlcpcb_final_cost.png",
+      "cdn_file": "0_d0959ff7ab616e8d3d994604bad7e69b68ada6ad_jlcpcb_final_cost.png",
+      "sha": "d0959ff7ab616e8d3d994604bad7e69b68ada6ad",
+      "size": 65549
+    },
+    {
+      "original_filename": "jlcpcb_generate_window.png",
+      "original_path": "c:/Users/Nathan/Documents/GitHub/SimpleFlightController/assets/jlcpcb_generate_window.png",
+      "bucky_url": "https://imgutil.s3.us-east-2.amazonaws.com/00a829cbde4f2ba27cf3556283c3f4a002a3af82fbb4f4b75fec75bdd8a4fb59/jlcpcb_generate_window.png",
+      "cdn_url": "https://hc-cdn.hel1.your-objectstorage.com/s/v3/cd613f813c276c666a4f8dac1c326394d9614d5d_jlcpcb_generate_window.png",
+      "cdn_file": "0_cd613f813c276c666a4f8dac1c326394d9614d5d_jlcpcb_generate_window.png",
+      "sha": "cd613f813c276c666a4f8dac1c326394d9614d5d",
+      "size": 21917
+    },
+    {
+      "original_filename": "jlcpcb_parts_list.png",
+      "original_path": "c:/Users/Nathan/Documents/GitHub/SimpleFlightController/assets/jlcpcb_parts_list.png",
+      "bucky_url": "https://imgutil.s3.us-east-2.amazonaws.com/d999220e54613448b25a2d69e1dc36d4e80720d0d0ee787c5e74db58f4e4be85/jlcpcb_parts_list.png",
+      "cdn_url": "https://hc-cdn.hel1.your-objectstorage.com/s/v3/309859e47ab12113c2301b697d507e5930f1ad82_jlcpcb_parts_list.png",
+      "cdn_file": "0_309859e47ab12113c2301b697d507e5930f1ad82_jlcpcb_parts_list.png",
+      "sha": "309859e47ab12113c2301b697d507e5930f1ad82",
+      "size": 335090
+    },
+    {
+      "original_filename": "jlcpcb_pcba_settings.png",
+      "original_path": "c:/Users/Nathan/Documents/GitHub/SimpleFlightController/assets/jlcpcb_pcba_settings.png",
+      "bucky_url": "https://imgutil.s3.us-east-2.amazonaws.com/0af13934ef23dfb0b79ccd747e3ef4b60c12279ae71be7a4fcf00224c35c8e8c/jlcpcb_pcba_settings.png",
+      "cdn_url": "https://hc-cdn.hel1.your-objectstorage.com/s/v3/89c577fe501c0d75c65cffc5779a8c087aaf1398_jlcpcb_pcba_settings.png",
+      "cdn_file": "0_89c577fe501c0d75c65cffc5779a8c087aaf1398_jlcpcb_pcba_settings.png",
+      "sha": "89c577fe501c0d75c65cffc5779a8c087aaf1398",
+      "size": 125774
+    },
+    {
+      "original_filename": "jlcpcb_plugin_icon.png",
+      "original_path": "c:/Users/Nathan/Documents/GitHub/SimpleFlightController/assets/jlcpcb_plugin_icon.png",
+      "bucky_url": "https://imgutil.s3.us-east-2.amazonaws.com/d6978fecbc2cc8784d788b42ffdc8b13f3294be0c8dd43e080fca8d3b30d1427/jlcpcb_plugin_icon.png",
+      "cdn_url": "https://hc-cdn.hel1.your-objectstorage.com/s/v3/a0641970cc3d80902ed1c175e30f17c2872ea231_jlcpcb_plugin_icon.png",
+      "cdn_file": "0_a0641970cc3d80902ed1c175e30f17c2872ea231_jlcpcb_plugin_icon.png",
+      "sha": "a0641970cc3d80902ed1c175e30f17c2872ea231",
+      "size": 75700
+    },
+    {
+      "original_filename": "jlcpcb_plugin_install.png",
+      "original_path": "c:/Users/Nathan/Documents/GitHub/SimpleFlightController/assets/jlcpcb_plugin_install.png",
+      "bucky_url": "https://imgutil.s3.us-east-2.amazonaws.com/8c922c972cd6f76c2a824843caa5c0b06a8e3c752b0dfebfc8d203fc6830b5c1/jlcpcb_plugin_install.png",
+      "cdn_url": "https://hc-cdn.hel1.your-objectstorage.com/s/v3/cbf1490de31b0932d2dcdc4515af6478308481e1_jlcpcb_plugin_install.png",
+      "cdn_file": "0_cbf1490de31b0932d2dcdc4515af6478308481e1_jlcpcb_plugin_install.png",
+      "sha": "cbf1490de31b0932d2dcdc4515af6478308481e1",
+      "size": 46759
+    },
+    {
+      "original_filename": "jlcpcb_production_folder.png",
+      "original_path": "c:/Users/Nathan/Documents/GitHub/SimpleFlightController/assets/jlcpcb_production_folder.png",
+      "bucky_url": "https://imgutil.s3.us-east-2.amazonaws.com/6ed3c71a669265689375aea95f641d6dbba8d1594ce26d50f76e0f2e66ad2ac4/jlcpcb_production_folder.png",
+      "cdn_url": "https://hc-cdn.hel1.your-objectstorage.com/s/v3/69d6c2eb3eb07c8b5d1597a030fc1bf6048a6483_jlcpcb_production_folder.png",
+      "cdn_file": "0_69d6c2eb3eb07c8b5d1597a030fc1bf6048a6483_jlcpcb_production_folder.png",
+      "sha": "69d6c2eb3eb07c8b5d1597a030fc1bf6048a6483",
+      "size": 29077
+    },
+    {
+      "original_filename": "jlcpcb_standard_pcba.png",
+      "original_path": "c:/Users/Nathan/Documents/GitHub/SimpleFlightController/assets/jlcpcb_standard_pcba.png",
+      "bucky_url": "https://imgutil.s3.us-east-2.amazonaws.com/a505587dbba704622a59f3bc6f975997360320078494e68d55cbec9c6e45b4a2/jlcpcb_standard_pcba.png",
+      "cdn_url": "https://hc-cdn.hel1.your-objectstorage.com/s/v3/fae08bdf789daec4ad92938e3bb98aa2ccf00408_jlcpcb_standard_pcba.png",
+      "cdn_file": "0_fae08bdf789daec4ad92938e3bb98aa2ccf00408_jlcpcb_standard_pcba.png",
+      "sha": "fae08bdf789daec4ad92938e3bb98aa2ccf00408",
+      "size": 11936
+    },
+    {
+      "original_filename": "jlcpcb_upload_gerbers.png",
+      "original_path": "c:/Users/Nathan/Documents/GitHub/SimpleFlightController/assets/jlcpcb_upload_gerbers.png",
+      "bucky_url": "https://imgutil.s3.us-east-2.amazonaws.com/f71258da72a4a2ae8024fc294dc6d2e1c500a427ece916204151ebddc40ad4a7/jlcpcb_upload_gerbers.png",
+      "cdn_url": "https://hc-cdn.hel1.your-objectstorage.com/s/v3/7e39144c9db40181e599d0ca5d7801a4b46a2949_jlcpcb_upload_gerbers.png",
+      "cdn_file": "0_7e39144c9db40181e599d0ca5d7801a4b46a2949_jlcpcb_upload_gerbers.png",
+      "sha": "7e39144c9db40181e599d0ca5d7801a4b46a2949",
+      "size": 240027
+    },
+    {
+      "original_filename": "kicad-project-files.png",
+      "original_path": "c:/Users/Nathan/Documents/GitHub/SimpleFlightController/assets/kicad-project-files.png",
+      "bucky_url": "https://imgutil.s3.us-east-2.amazonaws.com/c3744d4be1444bef9c5873362b23bf15cdf066fefb42ea6ccd69eaf71288393f/kicad-project-files.png",
+      "cdn_url": "https://hc-cdn.hel1.your-objectstorage.com/s/v3/02816d068a1a60959bb0e6365f396a702800f679_kicad-project-files.png",
+      "cdn_file": "0_02816d068a1a60959bb0e6365f396a702800f679_kicad-project-files.png",
+      "sha": "02816d068a1a60959bb0e6365f396a702800f679",
+      "size": 21490
+    },
+    {
+      "original_filename": "kicad_component_value.png",
+      "original_path": "c:/Users/Nathan/Documents/GitHub/SimpleFlightController/assets/kicad_component_value.png",
+      "bucky_url": "https://imgutil.s3.us-east-2.amazonaws.com/79934279ae2232f2f3b0ece743e4e8b79d298441b480ab27b4cb2566a87ba2ee/kicad_component_value.png",
+      "cdn_url": "https://hc-cdn.hel1.your-objectstorage.com/s/v3/d5db01401c162ba714abde5df30725a0562ba98d_kicad_component_value.png",
+      "cdn_file": "0_d5db01401c162ba714abde5df30725a0562ba98d_kicad_component_value.png",
+      "sha": "d5db01401c162ba714abde5df30725a0562ba98d",
+      "size": 193330
+    },
+    {
+      "original_filename": "kicad_crystal_imports.png",
+      "original_path": "c:/Users/Nathan/Documents/GitHub/SimpleFlightController/assets/kicad_crystal_imports.png",
+      "bucky_url": "https://imgutil.s3.us-east-2.amazonaws.com/cc288d5ee4658cb9d7e0c15774f77c62063b604349019faa752f105b089e9038/kicad_crystal_imports.png",
+      "cdn_url": "https://hc-cdn.hel1.your-objectstorage.com/s/v3/91691ac20c4f8df67c7ba200e6293171f460e566_kicad_crystal_imports.png",
+      "cdn_file": "0_91691ac20c4f8df67c7ba200e6293171f460e566_kicad_crystal_imports.png",
+      "sha": "91691ac20c4f8df67c7ba200e6293171f460e566",
+      "size": 13738
+    },
+    {
+      "original_filename": "kicad_crystals_wired.png",
+      "original_path": "c:/Users/Nathan/Documents/GitHub/SimpleFlightController/assets/kicad_crystals_wired.png",
+      "bucky_url": "https://imgutil.s3.us-east-2.amazonaws.com/290fcddb5721d2ab1de42de1cbb03b8fa1492878800d77d9b2a53b53c2aac61f/kicad_crystals_wired.png",
+      "cdn_url": "https://hc-cdn.hel1.your-objectstorage.com/s/v3/488106a8486103ec16373f9cf73232c74130121c_kicad_crystals_wired.png",
+      "cdn_file": "0_488106a8486103ec16373f9cf73232c74130121c_kicad_crystals_wired.png",
+      "sha": "488106a8486103ec16373f9cf73232c74130121c",
+      "size": 14578
+    },
+    {
+      "original_filename": "kicad_final_schematic.png",
+      "original_path": "c:/Users/Nathan/Documents/GitHub/SimpleFlightController/assets/kicad_final_schematic.png",
+      "bucky_url": "https://imgutil.s3.us-east-2.amazonaws.com/a81c8bdde4d267cdd65a3a801bc120a3fb66a110cc333af3d4068750a208f6df/kicad_final_schematic.png",
+      "cdn_url": "https://hc-cdn.hel1.your-objectstorage.com/s/v3/86c7c8cc2b5632d2e4cbdc7bbabcc95df82542e4_kicad_final_schematic.png",
+      "cdn_file": "0_86c7c8cc2b5632d2e4cbdc7bbabcc95df82542e4_kicad_final_schematic.png",
+      "sha": "86c7c8cc2b5632d2e4cbdc7bbabcc95df82542e4",
+      "size": 671321
+    },
+    {
+      "original_filename": "kicad_footprint.png",
+      "original_path": "c:/Users/Nathan/Documents/GitHub/SimpleFlightController/assets/kicad_footprint.png",
+      "bucky_url": "https://imgutil.s3.us-east-2.amazonaws.com/11c163619536f3ca495560e5e75050c1779f5ea22417e46c51e6971fec8c6400/kicad_footprint.png",
+      "cdn_url": "https://hc-cdn.hel1.your-objectstorage.com/s/v3/dd6687dfd4dd4d8d7b79465750410fc3791abf5e_kicad_footprint.png",
+      "cdn_file": "0_dd6687dfd4dd4d8d7b79465750410fc3791abf5e_kicad_footprint.png",
+      "sha": "dd6687dfd4dd4d8d7b79465750410fc3791abf5e",
+      "size": 149178
+    },
+    {
+      "original_filename": "kicad_i2c_connections.png",
+      "original_path": "c:/Users/Nathan/Documents/GitHub/SimpleFlightController/assets/kicad_i2c_connections.png",
+      "bucky_url": "https://imgutil.s3.us-east-2.amazonaws.com/11e4e99ddd259e8b86b6db49cb9acafa94f057d8475c9a3e3eb096ee1a3729a8/kicad_i2c_connections.png",
+      "cdn_url": "https://hc-cdn.hel1.your-objectstorage.com/s/v3/e1a99f924c403e5ca44982fa1326b2f6ba094205_kicad_i2c_connections.png",
+      "cdn_file": "0_e1a99f924c403e5ca44982fa1326b2f6ba094205_kicad_i2c_connections.png",
+      "sha": "e1a99f924c403e5ca44982fa1326b2f6ba094205",
+      "size": 23872
+    },
+    {
+      "original_filename": "kicad_i2c_connections2.png",
+      "original_path": "c:/Users/Nathan/Documents/GitHub/SimpleFlightController/assets/kicad_i2c_connections2.png",
+      "bucky_url": "https://imgutil.s3.us-east-2.amazonaws.com/38f322781c5c89a5cbb74c030197e8d19f3992d864bd8e49141a54004df65efe/kicad_i2c_connections2.png",
+      "cdn_url": "https://hc-cdn.hel1.your-objectstorage.com/s/v3/4615f7bec5f04cd21c69819354efb5a45eadc97e_kicad_i2c_connections2.png",
+      "cdn_file": "0_4615f7bec5f04cd21c69819354efb5a45eadc97e_kicad_i2c_connections2.png",
+      "sha": "4615f7bec5f04cd21c69819354efb5a45eadc97e",
+      "size": 13709
+    },
+    {
+      "original_filename": "kicad_net_labels_schematic.png",
+      "original_path": "c:/Users/Nathan/Documents/GitHub/SimpleFlightController/assets/kicad_net_labels_schematic.png",
+      "bucky_url": "https://imgutil.s3.us-east-2.amazonaws.com/42d4c6ec1c6f2e585b662a10de12bdb4b6408f347b4b272fa6524eb8527552ba/kicad_net_labels_schematic.png",
+      "cdn_url": "https://hc-cdn.hel1.your-objectstorage.com/s/v3/34c585b194b51e08bafcf92fd029c35b274fff5f_kicad_net_labels_schematic.png",
+      "cdn_file": "0_34c585b194b51e08bafcf92fd029c35b274fff5f_kicad_net_labels_schematic.png",
+      "sha": "34c585b194b51e08bafcf92fd029c35b274fff5f",
+      "size": 28831
+    },
+    {
+      "original_filename": "kicad_page_settings.png",
+      "original_path": "c:/Users/Nathan/Documents/GitHub/SimpleFlightController/assets/kicad_page_settings.png",
+      "bucky_url": "https://imgutil.s3.us-east-2.amazonaws.com/4b6ea907618d8ebeef1e34a6186c7106c841b968ccf9ba51eca9bcfc731c0ae7/kicad_page_settings.png",
+      "cdn_url": "https://hc-cdn.hel1.your-objectstorage.com/s/v3/8154fb8f6a1c8275191cf1bbe07fdc3c391211ce_kicad_page_settings.png",
+      "cdn_file": "0_8154fb8f6a1c8275191cf1bbe07fdc3c391211ce_kicad_page_settings.png",
+      "sha": "8154fb8f6a1c8275191cf1bbe07fdc3c391211ce",
+      "size": 48660
+    },
+    {
+      "original_filename": "kicad_pre.png",
+      "original_path": "c:/Users/Nathan/Documents/GitHub/SimpleFlightController/assets/kicad_pre.png",
+      "bucky_url": "https://imgutil.s3.us-east-2.amazonaws.com/67b53692a05b52e9810598996b890ae82d48188b23fd679d571107f3f96ea2b4/kicad_pre.png",
+      "cdn_url": "https://hc-cdn.hel1.your-objectstorage.com/s/v3/393b4eb069231176b8eb76e7b6d6661feb93cd74_kicad_pre.png",
+      "cdn_file": "0_393b4eb069231176b8eb76e7b6d6661feb93cd74_kicad_pre.png",
+      "sha": "393b4eb069231176b8eb76e7b6d6661feb93cd74",
+      "size": 153767
+    },
+    {
+      "original_filename": "kicad_reset_boot_buttons.png",
+      "original_path": "c:/Users/Nathan/Documents/GitHub/SimpleFlightController/assets/kicad_reset_boot_buttons.png",
+      "bucky_url": "https://imgutil.s3.us-east-2.amazonaws.com/42cc8223f56a09fa96f89e704bbaa87e6ec301232e7859ead58822f35fe9d923/kicad_reset_boot_buttons.png",
+      "cdn_url": "https://hc-cdn.hel1.your-objectstorage.com/s/v3/30fb452fc658a7f7d414cae4a78d54add0af4619_kicad_reset_boot_buttons.png",
+      "cdn_file": "0_30fb452fc658a7f7d414cae4a78d54add0af4619_kicad_reset_boot_buttons.png",
+      "sha": "30fb452fc658a7f7d414cae4a78d54add0af4619",
+      "size": 10107
+    },
+    {
+      "original_filename": "kicad_servo_headers.png",
+      "original_path": "c:/Users/Nathan/Documents/GitHub/SimpleFlightController/assets/kicad_servo_headers.png",
+      "bucky_url": "https://imgutil.s3.us-east-2.amazonaws.com/3d00e63335e98adfd724df8f850e9e493cf95073154d4f51984f77d35c406ae8/kicad_servo_headers.png",
+      "cdn_url": "https://hc-cdn.hel1.your-objectstorage.com/s/v3/7d3ab72b1f8376df7fe260b52a718d59f6b87dbb_kicad_servo_headers.png",
+      "cdn_file": "0_7d3ab72b1f8376df7fe260b52a718d59f6b87dbb_kicad_servo_headers.png",
+      "sha": "7d3ab72b1f8376df7fe260b52a718d59f6b87dbb",
+      "size": 17127
+    },
+    {
+      "original_filename": "kicad_start.png",
+      "original_path": "c:/Users/Nathan/Documents/GitHub/SimpleFlightController/assets/kicad_start.png",
+      "bucky_url": "https://imgutil.s3.us-east-2.amazonaws.com/a14bb96580eeecfbe371c410e19aa19a3686b1473f5b7c039a720be86733cd33/kicad_start.png",
+      "cdn_url": "https://hc-cdn.hel1.your-objectstorage.com/s/v3/5aa0d43b29d3966bb755930400ec9a955a36033b_kicad_start.png",
+      "cdn_file": "0_5aa0d43b29d3966bb755930400ec9a955a36033b_kicad_start.png",
+      "sha": "5aa0d43b29d3966bb755930400ec9a955a36033b",
+      "size": 57354
+    },
+    {
+      "original_filename": "kicad_symbol.png",
+      "original_path": "c:/Users/Nathan/Documents/GitHub/SimpleFlightController/assets/kicad_symbol.png",
+      "bucky_url": "https://imgutil.s3.us-east-2.amazonaws.com/a1c4ec7a093b32f7c3dd5e98d19eaae384b3b86b35a9114b06bb637471506830/kicad_symbol.png",
+      "cdn_url": "https://hc-cdn.hel1.your-objectstorage.com/s/v3/6ff011c0b1db3493e8e85328a2df286e34758770_kicad_symbol.png",
+      "cdn_file": "0_6ff011c0b1db3493e8e85328a2df286e34758770_kicad_symbol.png",
+      "sha": "6ff011c0b1db3493e8e85328a2df286e34758770",
+      "size": 140478
+    },
+    {
+      "original_filename": "kicad_usbc.png",
+      "original_path": "c:/Users/Nathan/Documents/GitHub/SimpleFlightController/assets/kicad_usbc.png",
+      "bucky_url": "https://imgutil.s3.us-east-2.amazonaws.com/887249803f5341dbbf4f81ae96723ff02d74acaee1e5a04fbc6576b868520f6c/kicad_usbc.png",
+      "cdn_url": "https://hc-cdn.hel1.your-objectstorage.com/s/v3/365f855c838d8320b564685aa93b370a484c82bc_kicad_usbc.png",
+      "cdn_file": "0_365f855c838d8320b564685aa93b370a484c82bc_kicad_usbc.png",
+      "sha": "365f855c838d8320b564685aa93b370a484c82bc",
+      "size": 326467
+    },
+    {
+      "original_filename": "lcsc.png",
+      "original_path": "c:/Users/Nathan/Documents/GitHub/SimpleFlightController/assets/lcsc.png",
+      "bucky_url": "https://imgutil.s3.us-east-2.amazonaws.com/1af88281f1f0bae7bf2ad175f16a661c4ed85585b26596ae5f0184cab9d4ead6/lcsc.png",
+      "cdn_url": "https://hc-cdn.hel1.your-objectstorage.com/s/v3/6d46cca468d8ed4fca37d81d019dec3b15a68818_lcsc.png",
+      "cdn_file": "0_6d46cca468d8ed4fca37d81d019dec3b15a68818_lcsc.png",
+      "sha": "6d46cca468d8ed4fca37d81d019dec3b15a68818",
+      "size": 670957
+    },
+    {
+      "original_filename": "lcsc_done.png",
+      "original_path": "c:/Users/Nathan/Documents/GitHub/SimpleFlightController/assets/lcsc_done.png",
+      "bucky_url": "https://imgutil.s3.us-east-2.amazonaws.com/0d6d6c16ca610471e790f530189aac074a9fa011aecf06f3668673ca6519cd49/lcsc_done.png",
+      "cdn_url": "https://hc-cdn.hel1.your-objectstorage.com/s/v3/64678d6f38b1e93c7c600222c4fe9a170c59b229_lcsc_done.png",
+      "cdn_file": "0_64678d6f38b1e93c7c600222c4fe9a170c59b229_lcsc_done.png",
+      "sha": "64678d6f38b1e93c7c600222c4fe9a170c59b229",
+      "size": 14399
+    },
+    {
+      "original_filename": "lcsc_script.png",
+      "original_path": "c:/Users/Nathan/Documents/GitHub/SimpleFlightController/assets/lcsc_script.png",
+      "bucky_url": "https://imgutil.s3.us-east-2.amazonaws.com/e20d5cbc72f121670049a96f236ecd7eeb129778ce1d101d49f132ba235671b4/lcsc_script.png",
+      "cdn_url": "https://hc-cdn.hel1.your-objectstorage.com/s/v3/eb221640fbec7f23837dc4350dbde769145734ef_lcsc_script.png",
+      "cdn_file": "0_eb221640fbec7f23837dc4350dbde769145734ef_lcsc_script.png",
+      "sha": "eb221640fbec7f23837dc4350dbde769145734ef",
+      "size": 225130
+    },
+    {
+      "original_filename": "lcsc_txt.png",
+      "original_path": "c:/Users/Nathan/Documents/GitHub/SimpleFlightController/assets/lcsc_txt.png",
+      "bucky_url": "https://imgutil.s3.us-east-2.amazonaws.com/7cd8b4653be448977036bca61e3ead3ed552501480c26d8d59a11d5fa224acf7/lcsc_txt.png",
+      "cdn_url": "https://hc-cdn.hel1.your-objectstorage.com/s/v3/03e6a4678418f95bffe676e614429fed3ac59192_lcsc_txt.png",
+      "cdn_file": "0_03e6a4678418f95bffe676e614429fed3ac59192_lcsc_txt.png",
+      "sha": "03e6a4678418f95bffe676e614429fed3ac59192",
+      "size": 21959
+    },
+    {
+      "original_filename": "lcsc_usbc.png",
+      "original_path": "c:/Users/Nathan/Documents/GitHub/SimpleFlightController/assets/lcsc_usbc.png",
+      "bucky_url": "https://imgutil.s3.us-east-2.amazonaws.com/70209d780857ae74efe6400e3023795e24fa5c8e99fc8928dff3fb307e2ad00c/lcsc_usbc.png",
+      "cdn_url": "https://hc-cdn.hel1.your-objectstorage.com/s/v3/ec20447082d2df2c068cad1a7c7b04b4d912da83_lcsc_usbc.png",
+      "cdn_file": "0_ec20447082d2df2c068cad1a7c7b04b4d912da83_lcsc_usbc.png",
+      "sha": "ec20447082d2df2c068cad1a7c7b04b4d912da83",
+      "size": 519949
+    },
+    {
+      "original_filename": "lmr51430_adjustable_vs_fixed.png",
+      "original_path": "c:/Users/Nathan/Documents/GitHub/SimpleFlightController/assets/lmr51430_adjustable_vs_fixed.png",
+      "bucky_url": "https://imgutil.s3.us-east-2.amazonaws.com/c3904e82162666fee1b1c0472f10720104da2578ed653abfdc63393969be6d46/lmr51430_adjustable_vs_fixed.png",
+      "cdn_url": "https://hc-cdn.hel1.your-objectstorage.com/s/v3/25e145f3104c174ecfafce4c491454cf103f6156_lmr51430_adjustable_vs_fixed.png",
+      "cdn_file": "0_25e145f3104c174ecfafce4c491454cf103f6156_lmr51430_adjustable_vs_fixed.png",
+      "sha": "25e145f3104c174ecfafce4c491454cf103f6156",
+      "size": 66057
+    },
+    {
+      "original_filename": "lmr51430_schematic.png",
+      "original_path": "c:/Users/Nathan/Documents/GitHub/SimpleFlightController/assets/lmr51430_schematic.png",
+      "bucky_url": "https://imgutil.s3.us-east-2.amazonaws.com/bd4e80e9a9d9451d19c4337c28a9d3dac01a0efa6248a6cc9021b7f1604c67d0/lmr51430_schematic.png",
+      "cdn_url": "https://hc-cdn.hel1.your-objectstorage.com/s/v3/12c48e22668d221830bbf5506b9f4c494962c277_lmr51430_schematic.png",
+      "cdn_file": "0_12c48e22668d221830bbf5506b9f4c494962c277_lmr51430_schematic.png",
+      "sha": "12c48e22668d221830bbf5506b9f4c494962c277",
+      "size": 24959
+    },
+    {
+      "original_filename": "lmr51430_switching_tables.png",
+      "original_path": "c:/Users/Nathan/Documents/GitHub/SimpleFlightController/assets/lmr51430_switching_tables.png",
+      "bucky_url": "https://imgutil.s3.us-east-2.amazonaws.com/4631fc86745d573b4c9bd8255bca0d77332c9171741ed30463d610c0a2e56c59/lmr51430_switching_tables.png",
+      "cdn_url": "https://hc-cdn.hel1.your-objectstorage.com/s/v3/c2c003c8f0c2a754d10da8c861b01c4c79a9cf2e_lmr51430_switching_tables.png",
+      "cdn_file": "0_c2c003c8f0c2a754d10da8c861b01c4c79a9cf2e_lmr51430_switching_tables.png",
+      "sha": "c2c003c8f0c2a754d10da8c861b01c4c79a9cf2e",
+      "size": 57768
+    },
+    {
+      "original_filename": "microsd_kicad_wired.png",
+      "original_path": "c:/Users/Nathan/Documents/GitHub/SimpleFlightController/assets/microsd_kicad_wired.png",
+      "bucky_url": "https://imgutil.s3.us-east-2.amazonaws.com/36a3c0e54d285f3c4de02474a68f31e8eea8e60c74686c55b75d6b27ffdc3762/microsd_kicad_wired.png",
+      "cdn_url": "https://hc-cdn.hel1.your-objectstorage.com/s/v3/5affaf2d791825d5efef5c7ab7c298da871b5dca_microsd_kicad_wired.png",
+      "cdn_file": "0_5affaf2d791825d5efef5c7ab7c298da871b5dca_microsd_kicad_wired.png",
+      "sha": "5affaf2d791825d5efef5c7ab7c298da871b5dca",
+      "size": 22652
+    },
+    {
+      "original_filename": "microsd_pinout.png",
+      "original_path": "c:/Users/Nathan/Documents/GitHub/SimpleFlightController/assets/microsd_pinout.png",
+      "bucky_url": "https://imgutil.s3.us-east-2.amazonaws.com/f97a8bae1b312d706a41e666c2a6bee256040bde1c611e232a6191ab94c52d17/microsd_pinout.png",
+      "cdn_url": "https://hc-cdn.hel1.your-objectstorage.com/s/v3/1368ecdbe4c0da0ba65fa7630b56cef150c9a34b_microsd_pinout.png",
+      "cdn_file": "0_1368ecdbe4c0da0ba65fa7630b56cef150c9a34b_microsd_pinout.png",
+      "sha": "1368ecdbe4c0da0ba65fa7630b56cef150c9a34b",
+      "size": 43671
+    },
+    {
+      "original_filename": "microsd_pullup_requirements.png",
+      "original_path": "c:/Users/Nathan/Documents/GitHub/SimpleFlightController/assets/microsd_pullup_requirements.png",
+      "bucky_url": "https://imgutil.s3.us-east-2.amazonaws.com/9687247c73924daf19aef68b6dcfe34c460a2f182c91a6f76124d598550fbc94/microsd_pullup_requirements.png",
+      "cdn_url": "https://hc-cdn.hel1.your-objectstorage.com/s/v3/70d9b5177979f4ed131b8acf6d75e27911024cf6_microsd_pullup_requirements.png",
+      "cdn_file": "0_70d9b5177979f4ed131b8acf6d75e27911024cf6_microsd_pullup_requirements.png",
+      "sha": "70d9b5177979f4ed131b8acf6d75e27911024cf6",
+      "size": 19677
+    },
+    {
+      "original_filename": "net_labels_example.png",
+      "original_path": "c:/Users/Nathan/Documents/GitHub/SimpleFlightController/assets/net_labels_example.png",
+      "bucky_url": "https://imgutil.s3.us-east-2.amazonaws.com/1890fbd97ca90887eea40aa1b785855c082a626e1036654cc7cd8ddb01d63c50/net_labels_example.png",
+      "cdn_url": "https://hc-cdn.hel1.your-objectstorage.com/s/v3/98a8cd4ec01d8601acdc01184249e973e61c6861_net_labels_example.png",
+      "cdn_file": "0_98a8cd4ec01d8601acdc01184249e973e61c6861_net_labels_example.png",
+      "sha": "98a8cd4ec01d8601acdc01184249e973e61c6861",
+      "size": 36333
+    },
+    {
+      "original_filename": "pcb_3d_model_after.png",
+      "original_path": "c:/Users/Nathan/Documents/GitHub/SimpleFlightController/assets/pcb_3d_model_after.png",
+      "bucky_url": "https://imgutil.s3.us-east-2.amazonaws.com/c0089f4a478f888ac05c6db0303ace054c1c5e914653e1651b1753b323d7ed60/pcb_3d_model_after.png",
+      "cdn_url": "https://hc-cdn.hel1.your-objectstorage.com/s/v3/b7dd0f50ab2463ee9a4802534349867b1ffbac7d_pcb_3d_model_after.png",
+      "cdn_file": "0_b7dd0f50ab2463ee9a4802534349867b1ffbac7d_pcb_3d_model_after.png",
+      "sha": "b7dd0f50ab2463ee9a4802534349867b1ffbac7d",
+      "size": 55059
+    },
+    {
+      "original_filename": "pcb_3d_model_before.png",
+      "original_path": "c:/Users/Nathan/Documents/GitHub/SimpleFlightController/assets/pcb_3d_model_before.png",
+      "bucky_url": "https://imgutil.s3.us-east-2.amazonaws.com/5e9e031014d06ffb313f8afedf9d8761815b109fbe4e40aaecd57467bf2a7170/pcb_3d_model_before.png",
+      "cdn_url": "https://hc-cdn.hel1.your-objectstorage.com/s/v3/2358fcf199d98f621b7d24eb48761363034edb07_pcb_3d_model_before.png",
+      "cdn_file": "0_2358fcf199d98f621b7d24eb48761363034edb07_pcb_3d_model_before.png",
+      "sha": "2358fcf199d98f621b7d24eb48761363034edb07",
+      "size": 45769
+    },
+    {
+      "original_filename": "pcb_3d_model_properties.png",
+      "original_path": "c:/Users/Nathan/Documents/GitHub/SimpleFlightController/assets/pcb_3d_model_properties.png",
+      "bucky_url": "https://imgutil.s3.us-east-2.amazonaws.com/b7038dafc9770a42c64e059a23a5636a8d8e4b4d54e20f6b38d3bc50b25686d0/pcb_3d_model_properties.png",
+      "cdn_url": "https://hc-cdn.hel1.your-objectstorage.com/s/v3/6e9d9f24a82f3ddf2646ef9358a2859d422eb5e9_pcb_3d_model_properties.png",
+      "cdn_file": "0_6e9d9f24a82f3ddf2646ef9358a2859d422eb5e9_pcb_3d_model_properties.png",
+      "sha": "6e9d9f24a82f3ddf2646ef9358a2859d422eb5e9",
+      "size": 150272
+    },
+    {
+      "original_filename": "pcb_3d_view_side.png",
+      "original_path": "c:/Users/Nathan/Documents/GitHub/SimpleFlightController/assets/pcb_3d_view_side.png",
+      "bucky_url": "https://imgutil.s3.us-east-2.amazonaws.com/feb19cadb979d56aa1ea4ad5a146052b125f1b53fd033cf7c90215f4132bdf03/pcb_3d_view_side.png",
+      "cdn_url": "https://hc-cdn.hel1.your-objectstorage.com/s/v3/fd2612614f050ddaf3424b4a6970b447ff157a89_pcb_3d_view_side.png",
+      "cdn_file": "0_fd2612614f050ddaf3424b4a6970b447ff157a89_pcb_3d_view_side.png",
+      "sha": "fd2612614f050ddaf3424b4a6970b447ff157a89",
+      "size": 122657
+    },
+    {
+      "original_filename": "pcb_3d_view_top.png",
+      "original_path": "c:/Users/Nathan/Documents/GitHub/SimpleFlightController/assets/pcb_3d_view_top.png",
+      "bucky_url": "https://imgutil.s3.us-east-2.amazonaws.com/94d546ae82beebc772f7078aa2723a499006bd26b245a8fc615bed2b34ddf650/pcb_3d_view_top.png",
+      "cdn_url": "https://hc-cdn.hel1.your-objectstorage.com/s/v3/5d9e172b022b401c32c22f828ad2da025c2590c1_pcb_3d_view_top.png",
+      "cdn_file": "0_5d9e172b022b401c32c22f828ad2da025c2590c1_pcb_3d_view_top.png",
+      "sha": "5d9e172b022b401c32c22f828ad2da025c2590c1",
+      "size": 10016
+    },
+    {
+      "original_filename": "pcb_3v3_buck_adjusted.png",
+      "original_path": "c:/Users/Nathan/Documents/GitHub/SimpleFlightController/assets/pcb_3v3_buck_adjusted.png",
+      "bucky_url": "https://imgutil.s3.us-east-2.amazonaws.com/92c61c176e6d0d26f8d0f6f3562d4748d2791ae8aae3050ec2cffd36707f0bf2/pcb_3v3_buck_adjusted.png",
+      "cdn_url": "https://hc-cdn.hel1.your-objectstorage.com/s/v3/ec4820e3eabc124f44d0fae69a5be5e72f6fb5d0_pcb_3v3_buck_adjusted.png",
+      "cdn_file": "0_ec4820e3eabc124f44d0fae69a5be5e72f6fb5d0_pcb_3v3_buck_adjusted.png",
+      "sha": "ec4820e3eabc124f44d0fae69a5be5e72f6fb5d0",
+      "size": 57274
+    },
+    {
+      "original_filename": "pcb_3v3_buck_initial.png",
+      "original_path": "c:/Users/Nathan/Documents/GitHub/SimpleFlightController/assets/pcb_3v3_buck_initial.png",
+      "bucky_url": "https://imgutil.s3.us-east-2.amazonaws.com/0196535409b9cdc0ddb4d34ce435597e4bd7caeab69ecf12bd6eb23c19a5da2e/pcb_3v3_buck_initial.png",
+      "cdn_url": "https://hc-cdn.hel1.your-objectstorage.com/s/v3/6b75e5537f105b5c5353c57aed6bc4d04d905716_pcb_3v3_buck_initial.png",
+      "cdn_file": "0_6b75e5537f105b5c5353c57aed6bc4d04d905716_pcb_3v3_buck_initial.png",
+      "sha": "6b75e5537f105b5c5353c57aed6bc4d04d905716",
+      "size": 72573
+    },
+    {
+      "original_filename": "pcb_3v3_through_decoupling_caps.png",
+      "original_path": "c:/Users/Nathan/Documents/GitHub/SimpleFlightController/assets/pcb_3v3_through_decoupling_caps.png",
+      "bucky_url": "https://imgutil.s3.us-east-2.amazonaws.com/25f15ba550719341f3a0573b59466a89feedae5212b29158fc66f31e19109802/pcb_3v3_through_decoupling_caps.png",
+      "cdn_url": "https://hc-cdn.hel1.your-objectstorage.com/s/v3/3b489d22eedc68b7b8af7e759accc98384f6952d_pcb_3v3_through_decoupling_caps.png",
+      "cdn_file": "0_3b489d22eedc68b7b8af7e759accc98384f6952d_pcb_3v3_through_decoupling_caps.png",
+      "sha": "3b489d22eedc68b7b8af7e759accc98384f6952d",
+      "size": 80817
+    },
+    {
+      "original_filename": "pcb_5v_buck_boost_layout.png",
+      "original_path": "c:/Users/Nathan/Documents/GitHub/SimpleFlightController/assets/pcb_5v_buck_boost_layout.png",
+      "bucky_url": "https://imgutil.s3.us-east-2.amazonaws.com/7e86324a60da2f0ea1495fc5c42717dc3617e9ad545ff5cfeaf623b4f5c19885/pcb_5v_buck_boost_layout.png",
+      "cdn_url": "https://hc-cdn.hel1.your-objectstorage.com/s/v3/803dc0894d23718ebdefc5765b7360d2ded21e1b_pcb_5v_buck_boost_layout.png",
+      "cdn_file": "0_803dc0894d23718ebdefc5765b7360d2ded21e1b_pcb_5v_buck_boost_layout.png",
+      "sha": "803dc0894d23718ebdefc5765b7360d2ded21e1b",
+      "size": 88162
+    },
+    {
+      "original_filename": "pcb_5v_buck_boost_routed.png",
+      "original_path": "c:/Users/Nathan/Documents/GitHub/SimpleFlightController/assets/pcb_5v_buck_boost_routed.png",
+      "bucky_url": "https://imgutil.s3.us-east-2.amazonaws.com/8e7ffbb52e647a48d4fa4dc2827e094e523a26388d6a7215f01df2d25b3f54fd/pcb_5v_buck_boost_routed.png",
+      "cdn_url": "https://hc-cdn.hel1.your-objectstorage.com/s/v3/188b44883ac680256966226baef217e27d79acf7_pcb_5v_buck_boost_routed.png",
+      "cdn_file": "0_188b44883ac680256966226baef217e27d79acf7_pcb_5v_buck_boost_routed.png",
+      "sha": "188b44883ac680256966226baef217e27d79acf7",
+      "size": 126315
+    },
+    {
+      "original_filename": "pcb_all_groups_separated.png",
+      "original_path": "c:/Users/Nathan/Documents/GitHub/SimpleFlightController/assets/pcb_all_groups_separated.png",
+      "bucky_url": "https://imgutil.s3.us-east-2.amazonaws.com/46ccde4b16fa893352438a338d1ec6068c6b25165725212ba460e460494ea9b0/pcb_all_groups_separated.png",
+      "cdn_url": "https://hc-cdn.hel1.your-objectstorage.com/s/v3/51cd3927e5619231b3af5cd9604d8cd486de681a_pcb_all_groups_separated.png",
+      "cdn_file": "0_51cd3927e5619231b3af5cd9604d8cd486de681a_pcb_all_groups_separated.png",
+      "sha": "51cd3927e5619231b3af5cd9604d8cd486de681a",
+      "size": 70081
+    },
+    {
+      "original_filename": "pcb_all_routed_complete.png",
+      "original_path": "c:/Users/Nathan/Documents/GitHub/SimpleFlightController/assets/pcb_all_routed_complete.png",
+      "bucky_url": "https://imgutil.s3.us-east-2.amazonaws.com/374423c835136116c78f1cfdf574ace111b57fabd4659f9d4c0184bcca7cf27a/pcb_all_routed_complete.png",
+      "cdn_url": "https://hc-cdn.hel1.your-objectstorage.com/s/v3/6123dcda724abdbe564862cfd59c388e0b517837_pcb_all_routed_complete.png",
+      "cdn_file": "0_6123dcda724abdbe564862cfd59c388e0b517837_pcb_all_routed_complete.png",
+      "sha": "6123dcda724abdbe564862cfd59c388e0b517837",
+      "size": 155820
+    },
+    {
+      "original_filename": "pcb_battery_charger_layout.png",
+      "original_path": "c:/Users/Nathan/Documents/GitHub/SimpleFlightController/assets/pcb_battery_charger_layout.png",
+      "bucky_url": "https://imgutil.s3.us-east-2.amazonaws.com/b793baeb90463fb2c173972045f5f61725c683be9e0b517029c628a92c7f2555/pcb_battery_charger_layout.png",
+      "cdn_url": "https://hc-cdn.hel1.your-objectstorage.com/s/v3/c50c289127f6626e398e1dd93f156aa9239ca0dc_pcb_battery_charger_layout.png",
+      "cdn_file": "0_c50c289127f6626e398e1dd93f156aa9239ca0dc_pcb_battery_charger_layout.png",
+      "sha": "c50c289127f6626e398e1dd93f156aa9239ca0dc",
+      "size": 88120
+    },
+    {
+      "original_filename": "pcb_battery_charger_routed.png",
+      "original_path": "c:/Users/Nathan/Documents/GitHub/SimpleFlightController/assets/pcb_battery_charger_routed.png",
+      "bucky_url": "https://imgutil.s3.us-east-2.amazonaws.com/ef8b08e0151e71022b1d1bff185fe1b2bfd17322ec909be58d0f14d2b0a06c99/pcb_battery_charger_routed.png",
+      "cdn_url": "https://hc-cdn.hel1.your-objectstorage.com/s/v3/f01878d60b3499c1f3119d121367adc095038a66_pcb_battery_charger_routed.png",
+      "cdn_file": "0_f01878d60b3499c1f3119d121367adc095038a66_pcb_battery_charger_routed.png",
+      "sha": "f01878d60b3499c1f3119d121367adc095038a66",
+      "size": 100396
+    },
+    {
+      "original_filename": "pcb_bmp580_i2c_routing.png",
+      "original_path": "c:/Users/Nathan/Documents/GitHub/SimpleFlightController/assets/pcb_bmp580_i2c_routing.png",
+      "bucky_url": "https://imgutil.s3.us-east-2.amazonaws.com/b7743d0dcfbfbc507e0df77d7887d19c41f0eed1411ce4728271d46f26704999/pcb_bmp580_i2c_routing.png",
+      "cdn_url": "https://hc-cdn.hel1.your-objectstorage.com/s/v3/c03529ba4eee753126b6da05aa60ca9f3615b498_pcb_bmp580_i2c_routing.png",
+      "cdn_file": "0_c03529ba4eee753126b6da05aa60ca9f3615b498_pcb_bmp580_i2c_routing.png",
+      "sha": "c03529ba4eee753126b6da05aa60ca9f3615b498",
+      "size": 137441
+    },
+    {
+      "original_filename": "pcb_board_dimensions.png",
+      "original_path": "c:/Users/Nathan/Documents/GitHub/SimpleFlightController/assets/pcb_board_dimensions.png",
+      "bucky_url": "https://imgutil.s3.us-east-2.amazonaws.com/bbbad2f5865cdc57a44fac181d07cb25bda2c117e632e0221d28b7f72c927775/pcb_board_dimensions.png",
+      "cdn_url": "https://hc-cdn.hel1.your-objectstorage.com/s/v3/a0be299721829a198f4767003db2bde317e1fe49_pcb_board_dimensions.png",
+      "cdn_file": "0_a0be299721829a198f4767003db2bde317e1fe49_pcb_board_dimensions.png",
+      "sha": "a0be299721829a198f4767003db2bde317e1fe49",
+      "size": 5343
+    },
+    {
+      "original_filename": "pcb_board_outline_drawn.png",
+      "original_path": "c:/Users/Nathan/Documents/GitHub/SimpleFlightController/assets/pcb_board_outline_drawn.png",
+      "bucky_url": "https://imgutil.s3.us-east-2.amazonaws.com/222f31d17c91fd36f4b9e0f12fba698a41e1865448131ee94a0d19214bcc29ba/pcb_board_outline_drawn.png",
+      "cdn_url": "https://hc-cdn.hel1.your-objectstorage.com/s/v3/448816c6d568b80d56df0a55174900900238a363_pcb_board_outline_drawn.png",
+      "cdn_file": "0_448816c6d568b80d56df0a55174900900238a363_pcb_board_outline_drawn.png",
+      "sha": "448816c6d568b80d56df0a55174900900238a363",
+      "size": 153834
+    },
+    {
+      "original_filename": "pcb_board_setup_constraints.png",
+      "original_path": "c:/Users/Nathan/Documents/GitHub/SimpleFlightController/assets/pcb_board_setup_constraints.png",
+      "bucky_url": "https://imgutil.s3.us-east-2.amazonaws.com/722ceed226c4b65c187f55b24077e0097600bbc18424afae1d39483102190e29/pcb_board_setup_constraints.png",
+      "cdn_url": "https://hc-cdn.hel1.your-objectstorage.com/s/v3/1aadb0c0da8763f5512198ce4104451067d8ac24_pcb_board_setup_constraints.png",
+      "cdn_file": "0_1aadb0c0da8763f5512198ce4104451067d8ac24_pcb_board_setup_constraints.png",
+      "sha": "1aadb0c0da8763f5512198ce4104451067d8ac24",
+      "size": 12672
+    },
+    {
+      "original_filename": "pcb_bulk_decoupling_caps.png",
+      "original_path": "c:/Users/Nathan/Documents/GitHub/SimpleFlightController/assets/pcb_bulk_decoupling_caps.png",
+      "bucky_url": "https://imgutil.s3.us-east-2.amazonaws.com/486775a09e1d3a0fbc11e643e764c8b322b7962e0408dc3ca681ab5c4b20e694/pcb_bulk_decoupling_caps.png",
+      "cdn_url": "https://hc-cdn.hel1.your-objectstorage.com/s/v3/76502c959ad4635ccd32438fe04be6963847d750_pcb_bulk_decoupling_caps.png",
+      "cdn_file": "0_76502c959ad4635ccd32438fe04be6963847d750_pcb_bulk_decoupling_caps.png",
+      "sha": "76502c959ad4635ccd32438fe04be6963847d750",
+      "size": 18004
+    },
+    {
+      "original_filename": "pcb_components_imported.png",
+      "original_path": "c:/Users/Nathan/Documents/GitHub/SimpleFlightController/assets/pcb_components_imported.png",
+      "bucky_url": "https://imgutil.s3.us-east-2.amazonaws.com/6428ff42cc45358720eaf9fb219b7fd0df65156c47bfc9ca5f5fbc79357e91f1/pcb_components_imported.png",
+      "cdn_url": "https://hc-cdn.hel1.your-objectstorage.com/s/v3/acc124764d7af00c01c48aab5526f883f428efbc_pcb_components_imported.png",
+      "cdn_file": "0_acc124764d7af00c01c48aab5526f883f428efbc_pcb_components_imported.png",
+      "sha": "acc124764d7af00c01c48aab5526f883f428efbc",
+      "size": 225948
+    },
+    {
+      "original_filename": "pcb_constraints_settings.png",
+      "original_path": "c:/Users/Nathan/Documents/GitHub/SimpleFlightController/assets/pcb_constraints_settings.png",
+      "bucky_url": "https://imgutil.s3.us-east-2.amazonaws.com/0003e9406ca47dc3edc036b8078de0c14f49d7d43495aa5c89d41c9c7b436abe/pcb_constraints_settings.png",
+      "cdn_url": "https://hc-cdn.hel1.your-objectstorage.com/s/v3/151af206137f6852dc0e64675b698ed13e723c66_pcb_constraints_settings.png",
+      "cdn_file": "0_151af206137f6852dc0e64675b698ed13e723c66_pcb_constraints_settings.png",
+      "sha": "151af206137f6852dc0e64675b698ed13e723c66",
+      "size": 54706
+    },
+    {
+      "original_filename": "pcb_crystals_layout.png",
+      "original_path": "c:/Users/Nathan/Documents/GitHub/SimpleFlightController/assets/pcb_crystals_layout.png",
+      "bucky_url": "https://imgutil.s3.us-east-2.amazonaws.com/cc93370124cb160caa1dd81cc8b569beb8b39d5c0a4ecd0b81b9400b42fa6a9d/pcb_crystals_layout.png",
+      "cdn_url": "https://hc-cdn.hel1.your-objectstorage.com/s/v3/76f227974fe3d2b921e392e30138a33b9446e04f_pcb_crystals_layout.png",
+      "cdn_file": "0_76f227974fe3d2b921e392e30138a33b9446e04f_pcb_crystals_layout.png",
+      "sha": "76f227974fe3d2b921e392e30138a33b9446e04f",
+      "size": 33250
+    },
+    {
+      "original_filename": "pcb_drc_check_button.png",
+      "original_path": "c:/Users/Nathan/Documents/GitHub/SimpleFlightController/assets/pcb_drc_check_button.png",
+      "bucky_url": "https://imgutil.s3.us-east-2.amazonaws.com/2694d42386f99256d34a8bb95cdd13c8cfff4a5eca279858835548baf1d6bcdb/pcb_drc_check_button.png",
+      "cdn_url": "https://hc-cdn.hel1.your-objectstorage.com/s/v3/f6a6cf323c7105e70c08637bea442c94347b4722_pcb_drc_check_button.png",
+      "cdn_file": "0_f6a6cf323c7105e70c08637bea442c94347b4722_pcb_drc_check_button.png",
+      "sha": "f6a6cf323c7105e70c08637bea442c94347b4722",
+      "size": 11419
+    },
+    {
+      "original_filename": "pcb_drc_errors_from_imports.png",
+      "original_path": "c:/Users/Nathan/Documents/GitHub/SimpleFlightController/assets/pcb_drc_errors_from_imports.png",
+      "bucky_url": "https://imgutil.s3.us-east-2.amazonaws.com/6144c1afa3f6aaa2e5fcf9580b4abe867a97cb1cf905fe44d6cd7048b9be6ab3/pcb_drc_errors_from_imports.png",
+      "cdn_url": "https://hc-cdn.hel1.your-objectstorage.com/s/v3/ca24efa42d21abb21263b99ff999a1f61d7e940e_pcb_drc_errors_from_imports.png",
+      "cdn_file": "0_ca24efa42d21abb21263b99ff999a1f61d7e940e_pcb_drc_errors_from_imports.png",
+      "sha": "ca24efa42d21abb21263b99ff999a1f61d7e940e",
+      "size": 62055
+    },
+    {
+      "original_filename": "pcb_drc_results.png",
+      "original_path": "c:/Users/Nathan/Documents/GitHub/SimpleFlightController/assets/pcb_drc_results.png",
+      "bucky_url": "https://imgutil.s3.us-east-2.amazonaws.com/bb8a0277e4e471386a48cc5943282200a72f7d75a0b6f867c1165dd30e6ebbe0/pcb_drc_results.png",
+      "cdn_url": "https://hc-cdn.hel1.your-objectstorage.com/s/v3/9a99952db4d7dcb741463d6788c673ab0329500f_pcb_drc_results.png",
+      "cdn_file": "0_9a99952db4d7dcb741463d6788c673ab0329500f_pcb_drc_results.png",
+      "sha": "9a99952db4d7dcb741463d6788c673ab0329500f",
+      "size": 36507
+    },
+    {
+      "original_filename": "pcb_drc_run_button.png",
+      "original_path": "c:/Users/Nathan/Documents/GitHub/SimpleFlightController/assets/pcb_drc_run_button.png",
+      "bucky_url": "https://imgutil.s3.us-east-2.amazonaws.com/45c87e23a0c1302b32c2248ce1f423e1868aeb152d4b26a4121accf27b91a8f4/pcb_drc_run_button.png",
+      "cdn_url": "https://hc-cdn.hel1.your-objectstorage.com/s/v3/550bd5b3051d387fda135777b466598f695b90e5_pcb_drc_run_button.png",
+      "cdn_file": "0_550bd5b3051d387fda135777b466598f695b90e5_pcb_drc_run_button.png",
+      "sha": "550bd5b3051d387fda135777b466598f695b90e5",
+      "size": 28378
+    },
+    {
+      "original_filename": "pcb_edge_cuts_tool.png",
+      "original_path": "c:/Users/Nathan/Documents/GitHub/SimpleFlightController/assets/pcb_edge_cuts_tool.png",
+      "bucky_url": "https://imgutil.s3.us-east-2.amazonaws.com/a6f23e43a05e6d2bf20da6f908bd11316f19eb6fcede6318f14e5174c286e687/pcb_edge_cuts_tool.png",
+      "cdn_url": "https://hc-cdn.hel1.your-objectstorage.com/s/v3/2f8a0dea520b2ac94f1f2f45f5c41641d1f7ba56_pcb_edge_cuts_tool.png",
+      "cdn_file": "0_2f8a0dea520b2ac94f1f2f45f5c41641d1f7ba56_pcb_edge_cuts_tool.png",
+      "sha": "2f8a0dea520b2ac94f1f2f45f5c41641d1f7ba56",
+      "size": 11160
+    },
+    {
+      "original_filename": "pcb_final_complete.png",
+      "original_path": "c:/Users/Nathan/Documents/GitHub/SimpleFlightController/assets/pcb_final_complete.png",
+      "bucky_url": "https://imgutil.s3.us-east-2.amazonaws.com/80f3a33ba4d056b6984b0dad7e1520161ee9fc8ccaa9ed1862abecf3c2a7b409/pcb_final_complete.png",
+      "cdn_url": "https://hc-cdn.hel1.your-objectstorage.com/s/v3/50d7618ce15309279a6206f3cdfa7024a8a57cb3_pcb_final_complete.png",
+      "cdn_file": "0_50d7618ce15309279a6206f3cdfa7024a8a57cb3_pcb_final_complete.png",
+      "sha": "50d7618ce15309279a6206f3cdfa7024a8a57cb3",
+      "size": 243669
+    },
+    {
+      "original_filename": "pcb_final_layout_organized.png",
+      "original_path": "c:/Users/Nathan/Documents/GitHub/SimpleFlightController/assets/pcb_final_layout_organized.png",
+      "bucky_url": "https://imgutil.s3.us-east-2.amazonaws.com/c7c2635aed9615fd0755a971b9217b9591755ad4191f3cd7e40f7d65af9f8d81/pcb_final_layout_organized.png",
+      "cdn_url": "https://hc-cdn.hel1.your-objectstorage.com/s/v3/3ef2a6374abc23e6a60bff482baacbaf339947b9_pcb_final_layout_organized.png",
+      "cdn_file": "0_3ef2a6374abc23e6a60bff482baacbaf339947b9_pcb_final_layout_organized.png",
+      "sha": "3ef2a6374abc23e6a60bff482baacbaf339947b9",
+      "size": 172028
+    },
+    {
+      "original_filename": "pcb_ground_plane_connected.png",
+      "original_path": "c:/Users/Nathan/Documents/GitHub/SimpleFlightController/assets/pcb_ground_plane_connected.png",
+      "bucky_url": "https://imgutil.s3.us-east-2.amazonaws.com/308c6164d31784b1f55c9ed7551a0a3ec577f85bb4fdc1535657cf048a9f08d5/pcb_ground_plane_connected.png",
+      "cdn_url": "https://hc-cdn.hel1.your-objectstorage.com/s/v3/ec259459e9e0e4c3d3ec97dab4e053765ff8d524_pcb_ground_plane_connected.png",
+      "cdn_file": "0_ec259459e9e0e4c3d3ec97dab4e053765ff8d524_pcb_ground_plane_connected.png",
+      "sha": "ec259459e9e0e4c3d3ec97dab4e053765ff8d524",
+      "size": 89923
+    },
+    {
+      "original_filename": "pcb_ground_plane_disconnected.png",
+      "original_path": "c:/Users/Nathan/Documents/GitHub/SimpleFlightController/assets/pcb_ground_plane_disconnected.png",
+      "bucky_url": "https://imgutil.s3.us-east-2.amazonaws.com/9e10813a6824219f7b9766a463af16e418cc6c3ba4c2abc109029d62226c9c5c/pcb_ground_plane_disconnected.png",
+      "cdn_url": "https://hc-cdn.hel1.your-objectstorage.com/s/v3/703ebc948aacf286334890e817b472366d6ff5b0_pcb_ground_plane_disconnected.png",
+      "cdn_file": "0_703ebc948aacf286334890e817b472366d6ff5b0_pcb_ground_plane_disconnected.png",
+      "sha": "703ebc948aacf286334890e817b472366d6ff5b0",
+      "size": 65454
+    },
+    {
+      "original_filename": "pcb_ground_pour_complete.png",
+      "original_path": "c:/Users/Nathan/Documents/GitHub/SimpleFlightController/assets/pcb_ground_pour_complete.png",
+      "bucky_url": "https://imgutil.s3.us-east-2.amazonaws.com/b05e1194b9fc3164afb06f93f7e2e2cb15f30cc11438c2359fd9099b6cddd0e9/pcb_ground_pour_complete.png",
+      "cdn_url": "https://hc-cdn.hel1.your-objectstorage.com/s/v3/e859b4408e82c40d7110b84e302d63c6321d0211_pcb_ground_pour_complete.png",
+      "cdn_file": "0_e859b4408e82c40d7110b84e302d63c6321d0211_pcb_ground_pour_complete.png",
+      "sha": "e859b4408e82c40d7110b84e302d63c6321d0211",
+      "size": 153812
+    },
+    {
+      "original_filename": "pcb_ground_pour_filled.png",
+      "original_path": "c:/Users/Nathan/Documents/GitHub/SimpleFlightController/assets/pcb_ground_pour_filled.png",
+      "bucky_url": "https://imgutil.s3.us-east-2.amazonaws.com/930a3ab71c283a8e237b70bb944dc33661085b9572908b18a7d3887ee9488372/pcb_ground_pour_filled.png",
+      "cdn_url": "https://hc-cdn.hel1.your-objectstorage.com/s/v3/4f7ebc8c0096d5b30f1db3c60cc27a1ba93d2e70_pcb_ground_pour_filled.png",
+      "cdn_file": "0_4f7ebc8c0096d5b30f1db3c60cc27a1ba93d2e70_pcb_ground_pour_filled.png",
+      "sha": "4f7ebc8c0096d5b30f1db3c60cc27a1ba93d2e70",
+      "size": 170909
+    },
+    {
+      "original_filename": "pcb_ground_pour_outline.png",
+      "original_path": "c:/Users/Nathan/Documents/GitHub/SimpleFlightController/assets/pcb_ground_pour_outline.png",
+      "bucky_url": "https://imgutil.s3.us-east-2.amazonaws.com/093458b901d7475b6d5f7f83b4c432f7558161d59315d3691bed897432c6271b/pcb_ground_pour_outline.png",
+      "cdn_url": "https://hc-cdn.hel1.your-objectstorage.com/s/v3/cc3274a0944f55f82864c3bea41ba4661f439a0e_pcb_ground_pour_outline.png",
+      "cdn_file": "0_cc3274a0944f55f82864c3bea41ba4661f439a0e_pcb_ground_pour_outline.png",
+      "sha": "cc3274a0944f55f82864c3bea41ba4661f439a0e",
+      "size": 101964
+    },
+    {
+      "original_filename": "pcb_ground_pour_settings.png",
+      "original_path": "c:/Users/Nathan/Documents/GitHub/SimpleFlightController/assets/pcb_ground_pour_settings.png",
+      "bucky_url": "https://imgutil.s3.us-east-2.amazonaws.com/92f0ba51659cfb45db8361a35729287f2e052fc5d3247a3b7edb587998a736b7/pcb_ground_pour_settings.png",
+      "cdn_url": "https://hc-cdn.hel1.your-objectstorage.com/s/v3/c3f4c371c8fd4741834a16bd88776552bde60f16_pcb_ground_pour_settings.png",
+      "cdn_file": "0_c3f4c371c8fd4741834a16bd88776552bde60f16_pcb_ground_pour_settings.png",
+      "sha": "c3f4c371c8fd4741834a16bd88776552bde60f16",
+      "size": 38585
+    },
+    {
+      "original_filename": "pcb_group_components_tip.png",
+      "original_path": "c:/Users/Nathan/Documents/GitHub/SimpleFlightController/assets/pcb_group_components_tip.png",
+      "bucky_url": "https://imgutil.s3.us-east-2.amazonaws.com/f5afd7ae5c2d481b2f5389baa913f44e5f1b3b3818ebdca19235f67966e09bab/pcb_group_components_tip.png",
+      "cdn_url": "https://hc-cdn.hel1.your-objectstorage.com/s/v3/92272445077cc29c87fd74e989962ff542e9123c_pcb_group_components_tip.png",
+      "cdn_file": "0_92272445077cc29c87fd74e989962ff542e9123c_pcb_group_components_tip.png",
+      "sha": "92272445077cc29c87fd74e989962ff542e9123c",
+      "size": 41319
+    },
+    {
+      "original_filename": "pcb_import_button.png",
+      "original_path": "c:/Users/Nathan/Documents/GitHub/SimpleFlightController/assets/pcb_import_button.png",
+      "bucky_url": "https://imgutil.s3.us-east-2.amazonaws.com/fc61038d714d4aa0193c15d8e057d0aabc9e75c428e4e355b7339adfb1d9dd19/pcb_import_button.png",
+      "cdn_url": "https://hc-cdn.hel1.your-objectstorage.com/s/v3/5c74ad43a8d12b6293d3d5c8a165571429b15d21_pcb_import_button.png",
+      "cdn_file": "0_5c74ad43a8d12b6293d3d5c8a165571429b15d21_pcb_import_button.png",
+      "sha": "5c74ad43a8d12b6293d3d5c8a165571429b15d21",
+      "size": 18553
+    },
+    {
+      "original_filename": "pcb_imu_decoupling_routed.png",
+      "original_path": "c:/Users/Nathan/Documents/GitHub/SimpleFlightController/assets/pcb_imu_decoupling_routed.png",
+      "bucky_url": "https://imgutil.s3.us-east-2.amazonaws.com/f2219f565672d1d9734ad9b9c0cd3db93cdd53b65b4aa1aee36537f3d7465268/pcb_imu_decoupling_routed.png",
+      "cdn_url": "https://hc-cdn.hel1.your-objectstorage.com/s/v3/db81f7f25a949b3e66bfc40fad4fe114817212ae_pcb_imu_decoupling_routed.png",
+      "cdn_file": "0_db81f7f25a949b3e66bfc40fad4fe114817212ae_pcb_imu_decoupling_routed.png",
+      "sha": "db81f7f25a949b3e66bfc40fad4fe114817212ae",
+      "size": 92559
+    },
+    {
+      "original_filename": "pcb_initial_board_layout.png",
+      "original_path": "c:/Users/Nathan/Documents/GitHub/SimpleFlightController/assets/pcb_initial_board_layout.png",
+      "bucky_url": "https://imgutil.s3.us-east-2.amazonaws.com/5ed9c8bd21082ac796d264579ee0f4862b1b0fce1ceaa2929d7146c4b03d09f6/pcb_initial_board_layout.png",
+      "cdn_url": "https://hc-cdn.hel1.your-objectstorage.com/s/v3/dc1f136a2df1a4ca28bcb8c33d55769bf3cb4857_pcb_initial_board_layout.png",
+      "cdn_file": "0_dc1f136a2df1a4ca28bcb8c33d55769bf3cb4857_pcb_initial_board_layout.png",
+      "sha": "dc1f136a2df1a4ca28bcb8c33d55769bf3cb4857",
+      "size": 90827
+    },
+    {
+      "original_filename": "pcb_layers_panel.png",
+      "original_path": "c:/Users/Nathan/Documents/GitHub/SimpleFlightController/assets/pcb_layers_panel.png",
+      "bucky_url": "https://imgutil.s3.us-east-2.amazonaws.com/78732deca2d313c2bf4ba76057c85c015f8b4db49b4426a7783e89d5c70f66e3/pcb_layers_panel.png",
+      "cdn_url": "https://hc-cdn.hel1.your-objectstorage.com/s/v3/5e8975a52959dff20a3e83a73cd1b9c36cede118_pcb_layers_panel.png",
+      "cdn_file": "0_5e8975a52959dff20a3e83a73cd1b9c36cede118_pcb_layers_panel.png",
+      "sha": "5e8975a52959dff20a3e83a73cd1b9c36cede118",
+      "size": 23581
+    },
+    {
+      "original_filename": "pcb_microsd_layout.png",
+      "original_path": "c:/Users/Nathan/Documents/GitHub/SimpleFlightController/assets/pcb_microsd_layout.png",
+      "bucky_url": "https://imgutil.s3.us-east-2.amazonaws.com/0defd8413021ff25ffd30d437e296e2397294f167662e62635fb117ec5176ab9/pcb_microsd_layout.png",
+      "cdn_url": "https://hc-cdn.hel1.your-objectstorage.com/s/v3/41d6114e338889ba5d63748b70cfa9f866ba72e4_pcb_microsd_layout.png",
+      "cdn_file": "0_41d6114e338889ba5d63748b70cfa9f866ba72e4_pcb_microsd_layout.png",
+      "sha": "41d6114e338889ba5d63748b70cfa9f866ba72e4",
+      "size": 50180
+    },
+    {
+      "original_filename": "pcb_microsd_routed.png",
+      "original_path": "c:/Users/Nathan/Documents/GitHub/SimpleFlightController/assets/pcb_microsd_routed.png",
+      "bucky_url": "https://imgutil.s3.us-east-2.amazonaws.com/54958c35014ea3fbd91652e8102cd2fdaa3a1e2a82dd63e018a53748df7d6192/pcb_microsd_routed.png",
+      "cdn_url": "https://hc-cdn.hel1.your-objectstorage.com/s/v3/2f7a053291e85d75db06de364503279d2fb4ecee_pcb_microsd_routed.png",
+      "cdn_file": "0_2f7a053291e85d75db06de364503279d2fb4ecee_pcb_microsd_routed.png",
+      "sha": "2f7a053291e85d75db06de364503279d2fb4ecee",
+      "size": 132282
+    },
+    {
+      "original_filename": "pcb_net_classes_clearance.png",
+      "original_path": "c:/Users/Nathan/Documents/GitHub/SimpleFlightController/assets/pcb_net_classes_clearance.png",
+      "bucky_url": "https://imgutil.s3.us-east-2.amazonaws.com/0fd93475c89d5098d44a87919d8a8635523c3d7df0ee4c20680fd9ebc6fb81c3/pcb_net_classes_clearance.png",
+      "cdn_url": "https://hc-cdn.hel1.your-objectstorage.com/s/v3/ce45b43a0986bfd9f7c09d50e6264f37e2999a2f_pcb_net_classes_clearance.png",
+      "cdn_file": "0_ce45b43a0986bfd9f7c09d50e6264f37e2999a2f_pcb_net_classes_clearance.png",
+      "sha": "ce45b43a0986bfd9f7c09d50e6264f37e2999a2f",
+      "size": 78360
+    },
+    {
+      "original_filename": "pcb_pgnd_gnd_connection.png",
+      "original_path": "c:/Users/Nathan/Documents/GitHub/SimpleFlightController/assets/pcb_pgnd_gnd_connection.png",
+      "bucky_url": "https://imgutil.s3.us-east-2.amazonaws.com/a995fe1fce7b64de8241513ae751e6773b7e7403ec7645cbc66ac76d569a7336/pcb_pgnd_gnd_connection.png",
+      "cdn_url": "https://hc-cdn.hel1.your-objectstorage.com/s/v3/36dd873c5b6c3f7f9e4329ad3f084c63c892d65b_pcb_pgnd_gnd_connection.png",
+      "cdn_file": "0_36dd873c5b6c3f7f9e4329ad3f084c63c892d65b_pcb_pgnd_gnd_connection.png",
+      "sha": "36dd873c5b6c3f7f9e4329ad3f084c63c892d65b",
+      "size": 4556
+    },
+    {
+      "original_filename": "pcb_predefined_sizes.png",
+      "original_path": "c:/Users/Nathan/Documents/GitHub/SimpleFlightController/assets/pcb_predefined_sizes.png",
+      "bucky_url": "https://imgutil.s3.us-east-2.amazonaws.com/e3a11e96a1ec2103e67dee2d8b68bf0b327406a351a5eaaa4927b656dc2ba502/pcb_predefined_sizes.png",
+      "cdn_url": "https://hc-cdn.hel1.your-objectstorage.com/s/v3/8d91bc46653535a8416d3165bc3cff5bef3da659_pcb_predefined_sizes.png",
+      "cdn_file": "0_8d91bc46653535a8416d3165bc3cff5bef3da659_pcb_predefined_sizes.png",
+      "sha": "8d91bc46653535a8416d3165bc3cff5bef3da659",
+      "size": 26551
+    },
+    {
+      "original_filename": "pcb_reference_designators_window.png",
+      "original_path": "c:/Users/Nathan/Documents/GitHub/SimpleFlightController/assets/pcb_reference_designators_window.png",
+      "bucky_url": "https://imgutil.s3.us-east-2.amazonaws.com/a251b3eaa4cb42ee922228a067963a80ee5c483845f1eec5927a6abed3f09f9d/pcb_reference_designators_window.png",
+      "cdn_url": "https://hc-cdn.hel1.your-objectstorage.com/s/v3/0f1bc20f8f294ffea47f49206060fb12132170de_pcb_reference_designators_window.png",
+      "cdn_file": "0_0f1bc20f8f294ffea47f49206060fb12132170de_pcb_reference_designators_window.png",
+      "sha": "0f1bc20f8f294ffea47f49206060fb12132170de",
+      "size": 46898
+    },
+    {
+      "original_filename": "pcb_route_differential_pair_menu.png",
+      "original_path": "c:/Users/Nathan/Documents/GitHub/SimpleFlightController/assets/pcb_route_differential_pair_menu.png",
+      "bucky_url": "https://imgutil.s3.us-east-2.amazonaws.com/cda68dbc978a595d626fe1348e94093fe2bfc41e84c23f17fabca3e6663f9fed/pcb_route_differential_pair_menu.png",
+      "cdn_url": "https://hc-cdn.hel1.your-objectstorage.com/s/v3/e3044760e0daa41c1c2f93a840b88a1a24e39881_pcb_route_differential_pair_menu.png",
+      "cdn_file": "0_e3044760e0daa41c1c2f93a840b88a1a24e39881_pcb_route_differential_pair_menu.png",
+      "sha": "e3044760e0daa41c1c2f93a840b88a1a24e39881",
+      "size": 23136
+    },
+    {
+      "original_filename": "pcb_silkscreen_after.png",
+      "original_path": "c:/Users/Nathan/Documents/GitHub/SimpleFlightController/assets/pcb_silkscreen_after.png",
+      "bucky_url": "https://imgutil.s3.us-east-2.amazonaws.com/09dc0c35cd977bf2a4703feca6f0ad37021fe50a8d4c818ebd26da7b2496b452/pcb_silkscreen_after.png",
+      "cdn_url": "https://hc-cdn.hel1.your-objectstorage.com/s/v3/b84fb7526df22229a5b75049c35bd29c2c9b61e0_pcb_silkscreen_after.png",
+      "cdn_file": "0_b84fb7526df22229a5b75049c35bd29c2c9b61e0_pcb_silkscreen_after.png",
+      "sha": "b84fb7526df22229a5b75049c35bd29c2c9b61e0",
+      "size": 40957
+    },
+    {
+      "original_filename": "pcb_silkscreen_before.png",
+      "original_path": "c:/Users/Nathan/Documents/GitHub/SimpleFlightController/assets/pcb_silkscreen_before.png",
+      "bucky_url": "https://imgutil.s3.us-east-2.amazonaws.com/1bedd2c20bc40455148ac28b2b58da81c7d90adf6640b4ef8c42c9d2314a3bc0/pcb_silkscreen_before.png",
+      "cdn_url": "https://hc-cdn.hel1.your-objectstorage.com/s/v3/712a95b8bd5dc06f155910859b92d2b0cb91bd29_pcb_silkscreen_before.png",
+      "cdn_file": "0_712a95b8bd5dc06f155910859b92d2b0cb91bd29_pcb_silkscreen_before.png",
+      "sha": "712a95b8bd5dc06f155910859b92d2b0cb91bd29",
+      "size": 70545
+    },
+    {
+      "original_filename": "pcb_silkscreen_font_settings.png",
+      "original_path": "c:/Users/Nathan/Documents/GitHub/SimpleFlightController/assets/pcb_silkscreen_font_settings.png",
+      "bucky_url": "https://imgutil.s3.us-east-2.amazonaws.com/9a4dff24e6589a5cda18b14d8967e81ff678dbad3cfd3ec8915f6191089dfc6e/pcb_silkscreen_font_settings.png",
+      "cdn_url": "https://hc-cdn.hel1.your-objectstorage.com/s/v3/85edc6cf9f0421dd70af49c57c3ac9f0de3c0f29_pcb_silkscreen_font_settings.png",
+      "cdn_file": "0_85edc6cf9f0421dd70af49c57c3ac9f0de3c0f29_pcb_silkscreen_font_settings.png",
+      "sha": "85edc6cf9f0421dd70af49c57c3ac9f0de3c0f29",
+      "size": 11431
+    },
+    {
+      "original_filename": "pcb_silkscreen_organized.png",
+      "original_path": "c:/Users/Nathan/Documents/GitHub/SimpleFlightController/assets/pcb_silkscreen_organized.png",
+      "bucky_url": "https://imgutil.s3.us-east-2.amazonaws.com/ae743aa42fff616b5d78e9a3dd232ff4e93de1a65fee5fadbdf8b4ad0dcdd327/pcb_silkscreen_organized.png",
+      "cdn_url": "https://hc-cdn.hel1.your-objectstorage.com/s/v3/6aa086f11b5db28d64eb4f1e5a0f1e14b202d60f_pcb_silkscreen_organized.png",
+      "cdn_file": "0_6aa086f11b5db28d64eb4f1e5a0f1e14b202d60f_pcb_silkscreen_organized.png",
+      "sha": "6aa086f11b5db28d64eb4f1e5a0f1e14b202d60f",
+      "size": 224073
+    },
+    {
+      "original_filename": "pcb_stitching_via_location.png",
+      "original_path": "c:/Users/Nathan/Documents/GitHub/SimpleFlightController/assets/pcb_stitching_via_location.png",
+      "bucky_url": "https://imgutil.s3.us-east-2.amazonaws.com/e815ae37a9f707e570d3023585e7446dd3de397469c1e436bd66f1ce9512ef92/pcb_stitching_via_location.png",
+      "cdn_url": "https://hc-cdn.hel1.your-objectstorage.com/s/v3/7f4ea2670025d1c5407cfa5b9f8970bd26e693bd_pcb_stitching_via_location.png",
+      "cdn_file": "0_7f4ea2670025d1c5407cfa5b9f8970bd26e693bd_pcb_stitching_via_location.png",
+      "sha": "7f4ea2670025d1c5407cfa5b9f8970bd26e693bd",
+      "size": 86353
+    },
+    {
+      "original_filename": "pcb_stitching_via_placed.png",
+      "original_path": "c:/Users/Nathan/Documents/GitHub/SimpleFlightController/assets/pcb_stitching_via_placed.png",
+      "bucky_url": "https://imgutil.s3.us-east-2.amazonaws.com/7d5b73c5b4d03ed95139e53b5733f9b50d58f6b308e1455f7b084af91bfdcf65/pcb_stitching_via_placed.png",
+      "cdn_url": "https://hc-cdn.hel1.your-objectstorage.com/s/v3/0489a1ccd8b17372d37ac83946b4439ebb4ba2c3_pcb_stitching_via_placed.png",
+      "cdn_file": "0_0489a1ccd8b17372d37ac83946b4439ebb4ba2c3_pcb_stitching_via_placed.png",
+      "sha": "0489a1ccd8b17372d37ac83946b4439ebb4ba2c3",
+      "size": 53364
+    },
+    {
+      "original_filename": "pcb_stm32_decoupling_layout.png",
+      "original_path": "c:/Users/Nathan/Documents/GitHub/SimpleFlightController/assets/pcb_stm32_decoupling_layout.png",
+      "bucky_url": "https://imgutil.s3.us-east-2.amazonaws.com/549afba56478396741ffce90b74404cb05ffe4a0639037676582fe1a64326159/pcb_stm32_decoupling_layout.png",
+      "cdn_url": "https://hc-cdn.hel1.your-objectstorage.com/s/v3/5dfeaa33d4b381d5c84d2e703e40e1cc59e76e8a_pcb_stm32_decoupling_layout.png",
+      "cdn_file": "0_5dfeaa33d4b381d5c84d2e703e40e1cc59e76e8a_pcb_stm32_decoupling_layout.png",
+      "sha": "5dfeaa33d4b381d5c84d2e703e40e1cc59e76e8a",
+      "size": 125299
+    },
+    {
+      "original_filename": "pcb_stm32_orientation.png",
+      "original_path": "c:/Users/Nathan/Documents/GitHub/SimpleFlightController/assets/pcb_stm32_orientation.png",
+      "bucky_url": "https://imgutil.s3.us-east-2.amazonaws.com/4e15246dc79ef334789d4e0434c16454f85ee89147f82eeb36c9302c2ed365e4/pcb_stm32_orientation.png",
+      "cdn_url": "https://hc-cdn.hel1.your-objectstorage.com/s/v3/8c1f0de5244fd0ec0d7717ce06b3c9b516a39b67_pcb_stm32_orientation.png",
+      "cdn_file": "0_8c1f0de5244fd0ec0d7717ce06b3c9b516a39b67_pcb_stm32_orientation.png",
+      "sha": "8c1f0de5244fd0ec0d7717ce06b3c9b516a39b67",
+      "size": 45111
+    },
+    {
+      "original_filename": "pcb_text_graphics_menu.png",
+      "original_path": "c:/Users/Nathan/Documents/GitHub/SimpleFlightController/assets/pcb_text_graphics_menu.png",
+      "bucky_url": "https://imgutil.s3.us-east-2.amazonaws.com/02275c5c89c6a079b12f521a1ead42a361a75ba8edb206023eddf26def92fa68/pcb_text_graphics_menu.png",
+      "cdn_url": "https://hc-cdn.hel1.your-objectstorage.com/s/v3/ac3b345f193c7bde36330edcabd45c878d050897_pcb_text_graphics_menu.png",
+      "cdn_file": "0_ac3b345f193c7bde36330edcabd45c878d050897_pcb_text_graphics_menu.png",
+      "sha": "ac3b345f193c7bde36330edcabd45c878d050897",
+      "size": 44136
+    },
+    {
+      "original_filename": "pcb_thermal_pad_net_edit.png",
+      "original_path": "c:/Users/Nathan/Documents/GitHub/SimpleFlightController/assets/pcb_thermal_pad_net_edit.png",
+      "bucky_url": "https://imgutil.s3.us-east-2.amazonaws.com/a7aabb4da8abf0edde4a34a5bdbc5712d913f21ba889ab2f46362dd6efe6bd77/pcb_thermal_pad_net_edit.png",
+      "cdn_url": "https://hc-cdn.hel1.your-objectstorage.com/s/v3/3fe26fcb5a9cae8992bb10b34b497173445ac4bc_pcb_thermal_pad_net_edit.png",
+      "cdn_file": "0_3fe26fcb5a9cae8992bb10b34b497173445ac4bc_pcb_thermal_pad_net_edit.png",
+      "sha": "3fe26fcb5a9cae8992bb10b34b497173445ac4bc",
+      "size": 97425
+    },
+    {
+      "original_filename": "pcb_thermal_pad_via.png",
+      "original_path": "c:/Users/Nathan/Documents/GitHub/SimpleFlightController/assets/pcb_thermal_pad_via.png",
+      "bucky_url": "https://imgutil.s3.us-east-2.amazonaws.com/cad953533eff6987746ac43d5afe5c531634932339740eddc15d4472ca9ded16/pcb_thermal_pad_via.png",
+      "cdn_url": "https://hc-cdn.hel1.your-objectstorage.com/s/v3/70c2572d368bbde4d8af647dafe78bf1b493eb01_pcb_thermal_pad_via.png",
+      "cdn_file": "0_70c2572d368bbde4d8af647dafe78bf1b493eb01_pcb_thermal_pad_via.png",
+      "sha": "70c2572d368bbde4d8af647dafe78bf1b493eb01",
+      "size": 45081
+    },
+    {
+      "original_filename": "pcb_track_width_dropdown.png",
+      "original_path": "c:/Users/Nathan/Documents/GitHub/SimpleFlightController/assets/pcb_track_width_dropdown.png",
+      "bucky_url": "https://imgutil.s3.us-east-2.amazonaws.com/ad777911d2e2667e8a796b10356207aecf730b946f91d4596e9fbd7ce7856057/pcb_track_width_dropdown.png",
+      "cdn_url": "https://hc-cdn.hel1.your-objectstorage.com/s/v3/17ab1fcc961849b7c96f3142f1cb00eadc32fe91_pcb_track_width_dropdown.png",
+      "cdn_file": "0_17ab1fcc961849b7c96f3142f1cb00eadc32fe91_pcb_track_width_dropdown.png",
+      "sha": "17ab1fcc961849b7c96f3142f1cb00eadc32fe91",
+      "size": 14381
+    },
+    {
+      "original_filename": "pcb_update_from_schematic.png",
+      "original_path": "c:/Users/Nathan/Documents/GitHub/SimpleFlightController/assets/pcb_update_from_schematic.png",
+      "bucky_url": "https://imgutil.s3.us-east-2.amazonaws.com/14408f574f5de3b4595e6b7578ee1333c2bf72051515b0cb74be2891cbd3ec1b/pcb_update_from_schematic.png",
+      "cdn_url": "https://hc-cdn.hel1.your-objectstorage.com/s/v3/38d7e9aa0d1f121cdd315f49eea2970d624b423c_pcb_update_from_schematic.png",
+      "cdn_file": "0_38d7e9aa0d1f121cdd315f49eea2970d624b423c_pcb_update_from_schematic.png",
+      "sha": "38d7e9aa0d1f121cdd315f49eea2970d624b423c",
+      "size": 33623
+    },
+    {
+      "original_filename": "pcb_usb_differential_routing.png",
+      "original_path": "c:/Users/Nathan/Documents/GitHub/SimpleFlightController/assets/pcb_usb_differential_routing.png",
+      "bucky_url": "https://imgutil.s3.us-east-2.amazonaws.com/cac8418f63cd349f652dae08ccb50b2f5b0b2b39c616689cbc1654086cb0005c/pcb_usb_differential_routing.png",
+      "cdn_url": "https://hc-cdn.hel1.your-objectstorage.com/s/v3/f9bda1da977a8f5bbd12305a27a8ade3f0bda3a8_pcb_usb_differential_routing.png",
+      "cdn_file": "0_f9bda1da977a8f5bbd12305a27a8ade3f0bda3a8_pcb_usb_differential_routing.png",
+      "sha": "f9bda1da977a8f5bbd12305a27a8ade3f0bda3a8",
+      "size": 53730
+    },
+    {
+      "original_filename": "pcb_usb_differential_start.png",
+      "original_path": "c:/Users/Nathan/Documents/GitHub/SimpleFlightController/assets/pcb_usb_differential_start.png",
+      "bucky_url": "https://imgutil.s3.us-east-2.amazonaws.com/b5d0d4099debb49bed538cf0c8444afe46e873eb65878b6a160a304c5a95d936/pcb_usb_differential_start.png",
+      "cdn_url": "https://hc-cdn.hel1.your-objectstorage.com/s/v3/5007b05f91d2c46e7748ab71fafc4dd2392e53ae_pcb_usb_differential_start.png",
+      "cdn_file": "0_5007b05f91d2c46e7748ab71fafc4dd2392e53ae_pcb_usb_differential_start.png",
+      "sha": "5007b05f91d2c46e7748ab71fafc4dd2392e53ae",
+      "size": 20889
+    },
+    {
+      "original_filename": "pcb_usbc_components_placed.png",
+      "original_path": "c:/Users/Nathan/Documents/GitHub/SimpleFlightController/assets/pcb_usbc_components_placed.png",
+      "bucky_url": "https://imgutil.s3.us-east-2.amazonaws.com/9f31def9894710cd345cd47540f74a076cdd59a592689630ba67f8f7b9eac5b2/pcb_usbc_components_placed.png",
+      "cdn_url": "https://hc-cdn.hel1.your-objectstorage.com/s/v3/bf96d2f4b657f7c458e53cf5cad485d0d5afd551_pcb_usbc_components_placed.png",
+      "cdn_file": "0_bf96d2f4b657f7c458e53cf5cad485d0d5afd551_pcb_usbc_components_placed.png",
+      "sha": "bf96d2f4b657f7c458e53cf5cad485d0d5afd551",
+      "size": 78007
+    },
+    {
+      "original_filename": "pcb_usbc_layout_example.png",
+      "original_path": "c:/Users/Nathan/Documents/GitHub/SimpleFlightController/assets/pcb_usbc_layout_example.png",
+      "bucky_url": "https://imgutil.s3.us-east-2.amazonaws.com/882a49d2205e9a1999a71498e0f35db760b3297bf785803cedf2fbffcc1da4eb/pcb_usbc_layout_example.png",
+      "cdn_url": "https://hc-cdn.hel1.your-objectstorage.com/s/v3/3b629c240ec77ab266a3a0afa108f11405ccf7c3_pcb_usbc_layout_example.png",
+      "cdn_file": "0_3b629c240ec77ab266a3a0afa108f11405ccf7c3_pcb_usbc_layout_example.png",
+      "sha": "3b629c240ec77ab266a3a0afa108f11405ccf7c3",
+      "size": 119261
+    },
+    {
+      "original_filename": "pcb_usbc_overhang.png",
+      "original_path": "c:/Users/Nathan/Documents/GitHub/SimpleFlightController/assets/pcb_usbc_overhang.png",
+      "bucky_url": "https://imgutil.s3.us-east-2.amazonaws.com/ca8a6ae027388214ccc581f86b1c465e044569964f35c5140c00579971e6a233/pcb_usbc_overhang.png",
+      "cdn_url": "https://hc-cdn.hel1.your-objectstorage.com/s/v3/a8d0756383184e8dfe1608b29c6214f451bf6638_pcb_usbc_overhang.png",
+      "cdn_file": "0_a8d0756383184e8dfe1608b29c6214f451bf6638_pcb_usbc_overhang.png",
+      "sha": "a8d0756383184e8dfe1608b29c6214f451bf6638",
+      "size": 14376
+    },
+    {
+      "original_filename": "pcb_vbus_routing_fixed.png",
+      "original_path": "c:/Users/Nathan/Documents/GitHub/SimpleFlightController/assets/pcb_vbus_routing_fixed.png",
+      "bucky_url": "https://imgutil.s3.us-east-2.amazonaws.com/c96268409c913ba3c950ecb3704d73f46f219499e0551368c077db6eb5ced71f/pcb_vbus_routing_fixed.png",
+      "cdn_url": "https://hc-cdn.hel1.your-objectstorage.com/s/v3/ac63949260b423cb9e3545a33ce7e68caa42ae54_pcb_vbus_routing_fixed.png",
+      "cdn_file": "0_ac63949260b423cb9e3545a33ce7e68caa42ae54_pcb_vbus_routing_fixed.png",
+      "sha": "ac63949260b423cb9e3545a33ce7e68caa42ae54",
+      "size": 79066
+    },
+    {
+      "original_filename": "pcb_vbus_routing_issue.png",
+      "original_path": "c:/Users/Nathan/Documents/GitHub/SimpleFlightController/assets/pcb_vbus_routing_issue.png",
+      "bucky_url": "https://imgutil.s3.us-east-2.amazonaws.com/f51f7e8554b9502931b3718314fc93d687299c7f5df242cb6b4b37063877bebc/pcb_vbus_routing_issue.png",
+      "cdn_url": "https://hc-cdn.hel1.your-objectstorage.com/s/v3/c6fab4f979d8a0060f953e24ba58aa6cda776e7f_pcb_vbus_routing_issue.png",
+      "cdn_file": "0_c6fab4f979d8a0060f953e24ba58aa6cda776e7f_pcb_vbus_routing_issue.png",
+      "sha": "c6fab4f979d8a0060f953e24ba58aa6cda776e7f",
+      "size": 54940
+    },
+    {
+      "original_filename": "pcb_via_on_pad_placed.png",
+      "original_path": "c:/Users/Nathan/Documents/GitHub/SimpleFlightController/assets/pcb_via_on_pad_placed.png",
+      "bucky_url": "https://imgutil.s3.us-east-2.amazonaws.com/05b831e45c5edc8ea367a632e7613792be2cfd45b9e79300740241a0c57d2264/pcb_via_on_pad_placed.png",
+      "cdn_url": "https://hc-cdn.hel1.your-objectstorage.com/s/v3/907eb54dbe539772ada718d0a0494d23abd6ada0_pcb_via_on_pad_placed.png",
+      "cdn_file": "0_907eb54dbe539772ada718d0a0494d23abd6ada0_pcb_via_on_pad_placed.png",
+      "sha": "907eb54dbe539772ada718d0a0494d23abd6ada0",
+      "size": 39146
+    },
+    {
+      "original_filename": "pcb_via_placement_example.png",
+      "original_path": "c:/Users/Nathan/Documents/GitHub/SimpleFlightController/assets/pcb_via_placement_example.png",
+      "bucky_url": "https://imgutil.s3.us-east-2.amazonaws.com/a0da04b1add80606bc7b00ca6b5d103916dabd82730f06892e246d7db0c51bbc/pcb_via_placement_example.png",
+      "cdn_url": "https://hc-cdn.hel1.your-objectstorage.com/s/v3/333c89c3eacdae130001e62cf12007d0a4beb12a_pcb_via_placement_example.png",
+      "cdn_file": "0_333c89c3eacdae130001e62cf12007d0a4beb12a_pcb_via_placement_example.png",
+      "sha": "333c89c3eacdae130001e62cf12007d0a4beb12a",
+      "size": 52815
+    },
+    {
+      "original_filename": "pcb_via_size_dropdown.png",
+      "original_path": "c:/Users/Nathan/Documents/GitHub/SimpleFlightController/assets/pcb_via_size_dropdown.png",
+      "bucky_url": "https://imgutil.s3.us-east-2.amazonaws.com/c9dbb927455d5a13e3f4b256ec33b677684156f81a424f1cffd50c11b9f4e69f/pcb_via_size_dropdown.png",
+      "cdn_url": "https://hc-cdn.hel1.your-objectstorage.com/s/v3/531b3f680cbc585654d518cdafe03b0a691225dd_pcb_via_size_dropdown.png",
+      "cdn_file": "0_531b3f680cbc585654d518cdafe03b0a691225dd_pcb_via_size_dropdown.png",
+      "sha": "531b3f680cbc585654d518cdafe03b0a691225dd",
+      "size": 49315
+    },
+    {
+      "original_filename": "power_ground_symbol.png",
+      "original_path": "c:/Users/Nathan/Documents/GitHub/SimpleFlightController/assets/power_ground_symbol.png",
+      "bucky_url": "https://imgutil.s3.us-east-2.amazonaws.com/546672679d5e8843026cda004c085ece8a51352805e5bdd8e6bc301926c56842/power_ground_symbol.png",
+      "cdn_url": "https://hc-cdn.hel1.your-objectstorage.com/s/v3/1f9b90df2a7fc0b422e6369a6ce3972f6bde3b4d_power_ground_symbol.png",
+      "cdn_file": "0_1f9b90df2a7fc0b422e6369a6ce3972f6bde3b4d_power_ground_symbol.png",
+      "sha": "1f9b90df2a7fc0b422e6369a6ce3972f6bde3b4d",
+      "size": 1377
+    },
+    {
+      "original_filename": "production_folder_moved.png",
+      "original_path": "c:/Users/Nathan/Documents/GitHub/SimpleFlightController/assets/production_folder_moved.png",
+      "bucky_url": "https://imgutil.s3.us-east-2.amazonaws.com/2d6c2f2d539f1f806491ff156eca094e9b0ccf47d444b5c780106d3991eb7e77/production_folder_moved.png",
+      "cdn_url": "https://hc-cdn.hel1.your-objectstorage.com/s/v3/8352ad45cd7ccff9c36babb4455258598c247a99_production_folder_moved.png",
+      "cdn_file": "0_8352ad45cd7ccff9c36babb4455258598c247a99_production_folder_moved.png",
+      "sha": "8352ad45cd7ccff9c36babb4455258598c247a99",
+      "size": 19088
+    },
+    {
+      "original_filename": "pwm-duty-cycle.png",
+      "original_path": "c:/Users/Nathan/Documents/GitHub/SimpleFlightController/assets/pwm-duty-cycle.png",
+      "bucky_url": "https://imgutil.s3.us-east-2.amazonaws.com/24595254df49c88a2332c691066b82bda81759005b59e5c19027bf7d0b1abb6c/pwm-duty-cycle.png",
+      "cdn_url": "https://hc-cdn.hel1.your-objectstorage.com/s/v3/dfa58b42380f88635d4898510995f8d17621203a_pwm-duty-cycle.png",
+      "cdn_file": "0_dfa58b42380f88635d4898510995f8d17621203a_pwm-duty-cycle.png",
+      "sha": "dfa58b42380f88635d4898510995f8d17621203a",
+      "size": 27170
+    },
+    {
+      "original_filename": "schematic_usbc_selection.png",
+      "original_path": "c:/Users/Nathan/Documents/GitHub/SimpleFlightController/assets/schematic_usbc_selection.png",
+      "bucky_url": "https://imgutil.s3.us-east-2.amazonaws.com/a7380a5c8bb548450830e61a610bdf9db4877627248073c7f9d75a2e54b69492/schematic_usbc_selection.png",
+      "cdn_url": "https://hc-cdn.hel1.your-objectstorage.com/s/v3/a84b22f03308e15d2e999dd0c2f0c62e3386d37d_schematic_usbc_selection.png",
+      "cdn_file": "0_a84b22f03308e15d2e999dd0c2f0c62e3386d37d_schematic_usbc_selection.png",
+      "sha": "a84b22f03308e15d2e999dd0c2f0c62e3386d37d",
+      "size": 43566
+    },
+    {
+      "original_filename": "servo-pwm-50hz.png",
+      "original_path": "c:/Users/Nathan/Documents/GitHub/SimpleFlightController/assets/servo-pwm-50hz.png",
+      "bucky_url": "https://imgutil.s3.us-east-2.amazonaws.com/addaf2487dc60f1c9601374581438ebc162a3b7781a4ab583847d88d001ad3ae/servo-pwm-50hz.png",
+      "cdn_url": "https://hc-cdn.hel1.your-objectstorage.com/s/v3/fbba5610e535e0bd7dd9061bdb1bca6f9520b912_servo-pwm-50hz.png",
+      "cdn_file": "0_fbba5610e535e0bd7dd9061bdb1bca6f9520b912_servo-pwm-50hz.png",
+      "sha": "fbba5610e535e0bd7dd9061bdb1bca6f9520b912",
+      "size": 51415
+    },
+    {
+      "original_filename": "stm32_reference_schematic.png",
+      "original_path": "c:/Users/Nathan/Documents/GitHub/SimpleFlightController/assets/stm32_reference_schematic.png",
+      "bucky_url": "https://imgutil.s3.us-east-2.amazonaws.com/adc4cd473fc6e5c8169d3077fa6cd8632d69e17c0882ca306a56e9ea7c530202/stm32_reference_schematic.png",
+      "cdn_url": "https://hc-cdn.hel1.your-objectstorage.com/s/v3/08dc401cc68c607831e88961c57e243e08141771_stm32_reference_schematic.png",
+      "cdn_file": "0_08dc401cc68c607831e88961c57e243e08141771_stm32_reference_schematic.png",
+      "sha": "08dc401cc68c607831e88961c57e243e08141771",
+      "size": 236470
+    },
+    {
+      "original_filename": "stm32_vdd_vss_wiring.png",
+      "original_path": "c:/Users/Nathan/Documents/GitHub/SimpleFlightController/assets/stm32_vdd_vss_wiring.png",
+      "bucky_url": "https://imgutil.s3.us-east-2.amazonaws.com/84ce68747166ccff48044254d870b5fe4a712b4461d11d8c0cd39cdb7d59e7cb/stm32_vdd_vss_wiring.png",
+      "cdn_url": "https://hc-cdn.hel1.your-objectstorage.com/s/v3/e6095b36411c3e643774f58b9b3c081092aafb22_stm32_vdd_vss_wiring.png",
+      "cdn_file": "0_e6095b36411c3e643774f58b9b3c081092aafb22_stm32_vdd_vss_wiring.png",
+      "sha": "e6095b36411c3e643774f58b9b3c081092aafb22",
+      "size": 32090
+    },
+    {
+      "original_filename": "stm32cubemx_bmp_interrupt.png",
+      "original_path": "c:/Users/Nathan/Documents/GitHub/SimpleFlightController/assets/stm32cubemx_bmp_interrupt.png",
+      "bucky_url": "https://imgutil.s3.us-east-2.amazonaws.com/2334af7caf652842e17867d84aeb0ff46e8929731fdd17adf8680e1b3eff4f04/stm32cubemx_bmp_interrupt.png",
+      "cdn_url": "https://hc-cdn.hel1.your-objectstorage.com/s/v3/80c2a59bd8b85ac4a2672beabcb5ef21191ced7e_stm32cubemx_bmp_interrupt.png",
+      "cdn_file": "0_80c2a59bd8b85ac4a2672beabcb5ef21191ced7e_stm32cubemx_bmp_interrupt.png",
+      "sha": "80c2a59bd8b85ac4a2672beabcb5ef21191ced7e",
+      "size": 46639
+    },
+    {
+      "original_filename": "stm32cubemx_bq_ce_gpio.png",
+      "original_path": "c:/Users/Nathan/Documents/GitHub/SimpleFlightController/assets/stm32cubemx_bq_ce_gpio.png",
+      "bucky_url": "https://imgutil.s3.us-east-2.amazonaws.com/9c4899b64ccd3f7e45c8cf4a56cd594ee1349e46805b30c860750959789a97c8/stm32cubemx_bq_ce_gpio.png",
+      "cdn_url": "https://hc-cdn.hel1.your-objectstorage.com/s/v3/4d9b3b29b10020c5d9728779270ece69d9c57b01_stm32cubemx_bq_ce_gpio.png",
+      "cdn_file": "0_4d9b3b29b10020c5d9728779270ece69d9c57b01_stm32cubemx_bq_ce_gpio.png",
+      "sha": "4d9b3b29b10020c5d9728779270ece69d9c57b01",
+      "size": 39559
+    },
+    {
+      "original_filename": "stm32cubemx_bq_int_gpio.png",
+      "original_path": "c:/Users/Nathan/Documents/GitHub/SimpleFlightController/assets/stm32cubemx_bq_int_gpio.png",
+      "bucky_url": "https://imgutil.s3.us-east-2.amazonaws.com/96f9102813f7349130e7d867ea759cc5d694c1413f3de1db2164dbce2954cd6e/stm32cubemx_bq_int_gpio.png",
+      "cdn_url": "https://hc-cdn.hel1.your-objectstorage.com/s/v3/2e11bb87c76fd8fa537fe8948019e0184a22e424_stm32cubemx_bq_int_gpio.png",
+      "cdn_file": "0_2e11bb87c76fd8fa537fe8948019e0184a22e424_stm32cubemx_bq_int_gpio.png",
+      "sha": "2e11bb87c76fd8fa537fe8948019e0184a22e424",
+      "size": 54762
+    },
+    {
+      "original_filename": "stm32cubemx_final_pinout1.png",
+      "original_path": "c:/Users/Nathan/Documents/GitHub/SimpleFlightController/assets/stm32cubemx_final_pinout1.png",
+      "bucky_url": "https://imgutil.s3.us-east-2.amazonaws.com/2e5363aeb68f8c032ee37b67aa4d655ce63349cffc4f8407ea17255d83eb56e7/stm32cubemx_final_pinout1.png",
+      "cdn_url": "https://hc-cdn.hel1.your-objectstorage.com/s/v3/fb798901d2d129b6317aeca9bc488ef36c2892ef_stm32cubemx_final_pinout1.png",
+      "cdn_file": "0_fb798901d2d129b6317aeca9bc488ef36c2892ef_stm32cubemx_final_pinout1.png",
+      "sha": "fb798901d2d129b6317aeca9bc488ef36c2892ef",
+      "size": 53713
+    },
+    {
+      "original_filename": "stm32cubemx_final_pinout2.png",
+      "original_path": "c:/Users/Nathan/Documents/GitHub/SimpleFlightController/assets/stm32cubemx_final_pinout2.png",
+      "bucky_url": "https://imgutil.s3.us-east-2.amazonaws.com/4562f0e679e699acb7cadaa1c9c4b780803516655fd564a9c49b3f341b88f893/stm32cubemx_final_pinout2.png",
+      "cdn_url": "https://hc-cdn.hel1.your-objectstorage.com/s/v3/c87bf3996bea0834a1723249462dadae88036b17_stm32cubemx_final_pinout2.png",
+      "cdn_file": "0_c87bf3996bea0834a1723249462dadae88036b17_stm32cubemx_final_pinout2.png",
+      "sha": "c87bf3996bea0834a1723249462dadae88036b17",
+      "size": 132174
+    },
+    {
+      "original_filename": "stm32cubemx_final_pinout3.png",
+      "original_path": "c:/Users/Nathan/Documents/GitHub/SimpleFlightController/assets/stm32cubemx_final_pinout3.png",
+      "bucky_url": "https://imgutil.s3.us-east-2.amazonaws.com/a0aa77ca1a4eadd9b0bafc8f11c0ae6e2fbb88505d6391aed27a9d57fb51698c/stm32cubemx_final_pinout3.png",
+      "cdn_url": "https://hc-cdn.hel1.your-objectstorage.com/s/v3/a5ad9b0d1c095d89720d6ca1e5f5e00776448e0e_stm32cubemx_final_pinout3.png",
+      "cdn_file": "0_a5ad9b0d1c095d89720d6ca1e5f5e00776448e0e_stm32cubemx_final_pinout3.png",
+      "sha": "a5ad9b0d1c095d89720d6ca1e5f5e00776448e0e",
+      "size": 59104
+    },
+    {
+      "original_filename": "stm32cubemx_i2c_enabled.png",
+      "original_path": "c:/Users/Nathan/Documents/GitHub/SimpleFlightController/assets/stm32cubemx_i2c_enabled.png",
+      "bucky_url": "https://imgutil.s3.us-east-2.amazonaws.com/2eafa8773cb8467eaac3b931f55f61143909f7b610a3d1da7402aaedbd7d1aa7/stm32cubemx_i2c_enabled.png",
+      "cdn_url": "https://hc-cdn.hel1.your-objectstorage.com/s/v3/27049091e21ed6f794ba0f727f537191e58ba7ef_stm32cubemx_i2c_enabled.png",
+      "cdn_file": "0_27049091e21ed6f794ba0f727f537191e58ba7ef_stm32cubemx_i2c_enabled.png",
+      "sha": "27049091e21ed6f794ba0f727f537191e58ba7ef",
+      "size": 139296
+    },
+    {
+      "original_filename": "stm32cubemx_imu_interrupts.png",
+      "original_path": "c:/Users/Nathan/Documents/GitHub/SimpleFlightController/assets/stm32cubemx_imu_interrupts.png",
+      "bucky_url": "https://imgutil.s3.us-east-2.amazonaws.com/921f535683229a16e3a8a386f3fda8c14dfdab67632c8b88542b5268f9d00f09/stm32cubemx_imu_interrupts.png",
+      "cdn_url": "https://hc-cdn.hel1.your-objectstorage.com/s/v3/684938f807fe0e3b58a65fbcbad5c28a4464435a_stm32cubemx_imu_interrupts.png",
+      "cdn_file": "0_684938f807fe0e3b58a65fbcbad5c28a4464435a_stm32cubemx_imu_interrupts.png",
+      "sha": "684938f807fe0e3b58a65fbcbad5c28a4464435a",
+      "size": 54148
+    },
+    {
+      "original_filename": "stm32cubemx_mcu_selected.png",
+      "original_path": "c:/Users/Nathan/Documents/GitHub/SimpleFlightController/assets/stm32cubemx_mcu_selected.png",
+      "bucky_url": "https://imgutil.s3.us-east-2.amazonaws.com/2009c444017365c8b730fb2dc2c461043b5e9fe713dbdb1ebb75e39f64db281a/stm32cubemx_mcu_selected.png",
+      "cdn_url": "https://hc-cdn.hel1.your-objectstorage.com/s/v3/b3576e122a84ad794536c05e436f77b257198536_stm32cubemx_mcu_selected.png",
+      "cdn_file": "0_b3576e122a84ad794536c05e436f77b257198536_stm32cubemx_mcu_selected.png",
+      "sha": "b3576e122a84ad794536c05e436f77b257198536",
+      "size": 144278
+    },
+    {
+      "original_filename": "stm32cubemx_mcu_selector.png",
+      "original_path": "c:/Users/Nathan/Documents/GitHub/SimpleFlightController/assets/stm32cubemx_mcu_selector.png",
+      "bucky_url": "https://imgutil.s3.us-east-2.amazonaws.com/dae0b8f49c57303739687f008dac9ff235f29f01edb4e42c953059d1cf1b67be/stm32cubemx_mcu_selector.png",
+      "cdn_url": "https://hc-cdn.hel1.your-objectstorage.com/s/v3/b284f0aa7617463dc5a9b27c5cd6c68eb9e33c57_stm32cubemx_mcu_selector.png",
+      "cdn_file": "0_b284f0aa7617463dc5a9b27c5cd6c68eb9e33c57_stm32cubemx_mcu_selector.png",
+      "sha": "b284f0aa7617463dc5a9b27c5cd6c68eb9e33c57",
+      "size": 460935
+    },
+    {
+      "original_filename": "stm32cubemx_pinout_config.png",
+      "original_path": "c:/Users/Nathan/Documents/GitHub/SimpleFlightController/assets/stm32cubemx_pinout_config.png",
+      "bucky_url": "https://imgutil.s3.us-east-2.amazonaws.com/53f509cce574c64df540df42f0b74812c48c3894138f288c286a0ad4bde77079/stm32cubemx_pinout_config.png",
+      "cdn_url": "https://hc-cdn.hel1.your-objectstorage.com/s/v3/73a1a83a53f8ecfc333b3b7571cd8ef6dead97d7_stm32cubemx_pinout_config.png",
+      "cdn_file": "0_73a1a83a53f8ecfc333b3b7571cd8ef6dead97d7_stm32cubemx_pinout_config.png",
+      "sha": "73a1a83a53f8ecfc333b3b7571cd8ef6dead97d7",
+      "size": 256130
+    },
+    {
+      "original_filename": "stm32cubemx_pwm_config.png",
+      "original_path": "c:/Users/Nathan/Documents/GitHub/SimpleFlightController/assets/stm32cubemx_pwm_config.png",
+      "bucky_url": "https://imgutil.s3.us-east-2.amazonaws.com/5306f12db329bc5ed82a192e961fd07355568be376461573d069881af0253197/stm32cubemx_pwm_config.png",
+      "cdn_url": "https://hc-cdn.hel1.your-objectstorage.com/s/v3/07ea5869e3b6401972ea540180a778eb1b73d048_stm32cubemx_pwm_config.png",
+      "cdn_file": "0_07ea5869e3b6401972ea540180a778eb1b73d048_stm32cubemx_pwm_config.png",
+      "sha": "07ea5869e3b6401972ea540180a778eb1b73d048",
+      "size": 177212
+    },
+    {
+      "original_filename": "stm32cubemx_rcc_config.png",
+      "original_path": "c:/Users/Nathan/Documents/GitHub/SimpleFlightController/assets/stm32cubemx_rcc_config.png",
+      "bucky_url": "https://imgutil.s3.us-east-2.amazonaws.com/f20d070fa2f1f8857f25ad76e295beebf91a9efffc98885f12cf695a73a3a1d4/stm32cubemx_rcc_config.png",
+      "cdn_url": "https://hc-cdn.hel1.your-objectstorage.com/s/v3/59a3a6b88e05ad56d7d0353c2fa1e40ff0ba5706_stm32cubemx_rcc_config.png",
+      "cdn_file": "0_59a3a6b88e05ad56d7d0353c2fa1e40ff0ba5706_stm32cubemx_rcc_config.png",
+      "sha": "59a3a6b88e05ad56d7d0353c2fa1e40ff0ba5706",
+      "size": 116060
+    },
+    {
+      "original_filename": "stm32cubemx_save_location.png",
+      "original_path": "c:/Users/Nathan/Documents/GitHub/SimpleFlightController/assets/stm32cubemx_save_location.png",
+      "bucky_url": "https://imgutil.s3.us-east-2.amazonaws.com/3917bfe2d48549245cecbbc33594301c28d9215eba4c58d0a1343d612ee2483d/stm32cubemx_save_location.png",
+      "cdn_url": "https://hc-cdn.hel1.your-objectstorage.com/s/v3/be24ef3122d8cea1d6630ebd394fa894baaf686f_stm32cubemx_save_location.png",
+      "cdn_file": "0_be24ef3122d8cea1d6630ebd394fa894baaf686f_stm32cubemx_save_location.png",
+      "sha": "be24ef3122d8cea1d6630ebd394fa894baaf686f",
+      "size": 2754
+    },
+    {
+      "original_filename": "stm32cubemx_sdmmc_card_detect.png",
+      "original_path": "c:/Users/Nathan/Documents/GitHub/SimpleFlightController/assets/stm32cubemx_sdmmc_card_detect.png",
+      "bucky_url": "https://imgutil.s3.us-east-2.amazonaws.com/90cd67df3d9f1121239ad32e81430f16b746017667dcdbaf9593b45163ddfb5c/stm32cubemx_sdmmc_card_detect.png",
+      "cdn_url": "https://hc-cdn.hel1.your-objectstorage.com/s/v3/70d2111b1516cdcd5ae22a58df15035460e64029_stm32cubemx_sdmmc_card_detect.png",
+      "cdn_file": "0_70d2111b1516cdcd5ae22a58df15035460e64029_stm32cubemx_sdmmc_card_detect.png",
+      "sha": "70d2111b1516cdcd5ae22a58df15035460e64029",
+      "size": 59010
+    },
+    {
+      "original_filename": "stm32cubemx_sdmmc_enabled.png",
+      "original_path": "c:/Users/Nathan/Documents/GitHub/SimpleFlightController/assets/stm32cubemx_sdmmc_enabled.png",
+      "bucky_url": "https://imgutil.s3.us-east-2.amazonaws.com/5823c87fac0cf340edcd05d0551f349d4af2dd220bd8d38992e6e721dd672762/stm32cubemx_sdmmc_enabled.png",
+      "cdn_url": "https://hc-cdn.hel1.your-objectstorage.com/s/v3/751aeac27931452c3b6f08421b021755527600a6_stm32cubemx_sdmmc_enabled.png",
+      "cdn_file": "0_751aeac27931452c3b6f08421b021755527600a6_stm32cubemx_sdmmc_enabled.png",
+      "sha": "751aeac27931452c3b6f08421b021755527600a6",
+      "size": 137014
+    },
+    {
+      "original_filename": "stm32cubemx_spi_configured.png",
+      "original_path": "c:/Users/Nathan/Documents/GitHub/SimpleFlightController/assets/stm32cubemx_spi_configured.png",
+      "bucky_url": "https://imgutil.s3.us-east-2.amazonaws.com/36116899a701bc75bc13733b7b46ce6f87c6ee107436fecaf9324bf2ac3f79c3/stm32cubemx_spi_configured.png",
+      "cdn_url": "https://hc-cdn.hel1.your-objectstorage.com/s/v3/c500c296dc42ffa3157cd5c80eef336e9e1f6361_stm32cubemx_spi_configured.png",
+      "cdn_file": "0_c500c296dc42ffa3157cd5c80eef336e9e1f6361_stm32cubemx_spi_configured.png",
+      "sha": "c500c296dc42ffa3157cd5c80eef336e9e1f6361",
+      "size": 294428
+    },
+    {
+      "original_filename": "stm32cubemx_startup.png",
+      "original_path": "c:/Users/Nathan/Documents/GitHub/SimpleFlightController/assets/stm32cubemx_startup.png",
+      "bucky_url": "https://imgutil.s3.us-east-2.amazonaws.com/ebcf157bee8a2d4ee516a53c87ef4f5920489141eadd9a6a5fa15c231bd9252d/stm32cubemx_startup.png",
+      "cdn_url": "https://hc-cdn.hel1.your-objectstorage.com/s/v3/1798957db12ac9a10935d0f4d33f8a253c594d5b_stm32cubemx_startup.png",
+      "cdn_file": "0_1798957db12ac9a10935d0f4d33f8a253c594d5b_stm32cubemx_startup.png",
+      "sha": "1798957db12ac9a10935d0f4d33f8a253c594d5b",
+      "size": 286848
+    },
+    {
+      "original_filename": "stm32cubemx_toolchain_makefile.png",
+      "original_path": "c:/Users/Nathan/Documents/GitHub/SimpleFlightController/assets/stm32cubemx_toolchain_makefile.png",
+      "bucky_url": "https://imgutil.s3.us-east-2.amazonaws.com/8e3d4577902561f882b26ca604ac1d8ed943a022c0d932afe4c9b4a725325817/stm32cubemx_toolchain_makefile.png",
+      "cdn_url": "https://hc-cdn.hel1.your-objectstorage.com/s/v3/40d409ff6b572200bf5ab31adcf420c17a31d84c_stm32cubemx_toolchain_makefile.png",
+      "cdn_file": "0_40d409ff6b572200bf5ab31adcf420c17a31d84c_stm32cubemx_toolchain_makefile.png",
+      "sha": "40d409ff6b572200bf5ab31adcf420c17a31d84c",
+      "size": 224340
+    },
+    {
+      "original_filename": "stm32cubemx_usb_otg.png",
+      "original_path": "c:/Users/Nathan/Documents/GitHub/SimpleFlightController/assets/stm32cubemx_usb_otg.png",
+      "bucky_url": "https://imgutil.s3.us-east-2.amazonaws.com/f9bfa1bec80b3b5f42f544fb4d7826fc80820df31cce8c1fbd2d2407c26fba56/stm32cubemx_usb_otg.png",
+      "cdn_url": "https://hc-cdn.hel1.your-objectstorage.com/s/v3/644566c8defed3a1ce9f27c15f2d44ed007c04cd_stm32cubemx_usb_otg.png",
+      "cdn_file": "0_644566c8defed3a1ce9f27c15f2d44ed007c04cd_stm32cubemx_usb_otg.png",
+      "sha": "644566c8defed3a1ce9f27c15f2d44ed007c04cd",
+      "size": 251138
+    },
+    {
+      "original_filename": "ti-battery-charger-page.png",
+      "original_path": "c:/Users/Nathan/Documents/GitHub/SimpleFlightController/assets/ti-battery-charger-page.png",
+      "bucky_url": "https://imgutil.s3.us-east-2.amazonaws.com/180645e003db81ef307b347e4ec16a5a0b6f0ca6af723ea1bc9ae6d0e1460751/ti-battery-charger-page.png",
+      "cdn_url": "https://hc-cdn.hel1.your-objectstorage.com/s/v3/d6432723b54aa82475fc61680db8eb9416ea0036_ti-battery-charger-page.png",
+      "cdn_file": "0_d6432723b54aa82475fc61680db8eb9416ea0036_ti-battery-charger-page.png",
+      "sha": "d6432723b54aa82475fc61680db8eb9416ea0036",
+      "size": 64362
+    },
+    {
+      "original_filename": "ti-dcdc-power-modules.png",
+      "original_path": "c:/Users/Nathan/Documents/GitHub/SimpleFlightController/assets/ti-dcdc-power-modules.png",
+      "bucky_url": "https://imgutil.s3.us-east-2.amazonaws.com/5f5a63f6a9690eed12772d7b1e2f299d3f1527943c154ecf26a703fa07969a5d/ti-dcdc-power-modules.png",
+      "cdn_url": "https://hc-cdn.hel1.your-objectstorage.com/s/v3/5485b44bfcbdf47c671d59768d9c9ed748152a25_ti-dcdc-power-modules.png",
+      "cdn_file": "0_5485b44bfcbdf47c671d59768d9c9ed748152a25_ti-dcdc-power-modules.png",
+      "sha": "5485b44bfcbdf47c671d59768d9c9ed748152a25",
+      "size": 246926
+    },
+    {
+      "original_filename": "tps63070_adjustable.png",
+      "original_path": "c:/Users/Nathan/Documents/GitHub/SimpleFlightController/assets/tps63070_adjustable.png",
+      "bucky_url": "https://imgutil.s3.us-east-2.amazonaws.com/61e807092cba2a37e0c421ffb17de37e1557285b7263064ed507b11c7f4c883c/tps63070_adjustable.png",
+      "cdn_url": "https://hc-cdn.hel1.your-objectstorage.com/s/v3/d563f4ddeff3b72f081a77601c4f33f277bc570f_tps63070_adjustable.png",
+      "cdn_file": "0_d563f4ddeff3b72f081a77601c4f33f277bc570f_tps63070_adjustable.png",
+      "sha": "d563f4ddeff3b72f081a77601c4f33f277bc570f",
+      "size": 52662
+    },
+    {
+      "original_filename": "tps63070_fixed.png",
+      "original_path": "c:/Users/Nathan/Documents/GitHub/SimpleFlightController/assets/tps63070_fixed.png",
+      "bucky_url": "https://imgutil.s3.us-east-2.amazonaws.com/f31d981c6675b418df28f28429660369dccdd11ae405a341f8ae80ea4da9a45a/tps63070_fixed.png",
+      "cdn_url": "https://hc-cdn.hel1.your-objectstorage.com/s/v3/586f44f95da873cbd7a0c3eaba996dda57b91af7_tps63070_fixed.png",
+      "cdn_file": "0_586f44f95da873cbd7a0c3eaba996dda57b91af7_tps63070_fixed.png",
+      "sha": "586f44f95da873cbd7a0c3eaba996dda57b91af7",
+      "size": 62144
+    },
+    {
+      "original_filename": "tps63070_schematic_complete.png",
+      "original_path": "c:/Users/Nathan/Documents/GitHub/SimpleFlightController/assets/tps63070_schematic_complete.png",
+      "bucky_url": "https://imgutil.s3.us-east-2.amazonaws.com/15918645e02863eeab8fed815b973a1ca27c23a1cf916493f9c6e4b5bf4768ee/tps63070_schematic_complete.png",
+      "cdn_url": "https://hc-cdn.hel1.your-objectstorage.com/s/v3/579d30360238a3af6c4b2500296c6f77f0df82a5_tps63070_schematic_complete.png",
+      "cdn_file": "0_579d30360238a3af6c4b2500296c6f77f0df82a5_tps63070_schematic_complete.png",
+      "sha": "579d30360238a3af6c4b2500296c6f77f0df82a5",
+      "size": 23377
+    },
+    {
+      "original_filename": "usbc.png",
+      "original_path": "c:/Users/Nathan/Documents/GitHub/SimpleFlightController/assets/usbc.png",
+      "bucky_url": "https://imgutil.s3.us-east-2.amazonaws.com/61bbd57404022d3cce425827645a2e8e3e75444328629909ff623895fbb9cefe/usbc.png",
+      "cdn_url": "https://hc-cdn.hel1.your-objectstorage.com/s/v3/3cef224c168e7de4e92507c1ede446f3412a80ef_usbc.png",
+      "cdn_file": "0_3cef224c168e7de4e92507c1ede446f3412a80ef_usbc.png",
+      "sha": "3cef224c168e7de4e92507c1ede446f3412a80ef",
+      "size": 41768
+    },
+    {
+      "original_filename": "usbc_done.png",
+      "original_path": "c:/Users/Nathan/Documents/GitHub/SimpleFlightController/assets/usbc_done.png",
+      "bucky_url": "https://imgutil.s3.us-east-2.amazonaws.com/38e815d5df6ea8c771a006e8470fa9c2c26b3017bb22bb1b7120fae3949a26da/usbc_done.png",
+      "cdn_url": "https://hc-cdn.hel1.your-objectstorage.com/s/v3/159720619db037c2cf9504c755cb985c189212e3_usbc_done.png",
+      "cdn_file": "0_159720619db037c2cf9504c755cb985c189212e3_usbc_done.png",
+      "sha": "159720619db037c2cf9504c755cb985c189212e3",
+      "size": 61380
+    },
+    {
+      "original_filename": "voltage_divider_circuit.png",
+      "original_path": "c:/Users/Nathan/Documents/GitHub/SimpleFlightController/assets/voltage_divider_circuit.png",
+      "bucky_url": "https://imgutil.s3.us-east-2.amazonaws.com/2b01652d975fcd69999c7568aecde19898809b573c6f429ee8adf7388dc9784c/voltage_divider_circuit.png",
+      "cdn_url": "https://hc-cdn.hel1.your-objectstorage.com/s/v3/4e405900e8a68972df11b37104da2234747800e2_voltage_divider_circuit.png",
+      "cdn_file": "0_4e405900e8a68972df11b37104da2234747800e2_voltage_divider_circuit.png",
+      "sha": "4e405900e8a68972df11b37104da2234747800e2",
+      "size": 14582
+    },
+    {
+      "original_filename": "vscode_stm32_build_flash.png",
+      "original_path": "c:/Users/Nathan/Documents/GitHub/SimpleFlightController/assets/vscode_stm32_build_flash.png",
+      "bucky_url": "https://imgutil.s3.us-east-2.amazonaws.com/7361e634ca30aa864d7df6f6ebe96b5a17533849df10521c6cb24bdd263327d9/vscode_stm32_build_flash.png",
+      "cdn_url": "https://hc-cdn.hel1.your-objectstorage.com/s/v3/e30b0ede9b8baeb1f998cc37b3211cf05f45cd24_vscode_stm32_build_flash.png",
+      "cdn_file": "0_e30b0ede9b8baeb1f998cc37b3211cf05f45cd24_vscode_stm32_build_flash.png",
+      "sha": "e30b0ede9b8baeb1f998cc37b3211cf05f45cd24",
+      "size": 128698
+    },
+    {
+      "original_filename": "vscode_stm32_extension.png",
+      "original_path": "c:/Users/Nathan/Documents/GitHub/SimpleFlightController/assets/vscode_stm32_extension.png",
+      "bucky_url": "https://imgutil.s3.us-east-2.amazonaws.com/282c3dbd44ba4c6451299cfb5f4de9db5fb78b5b01d03aac2fe7c3db1b15a60e/vscode_stm32_extension.png",
+      "cdn_url": "https://hc-cdn.hel1.your-objectstorage.com/s/v3/d346cc47c7e62ee781fbfc7e4bb14bc64d8d0b6c_vscode_stm32_extension.png",
+      "cdn_file": "0_d346cc47c7e62ee781fbfc7e4bb14bc64d8d0b6c_vscode_stm32_extension.png",
+      "sha": "d346cc47c7e62ee781fbfc7e4bb14bc64d8d0b6c",
+      "size": 262009
+    },
+    {
+      "original_filename": "vscode_stm32_sidebar_button.png",
+      "original_path": "c:/Users/Nathan/Documents/GitHub/SimpleFlightController/assets/vscode_stm32_sidebar_button.png",
+      "bucky_url": "https://imgutil.s3.us-east-2.amazonaws.com/88e32edc7ac80cd416ced15606f0421e3cc2b4aa645dbef4d5204e7780b1cbd2/vscode_stm32_sidebar_button.png",
+      "cdn_url": "https://hc-cdn.hel1.your-objectstorage.com/s/v3/184dc2fabc0d05636d18ecac6742d3b23ef22e47_vscode_stm32_sidebar_button.png",
+      "cdn_file": "0_184dc2fabc0d05636d18ecac6742d3b23ef22e47_vscode_stm32_sidebar_button.png",
+      "sha": "184dc2fabc0d05636d18ecac6742d3b23ef22e47",
+      "size": 27174
+    }
+  ],
+  "failures": []
+}

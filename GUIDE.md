@@ -1148,25 +1148,35 @@ Feel free to modify this board to include more sensors, servos, peripherals, mic
 
 # Firmware
 
-After you have recieved your board, you need to actually write the firmware to communicate with the STM32. From STM32CubeMX go to the `Project Manager` section and then click on  `Toolchain / IDE` and select `Makefile` this allows use to use `VSCode` or any other code editor to edit the files much easier without having to use ST's software.
+Now you can either write your firmware through STM32CubeMX/VSCode or use [STM32duino](https://github.com/stm32duino/Arduino_Core_STM32).
 
-![alt text](image.png)
+## STM32CubeMX
 
-Now go to the button `Generate Code` at the top and download/install any packages that are required.
+After you have received your board, you need to write the firmware to communicate with the STM32. From STM32CubeMX, go to the `Project Manager` section, then click on `Toolchain / IDE` and select `Makefile`. This allows you to use `VSCode` or any other code editor to edit the files much more easily without having to use ST's software.
 
-After that's done, open up `VSCode` and open the the `software` directory. You're also going to want to install this extension to make building the software much easier:
+![STM32CubeMX Toolchain Makefile](assets/stm32cubemx_toolchain_makefile.png)
 
-![alt text](image-1.png)
+Now click the `Generate Code` button at the top and download/install any packages that are required.
 
-Then you should see this button on the size:
-![alt text](image-2.png)
+After that's done, open `VSCode` and open the `software` directory. You're also going to want to install this extension to make building the software much easier:
 
-This will allow us to build and flash our flight controller all from VSCode!
+![VSCode STM32 Extension](assets/vscode_stm32_extension.png)
 
-![alt text](image-3.png)
+Then you should see this button on the side:
+![VSCode STM32 Sidebar Button](assets/vscode_stm32_sidebar_button.png)
 
-If you need to edit the pinout or functions of any pin, rememebr to generate the code again from STM32CubeMX.
+This will allow you to build and flash your flight controller all from VSCode!
 
-Edit `main.c` and remember to keep your code inside the commented sections that say `USER CODE BEGIN` and `USER CODE END` to prevent it from being rewritten when you generate the code again. There are many tutorials online/on YouTube on how to program with STM32 so I'd reccommend looking on there. You will also need files called `drivers` to control each one of the chips/sensors that you use but those can be found on the internet/GitHub and can be imported into your project easily. ([example](https://youtu.be/dnfuNT1dPiM?t=1343)). 
+![VSCode STM32 Build and Flash](assets/vscode_stm32_build_flash.png)
+
+If you need to edit the pinout or functions of any pin, remember to generate the code again from STM32CubeMX.
+
+Edit `main.c` and remember to keep your code inside the commented sections that say `USER CODE BEGIN` and `USER CODE END` to prevent it from being overwritten when you generate the code again. There are many tutorials online/on YouTube on how to program with STM32, so I'd recommend looking there. You will also need files called `drivers` to control each of the chips/sensors that you use, but those can be found on the internet/GitHub and can be imported into your project easily. ([example](https://youtu.be/dnfuNT1dPiM?t=1343))
+
+## STM32duino
+
+Follow the instructions in the [GitHub](https://github.com/stm32duino/Arduino_Core_STM32#getting-started)
+
+---------
 
 If you have any questions feel free to DM me on Slack (@NotARoomba) and if you want to check out my other projects, here's my [GitHub](https://github.com/notaroomba) / [Website](https://notaroomba.dev).

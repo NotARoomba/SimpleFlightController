@@ -1049,7 +1049,7 @@
 				(font
 					(face "Blender Pro Bold")
 					(size 0.5 0.5)
-					(thickness 0.15)
+					(thickness 0.125)
 				)
 			)
 			(render_cache "X1" 45
@@ -1266,7 +1266,7 @@
 			(uuid "d37a7057-dea7-4b27-b9e0-12e600f6d377")
 		)
 		(embedded_fonts no)
-		(model "/hardware/lib/lcsc.3dshapes/CRYSTAL-SMD_4P-L3.2-W2.5-BL.wrl"
+		(model "${KIPRJMOD}/lib/lcsc.3dshapes/CRYSTAL-SMD_4P-L3.2-W2.5-BL.step"
 			(offset
 				(xyz 0 -0 -0)
 			)
@@ -3488,7 +3488,7 @@
 				(font
 					(face "Blender Pro Bold")
 					(size 0.5 0.5)
-					(thickness 0.15)
+					(thickness 0.125)
 				)
 			)
 			(render_cache "USB1" 0
@@ -3928,15 +3928,15 @@
 			(uuid "0c210fc6-70cd-4bd6-bdcf-581bc80f5d97")
 		)
 		(embedded_fonts no)
-		(model "/hardware/lib/lcsc.3dshapes/USB-C-SMD_TYPE-C-6PIN-2MD-073.wrl"
+		(model "${KIPRJMOD}/lib/lcsc.3dshapes/USB-C-SMD_TYPE-C-6PIN-2MD-073.step"
 			(offset
-				(xyz 0 -1.2 0.9)
+				(xyz 0 -1.2 1.4)
 			)
 			(scale
 				(xyz 1 1 1)
 			)
 			(rotate
-				(xyz 0 0 0)
+				(xyz -0 -0 -0)
 			)
 		)
 	)
@@ -4237,7 +4237,7 @@
 				(font
 					(face "Blender Pro Bold")
 					(size 0.5 0.5)
-					(thickness 0.15)
+					(thickness 0.125)
 				)
 			)
 			(render_cache "U1" 0
@@ -4673,7 +4673,7 @@
 			(uuid "0eb1e4d9-988b-4c67-9b14-775a570abc8a")
 		)
 		(embedded_fonts no)
-		(model "/hardware/lib/lcsc.3dshapes/VFQFPN-24_L4.0-W4.0-H0.9-P0.50.wrl"
+		(model "${KIPRJMOD}/lib/lcsc.3dshapes/VFQFPN-24_L4.0-W4.0-H0.9-P0.50.step"
 			(offset
 				(xyz 0 -0 -0)
 			)
@@ -7280,7 +7280,7 @@
 				(font
 					(face "Blender Pro Bold")
 					(size 0.5 0.5)
-					(thickness 0.15)
+					(thickness 0.125)
 				)
 			)
 			(render_cache "U2" 0
@@ -7648,15 +7648,15 @@
 			(uuid "e224d0db-3649-4ded-b5c2-56f44a09fe23")
 		)
 		(embedded_fonts no)
-		(model "/hardware/lib/lcsc.3dshapes/LGA-14_L2.5-W3.0-H0.9-P0.50.wrl"
+		(model "${KIPRJMOD}/lib/lcsc.3dshapes/LGA-14_L2.5-W3.0-H0.9-P0.50.step"
 			(offset
-				(xyz 0.24 -0.37 -0)
+				(xyz 0 0 -0)
 			)
 			(scale
 				(xyz 1 1 1)
 			)
 			(rotate
-				(xyz 0 0 0)
+				(xyz -0 -0 -0)
 			)
 		)
 	)
@@ -7672,7 +7672,7 @@
 				(font
 					(face "Blender Pro Bold")
 					(size 0.5 0.5)
-					(thickness 0.15)
+					(thickness 0.125)
 				)
 			)
 			(render_cache "L7" 0
@@ -7858,7 +7858,7 @@
 			(uuid "d9bd8b50-b65a-480f-b011-c43fe9858090")
 		)
 		(embedded_fonts no)
-		(model "/hardware/lib/lcsc.3dshapes/IND-SMD_L3.0-W3.0-H1.5.wrl"
+		(model "${KIPRJMOD}/lib/lcsc.3dshapes/IND-SMD_L3.0-W3.0-H1.5.step"
 			(offset
 				(xyz 0 -0 -0)
 			)
@@ -10086,7 +10086,7 @@
 				(font
 					(face "Blender Pro Bold")
 					(size 0.5 0.5)
-					(thickness 0.15)
+					(thickness 0.125)
 				)
 			)
 			(render_cache "U5" 0
@@ -10461,7 +10461,7 @@
 			(uuid "937ec398-8120-41a5-92bb-746f374281c3")
 		)
 		(embedded_fonts no)
-		(model "/hardware/lib/lcsc.3dshapes/VQFN-HR-15_L3.0-W2.5-H0.9-P0.50-BL_TPS63070RNMR.wrl"
+		(model "${KIPRJMOD}/lib/lcsc.3dshapes/VQFN-HR-15_L3.0-W2.5-H0.9-P0.50-BL_TPS63070RNMR.step"
 			(offset
 				(xyz -0 0.18 -0)
 			)
@@ -10485,7 +10485,7 @@
 				(font
 					(face "Blender Pro Bold")
 					(size 0.5 0.5)
-					(thickness 0.15)
+					(thickness 0.125)
 				)
 			)
 			(render_cache "L6" 90
@@ -10705,7 +10705,7 @@
 			(uuid "349bb98f-f42e-477c-a43d-60f802ba7c8b")
 		)
 		(embedded_fonts no)
-		(model "/hardware/lib/lcsc.3dshapes/IND-SMD_L4.0-W4.0-A.wrl"
+		(model "${KIPRJMOD}/lib/lcsc.3dshapes/IND-SMD_L4.0-W4.0-A.step"
 			(offset
 				(xyz 0 -0 -0)
 			)
@@ -12740,7 +12740,7 @@
 				(font
 					(face "Blender Pro Bold")
 					(size 0.5 0.5)
-					(thickness 0.15)
+					(thickness 0.125)
 				)
 			)
 			(render_cache "L4" 0
@@ -12972,15 +12972,15 @@
 			(uuid "7a823323-151a-4426-a8cc-5f3fd4d32c1c")
 		)
 		(embedded_fonts no)
-		(model "/hardware/lib/lcsc.3dshapes/L0603_L1.6-W0.8-H0.5_BEAD.wrl"
+		(model "${KIPRJMOD}/lib/lcsc.3dshapes/L0603_L1.6-W0.8-H0.5_BEAD.step"
 			(offset
-				(xyz 1.66 -0.49 -0)
+				(xyz 0 0 -0)
 			)
 			(scale
 				(xyz 1 1 1)
 			)
 			(rotate
-				(xyz 0 0 180)
+				(xyz -0 -0 180)
 			)
 		)
 	)
@@ -14128,7 +14128,7 @@
 			(uuid "f63924d0-d389-4192-9d61-f7aa2df67562")
 		)
 		(embedded_fonts no)
-		(model "/hardware/lib/lcsc.3dshapes/SW-SMD_L3.9-W2.9-H2.0-LS4.8.wrl"
+		(model "${KIPRJMOD}/lib/lcsc.3dshapes/SW-SMD_L3.9-W2.9-H2.0-LS4.8.step"
 			(offset
 				(xyz 0 -0 -0)
 			)
@@ -15268,7 +15268,7 @@
 				(font
 					(face "Blender Pro Bold")
 					(size 0.5 0.5)
-					(thickness 0.15)
+					(thickness 0.125)
 				)
 			)
 			(render_cache "L5" 90
@@ -15532,7 +15532,7 @@
 			(uuid "d0b95100-e444-46e8-a5ad-03ec33cbee17")
 		)
 		(embedded_fonts no)
-		(model "/hardware/lib/lcsc.3dshapes/L2520.wrl"
+		(model "${KIPRJMOD}/lib/lcsc.3dshapes/L2520.step"
 			(offset
 				(xyz 0 -0 -0)
 			)
@@ -15817,7 +15817,7 @@
 				(font
 					(face "Blender Pro Bold")
 					(size 0.5 0.5)
-					(thickness 0.15)
+					(thickness 0.125)
 				)
 			)
 			(render_cache "X2" 0
@@ -15985,7 +15985,7 @@
 			(uuid "e01dec51-ddab-4257-8dfb-e923ab3be8d3")
 		)
 		(embedded_fonts no)
-		(model "/hardware/lib/lcsc.3dshapes/FC-135R_L3.2-W1.5.wrl"
+		(model "${KIPRJMOD}/lib/lcsc.3dshapes/FC-135R_L3.2-W1.5.step"
 			(offset
 				(xyz 0 -0 -0)
 			)
@@ -16009,7 +16009,7 @@
 				(font
 					(face "Blender Pro Bold")
 					(size 0.5 0.5)
-					(thickness 0.15)
+					(thickness 0.125)
 				)
 			)
 			(render_cache "Card1" 0
@@ -16467,15 +16467,15 @@
 			(uuid "f24437ba-ac42-456f-8b0d-6e79bbb04130")
 		)
 		(embedded_fonts no)
-		(model "/hardware/lib/lcsc.3dshapes/TF-SMD_TF-01A.wrl"
+		(model "${KIPRJMOD}/lib/lcsc.3dshapes/TF-SMD_TF-01A.step"
 			(offset
-				(xyz 0 -2.18 0.6)
+				(xyz 0 -5 0)
 			)
 			(scale
 				(xyz 1 1 1)
 			)
 			(rotate
-				(xyz 0 0 0)
+				(xyz -0 -0 -0)
 			)
 		)
 	)
@@ -22294,7 +22294,7 @@
 			(uuid "b087845c-fe1f-4810-b04e-359f58611ff4")
 		)
 		(embedded_fonts no)
-		(model "/hardware/lib/lcsc.3dshapes/SW-SMD_L3.9-W2.9-H2.0-LS4.8.wrl"
+		(model "${KIPRJMOD}/lib/lcsc.3dshapes/SW-SMD_L3.9-W2.9-H2.0-LS4.8.step"
 			(offset
 				(xyz 0 -0 -0)
 			)
@@ -24978,6 +24978,24 @@
 		(layers "F.Cu" "B.Cu")
 		(net 3)
 		(uuid "09b29146-677b-4f04-86bb-3c2ccffde36e")
+	)
+	(via
+		(at 149.7 126.55)
+		(size 0.6)
+		(drill 0.3)
+		(layers "F.Cu" "B.Cu")
+		(free yes)
+		(net 3)
+		(uuid "26ed8a08-34c0-4bde-a0cd-e3b28d41eb34")
+	)
+	(via
+		(at 161.45 112.8)
+		(size 0.6)
+		(drill 0.3)
+		(layers "F.Cu" "B.Cu")
+		(free yes)
+		(net 3)
+		(uuid "33d29d77-fb2a-4c1c-8c79-c34930bd8607")
 	)
 	(via
 		(at 178.247182 127.802818)

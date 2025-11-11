@@ -425,7 +425,7 @@ Now wire up the rest of the schematic, and you should end up with something simi
 
 ![Battery Charger Schematic Complete](assets/battery_charger_complete.png)
 
-Note the mess, but I have different ground names for PGND and GND, although I used the same symbol. I added a battery screw terminal and also connected the battery ground to PGND, and I also shorted PGND and GND. I plan on connecting PGND and GND on the bottom of the thermal pad as advised in the datasheet.
+Note the mess, but I have different ground names for PGND and GND, although I used the same symbol. I added a battery screw terminal and also connected the battery ground to PGND, and I also shorted PGND and GND. I plan on connecting PGND and GND on the bottom of the thermal pad (this is actually the EP/Pin 25, but in the end I removed PGND and used only GND for simplicity).
 
 ### Regulators
 
@@ -733,7 +733,7 @@ Click on this button to open the footprint selection screen:
 
 The lines in yellow are components whose footprints we have to assign:
 
-![alt text](assets/footprint_yellow_lines.png)
+![alt text](assets/footprint_assignment_list.png)
 
 But since it's mainly resistors and capacitors, that makes it a lot easier.
 Since we're designing a flight controller, this has to be as small as possible, so I am going to be choosing the smallest footprints I can (while staying within good practices). The smaller the footprint, the more it can heat up and the less it can tolerate (for resistors and capacitors). A rule of thumb that I go by is any resistors under 80K I assign a 0201 footprint, over that and it's 0402. For capacitors, any `bulk capacitors` (capacitors that have high values like 4.7 µF or 10 µF) I usually assign 0402. Any bigger than 10 µF and I assign 0805, but it depends on the datasheet of the component. Under the application and implementation section there is usually a table that specifies which footprints/components to use. 
@@ -745,18 +745,18 @@ Now all that's left is to finish adding the footprints for these symbols:
 
 For the LED, I am going to have it in a 0402 package. And for the headers, I am going to use these footprints (basically the standard headers for jumper cables):
 
-![alt text](assets/footprint_header_selection.png)
+![alt text](assets/header_footprints.png)
 
 The inductors are a bit trickier. For this, you're gonna have to go into the datasheet and see where it says the size:
 
-![alt text](assets/footprint_inductor_size.png)
+![alt text](assets/inductor_datasheet_size.png)
 
 For that `5.6uH` inductor, I am going to be using `C18236327` (LCSC Part Number).
 
 
 For the 5V buck-boost, I am going to be using `C3033018`. I also noticed that I had the inductor value wrong from the datasheet. **THIS IS WHY DOUBLE CHECKING IS IMPORTANT:**
 
-![alt text](assets/footprint_inductor_value_correction.png)
+![alt text](assets/inductor_value_correction.png)
 
 For the final inductor in the battery charging IC, I am going to use `C435392`.
 
@@ -773,11 +773,11 @@ Then to import all of our components from the schematic, we hit this button:
 
 A screen should pop up:
 
-![alt text](assets/pcb_import_dialog.png)
+![alt text](assets/pcb_update_from_schematic.png)
 
 There should be no errors or warnings. Then press Update PCB to import everything from the schematic.
 
-![alt text](assets/pcb_imported_components.png)
+![alt text](assets/pcb_components_imported.png)
 
 Now comes the fun part, part placement!
 
@@ -799,59 +799,59 @@ I personally have always relied on this one trick to route my PCBs and it has al
 
 Starting with USB-C, go to the schematic and select the USB-C section:
 
-![alt text](assets/pcb_usbc_schematic_select.png)
+![alt text](assets/schematic_usbc_selection.png)
 
 Then going back to the PCB editor, you should see that the connector and its parts are selected. Then drag them off to one side.
 
-![alt text](assets/pcb_usbc_dragged.png)
+![alt text](assets/pcb_usbc_components_placed.png)
 
 Do the same for each of the sections and after you've done that you should get something like this: 
 
-![alt text](assets/pcb_sections_separated.png)
+![alt text](assets/pcb_all_groups_separated.png)
 
 Now go section by section and place the components close to where they're supposed to be connected. Make sure to place decoupling capacitors close to the pins that they need to decouple or they won't work.
 
 Example of the USB-C connector:
 
-![alt text](assets/pcb_usbc_placement.png)
+![alt text](assets/pcb_usbc_layout_example.png)
 
 I placed the resistors close to the pins that they need to decouple and in a good orientation so that I can connect that ground pin easily.
 
 For the 3.3V Buck converter I routed it like this:
 
-![alt text](assets/pcb_buck_converter_routing.png)
+![alt text](assets/pcb_3v3_buck_initial.png)
 
 But now I'm realizing that the components I chose are too small so I am going to make the capacitors and resistors a bit bigger:
 
-![alt text](assets/pcb_buck_converter_updated.png)
+![alt text](assets/pcb_3v3_buck_adjusted.png)
 
 Ignore the silkscreen for now (the yellow) we are going to come back to that later.
 
 Continue on for each of the chips. For example, here is how I placed the 5V buck-boost converter:
 
-![alt text](assets/pcb_5v_buckboost_placement.png)
+![alt text](assets/pcb_5v_buck_boost_layout.png)
 
 As you can see, the capacitors are close to the pin and to each other, and all of the components I have placed in a way where I can create easy connections like so:
 
-![alt text](assets/pcb_5v_buckboost_routing.png)
+![alt text](assets/pcb_5v_buck_boost_routed.png)
 
 Moving on to the battery charger:
 
-![alt text](assets/pcb_battery_charger_routing.png)
+![alt text](assets/pcb_battery_charger_layout.png)
 
 Crystals:
-![alt text](assets/pcb_crystals_placement.png)
+![alt text](assets/pcb_crystals_layout.png)
 
 microSD Card:
 
-![alt text](assets/pcb_microsd_placement.png)
+![alt text](assets/pcb_microsd_layout.png)
 
 For the STM32/microcontroller, it's a personal preference of mine to rotate it 45 degrees so that it's "easier" (subjectively) to route later. You can change this by editing the `orientation` property:
 
-![alt text](assets/pcb_stm32_orientation_setting.png)
+![alt text](assets/pcb_stm32_orientation.png)
 
 Also for these decoupling caps:
-![alt text](assets/pcb_decoupling_caps_size.png)
+![alt text](assets/pcb_bulk_decoupling_caps.png)
 
 I changed the sizes to be 0402 as they are bulk decoupling capacitors and should always be a bit bigger than the normal ones.
 
@@ -870,12 +870,12 @@ After you're done laying out all of the `passive components` (resistors, inducto
 Here's what my "board" layout is and I'm going to play around with the placement of each of the groups before routing to make it more compact.
 
 **TIP**
-![alt text](assets/pcb_grouping_tip.png)
+![alt text](assets/pcb_group_components_tip.png)
 It may be helpful to literally group them in KiCad to move them around easier.
 
 After a bit of laying out and thinking I came up with this:
 
-![alt text](assets/pcb_final_component_layout.png)
+![alt text](assets/pcb_final_layout_organized.png)
 
 The battery charger is close to VBUS and then VSYS has an easy path through to the 3.3V buck converter and 5V buck-boost. The battery connector is also on that side. On the top is the microSD card with a connection to the STM32 directly under it. On the top left are the buttons for boot and reset and also the 2 clocks. On the bottom left is the IMU that is kept separated from the rest to reduce noise (happened by accident lol) and the STM32 in the middle whose USB DP and DN pins are inline with the USB-C port.
 
@@ -887,25 +887,25 @@ Now after defining the layout, go to the `Edge.Cuts` layer and create a rectangl
 
 This will be the PCB outline.
 
-![alt text](assets/pcb_board_outline_created.png)
+![alt text](assets/pcb_board_outline_drawn.png)
 
-![alt text](assets/pcb_board_size_measurement.png)
+![alt text](assets/pcb_board_dimensions.png)
 When I originally created the board size to cover all of the parts, it had a size of 42.7mm x 47.8 mm so I decided to round it to 40mm x 46mm (optional). After creating the board outline, you may need to shuffle some stuff around for it to fit. It's good practice to put the USB-C connector hanging out a bit so that you have space to plug in the cable like so:
 
 ![alt text](assets/pcb_usbc_overhang.png)
 
 After organizing it, look at the board in the 3D viewer to get a good feel for how the components are going to look. Don't worry if the silkscreen/3D models look terrible for now, we will fix that at the end.
 
-![alt text](assets/pcb_3d_view_initial.png)
+![alt text](assets/pcb_3d_view_top.png)
 
-![alt text](assets/pcb_3d_view_angle.png)
+![alt text](assets/pcb_3d_view_side.png)
 
 ## Routing
 
 Before we start routing, let's configure the `Design Rules`. These are rules that KiCad has to impose certain restrictions like spacing between components and track width and via size, among other things. It is also where we can add default sizes for `vias` (holes that connect tracks between layers) and `tracks` (copper lines that connect components).
 
 Go to the `Pre-defined Sizes` section:
-![alt text](assets/pcb_design_rules_sizes.png)
+![alt text](assets/pcb_predefined_sizes.png)
 
 I am going to add `0.6mm`, `0.4mm` and `0.2mm` track widths. For vias, I usually go with vias that have `0.6mm Diameter / 0.3mm Hole` and `0.4 Diameter / 0.2mm Hole`.
 
@@ -925,7 +925,7 @@ Basically connect each of the pads to their connections and try to use as few vi
 
 Starting with the USB-C data lines, these are what's known as a `differential pair`, so they have to be the same length as they carry a signal that needs to be in sync with the other and the only way for that to happen is if they're the same length. Start connecting them like so:
 
-![alt text](assets/pcb_usb_differential_start.png)
+![alt text](assets/pcb_usb_differential_routing.png)
 
 Then go to `Route > Route Differential Pair` 
 ![alt text](assets/pcb_route_differential_menu.png)
@@ -941,19 +941,21 @@ Moving on, just some general tips. I personally like to use `0.6mm` or `0.4mm` w
 
 I also like to do the same as in the layout where I route all of the passive components to their respective ICs before then routing those groups together. For example, routing the decoupling capacitors to the IMU before connecting it to the STM32:
 
-![alt text](assets/pcb_imu_decoupling_routing.png)
+![IMU Decoupling Capacitors Routed](assets/pcb_imu_decoupling_routed.png)
 
-You might have to rotate components as well to get a good placement. And for vias, I aim to use max 2 per line like so:
+You might have to rotate components as well to get a good placement. For vias, I aim to use a maximum of 2 per line like so:
 
-![alt text](assets/pcb_via_example.png)
+![Via Placement Example](assets/pcb_via_placement_example.png)
 
-Don't worry about connecting the GNDs for now as we are going to use what's called a `ground plane` (copper area of GND that can connect to pins/pads).
+Don't worry about connecting the GNDs for now, as we are going to use what's called a `ground plane` (a copper area of GND that can connect to pins/pads).
 
-Sometimes for VBUS or another component, you might have vias that can't pass through, so I added `0.3mm` track width in the board settings and it works:
-![alt text](assets/pcb_vbus_narrow_track.png)
-![alt text](assets/pcb_narrow_track_settings.png)
+Sometimes for VBUS on USB-C or any other component, you might have vias that can't pass through, so I added a `0.3mm` track width in the board settings and it works:
 
-If KiCad doesn't let you place a via on a pad for whatever reason, you can edit the clearance in `Board Setup > Net Classes`. I set it to 0.15 but try not to set it any lower as the minimum for JLCPCB is `0.1mm`: 
+![VBUS Routing Issue](assets/pcb_vbus_routing_issue.png)
+
+![VBUS Routing Fixed](assets/pcb_vbus_routing_fixed.png)
+
+If KiCad doesn't let you place a via on a pad for whatever reason, you can edit the clearance in `Board Setup > Net Classes`. I set it to 0.15, but try not to set it any lower as the minimum for JLCPCB is `0.1mm`: 
 
 ![alt text](assets/pcb_net_classes_clearance.png)
 
@@ -976,21 +978,21 @@ Then routed the microSD card:
 Then finally I routed the 3.3V line, using 0.6mm tracks and then branching off into smaller 0.3mm tracks to connect to the different ICs.
 
 **REMEMBER THAT THE 3.3V MUST GO THROUGH THE DECOUPLING CAPACITORS FIRST BEFORE REACHING THE PIN LIKE SO:**
-![alt text](assets/pcb_decoupling_cap_order.png)
+![alt text](assets/pcb_3v3_through_decoupling_caps.png)
 
 After routing your board should look something like this:
 
-![alt text](assets/pcb_routing_complete.png)
+![alt text](assets/pcb_all_routed_complete.png)
 
 Now we are going to add the ground pours. This is so that we don't have to manually connect all of the ground pads and it also helps with interference and noise across the board.
 
 Go to the right and click on `Draw filled zones` and click on one corner and a window should pop up:
 
-![alt text](assets/pcb_ground_pour_dialog.png)
+![alt text](assets/pcb_ground_pour_settings.png)
 
-Here you need to select both layers of copper and select the GND net. Then you need to change the clearance and minimum width to both 0.2mm and also change the `Pad connection` to Solid. This allows the ground plane to connect to the pads better. Press OK and start creating the zone like so:
+Here you need to select both layers of copper and select the GND net. Then you need to change the clearance and minimum width to both 0.2mm and also change the `Pad connection` to `Solid` or `Thermal reliefs`. Solid allows the ground plane to connect to the pads better but Thermal reliefs is good if you need to solder/fix the board as the solid ground plane makes it difficult to heat up specific components. For this tutorial I am going to use `Solid` but feel free to use `Thermal reliefs` if you want to be able to solder it later. Press OK and start creating the zone like so:
 
-![alt text](assets/pcb_ground_pour_drawing.png)
+![alt text](assets/pcb_ground_pour_outline.png)
 
 You want it to look something like this:
 
@@ -998,7 +1000,7 @@ You want it to look something like this:
 
 Then press `b` on your keyboard and it should fill the zone automatically (`Ctrl-b` to clear them).
 
-![alt text](assets/pcb_ground_pour_filled.png)
+![alt text](assets/pcb_ground_pour_complete.png)
 
 Now you should check if you have any `ratlines` (blue lines that signal unconnected pins) and fix them. In my case, I forgot to connect the servos so I will do that now.
 
@@ -1029,18 +1031,18 @@ Also Notice how I didn't connect the grounds together and connected both PGND an
 
 After connecting everything we are going to run `Check DRC` which basically checks the design rules and makes sure our board is ready for production.
 
-![alt text](assets/pcb_drc_button.png)
+![alt text](assets/pcb_drc_check_button.png)
 
 
 Then click on `Run DRC`:
 
-![alt text](assets/pcb_drc_dialog.png)
+![alt text](assets/pcb_drc_run_button.png)
 
-![alt text](assets/pcb_drc_running.png)
+![alt text](assets/pcb_drc_results.png)
 
 Unselect the warnings and look at the errors. If there are any errors about unconnected pads then you should probably go back and make sure that everything is connected. There are some errors but those are from the parts that we imported like the USB-C and microSD card that KiCad is complaining about the holes:
 
-![alt text](assets/pcb_drc_errors.png)
+![alt text](assets/pcb_drc_errors_from_imports.png)
 
 Those errors are safe to ignore but any others you should probably fix.
 
@@ -1055,11 +1057,11 @@ Now I'm going to fix the silkscreen component names so that they look better (an
 ![alt text](assets/pcb_text_graphics_menu.png)
 
 This window should show up:
-![alt text](assets/pcb_text_graphics_dialog.png)
+![alt text](assets/pcb_reference_designators_window.png)
 
 Here you're going to select `Reference designators` as this will select all of the designators (R1, C1, etc...) on the board so we can edit their properties. Then in the action I am going to change the font and the size:
 
-![alt text](assets/pcb_text_graphics_settings.png)
+![alt text](assets/pcb_silkscreen_font_settings.png)
 
 You can set these values to whatever you want but I am going to go with this. Then click `Apply` to test it out and `Apply and Close` when you are done.
 
@@ -1076,11 +1078,17 @@ This is completely optional but look at how neat it looks now with all the desig
 
 I even added text to the battery connector to show which side is + and -.
 
-If you want to add the 3D models to render then just go to properties and find a 3D model that works for you:
+If you want to add the 3D models to render, then just go to properties and find a 3D model that works for you:
 
 ![alt text](assets/pcb_3d_model_properties.png)
 
-But I'm going to skip this as it's not necessary.
+(You may have to click on the folder icon next to the path/show button to change the 3D model from a `.wrl` to the `.step` in the same folder for imported LCSC parts for it to show. Just changing the name will not update it.)
+
+![3D Model Before](assets/pcb_3d_model_before.png)
+(Before)
+
+![3D Model After](assets/pcb_3d_model_after.png)
+(After)
 
 And you're done!
 
@@ -1090,11 +1098,9 @@ And you're done!
 
 To get your project ready for submission, we need to export the production files (gerbers, etc.). These files tell JLCPCB or whatever board manufacturer how to make the board and which components to place.
 
-Thankfully, there's a plugin that KiCad has to make this export easy.
+![alt text](assets/jlcpcb_plugin_icon.png)
 
-![alt text](assets/kicad_plugin_manager.png)
-
-Go to the `Plugin and Content Manager` and search for `jlc`.
+Thankfully, there's a plugin that KiCad has to make this export easy. Go to the `Plugin and Content Manager` in KiCad and search for `jlc`.
 
 You should see this plugin show up:
 
@@ -1102,19 +1108,19 @@ You should see this plugin show up:
 
 Press the install button and then `Apply Pending Changes` to install it. Finally, go back to your PCB screen and you should see this icon:
 
-![alt text](assets/jlcpcb_plugin_icon.png)
+![alt text](assets/jlcpcb_fabrication_icon.png)
 
 A window should open and click `Generate`:
 
-![alt text](assets/jlcpcb_plugin_generate.png)
+![alt text](assets/jlcpcb_generate_window.png)
 
 It should create this directory in the `hardware` folder:
 
-![alt text](assets/jlcpcb_output_directory.png)
+![alt text](assets/jlcpcb_fabrication_icon.png)
 
 But I'm going to copy it out of that folder and move it to the root so that reviewing is much easier.
 
-![alt text](assets/jlcpcb_production_folder.png)
+![alt text](assets/production_folder_moved.png)
 
 Now open [JLCPCB](https://jlcpcb.com/) and upload the gerbers (ZIP file that has the name of the KiCad project) in the `production` folder to see how much it costs.
 

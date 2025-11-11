@@ -1,8 +1,10 @@
 # How to make a flight controller (from scratch)
 
-I'm [@NotARoomba](https://github.com/notaroomba) and I have a (sort of) obsession with making flight controllers so heres a guide so that you too have the knowledge of making something [cool](https://github.com/notaroomba/athena).
+Made by @NotARoomba
 
 This is an advanced project. I recommend learning the basics of KiCad by making a small dev board or breadboard first. That said, anyone can follow along, as I'll go **_in-depth_** on how to build a flight controller.
+
+I'm [@NotARoomba](https://github.com/notaroomba) and I have a (sort of) obsession with making flight controllers so heres a guide so that you too have the knowledge of making something [cool](https://github.com/notaroomba/athena). The files for this guide can be found [here](https://github.com/notaroomba/simpleflightcontroller)
 
 First, define what type of flight controller you want: for a rocket or a drone? Keep that in mind when starting your own design. In this guide, we'll build a flight controller specifically for rockets.
 

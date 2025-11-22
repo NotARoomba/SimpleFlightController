@@ -1,3 +1,5 @@
+![Flight Controller Render](https://hc-cdn.hel1.your-objectstorage.com/s/v3/a3ff9eeecf832a9728930c930c50646856929097_render_cropped.webp)
+
 # How to make a flight controller (from scratch)
 
 Made by @NotARoomba
@@ -202,6 +204,8 @@ def main(argv=None):
 if __name__ == "__main__":
     main()
 ```
+
+---
 
 This code basically calls the `easyeda2kicad.py` library for every line that is present in `lcsc.txt` and adds it to a KiCad library in `/hardware/lib/lcsc`. (Make sure to install it first using `pip install easyeda2kicad.py`)
 

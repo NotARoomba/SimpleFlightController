@@ -12324,8 +12324,8 @@
 				(justify left)
 			)
 		)
-		(property "Value" "20pF"
-			(at 161.544 72.39 0)
+		(property "Value" "6.8pF"
+			(at 162.306 72.39 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -14334,8 +14334,8 @@
 				(justify left)
 			)
 		)
-		(property "Value" "20pF"
-			(at 135.636 72.39 0)
+		(property "Value" "6.8pF"
+			(at 135.128 72.39 0)
 			(effects
 				(font
 					(size 1.27 1.27)
